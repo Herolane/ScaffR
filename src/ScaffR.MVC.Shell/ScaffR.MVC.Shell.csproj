@@ -50,6 +50,7 @@
     <None Include="content\Helpers\HtmlHelpers.Common.cs.pp" />
     <None Include="content\Helpers\UrlHelpers.AbsoluteAction.cs.pp" />
     <None Include="content\Helpers\HtmlHelpers.EnumDropdown.cs.pp" />
+    <None Include="content\Extensions\ControllerExtensions.cs.pp" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

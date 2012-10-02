@@ -1,15 +1,15 @@
 ﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
 <#@ Output Extension="cs" #>
+[assembly: WebActivator.PreApplicationStartMethod(typeof(<#= Model.Namespace #>.App_Start.AutoMapperConfig), "RegisterMappings")]
 namespace <#= Model.Namespace #>.App_Start
 {
     using Core.Model;
     using Models;
-    
+
     public class AutoMapperConfig
     {
         public static void RegisterMappings()
         {
-            
         }
     }
 }
