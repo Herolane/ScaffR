@@ -9,7 +9,7 @@
     <iconUrl>http://www.scaffr.com/favicon.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
-      Description required.
+      Basic user objects that can either be used as proxies for WebApi or CodeFirst models.
     </description>
     <releaseNotes>
     </releaseNotes>

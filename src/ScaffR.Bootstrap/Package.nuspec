@@ -9,7 +9,7 @@
     <iconUrl>http://www.scaffr.com/favicon.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
-      Core library for developing testing tools using T4 Scaffolding.
+      ScaffR wrapper for Bootstrap, FontAwesome, and Cassette (Less)
     </description>
     <releaseNotes>
     </releaseNotes>

@@ -9,16 +9,16 @@
     <iconUrl>http://www.scaffr.com/favicon.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
-      Boilerplate architecture for layered n-tier architecture. 
+      Boilerplate powershell commands and architecture for layered n-tier architecture. 
     </description>
     <releaseNotes>
     </releaseNotes>
     <copyright>World-Class Programmers 2012</copyright>
     <tags>CodeFirst, Architecture, N-Tier</tags>
     <dependencies>      
-      <dependency id="ScaffR.Services" version="1.1.2" />
-      <dependency id="ScaffR.Data" version="1.1.2" />
-      <dependency id="ScaffR.Core" version="1.1.2" />
+      <dependency id="ScaffR.Services"/>
+      <dependency id="ScaffR.Data"/>
+      <dependency id="ScaffR.Core"/>
     </dependencies>
   </metadata>
   <files>

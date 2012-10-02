@@ -9,7 +9,7 @@
     <iconUrl>http://www.scaffr.com/favicon.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
-      Description required.
+      CodeFirst implementation of our ScaffR.Users.Core domain objects.
     </description>
     <releaseNotes>
     </releaseNotes>

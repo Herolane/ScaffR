@@ -9,7 +9,7 @@
     <iconUrl>http://www.scaffr.com/favicon.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
-      Builds the default ScaffR data layer.
+      Builds the default ScaffR data layer with EF5 Code First, Migrations.
     </description>
     <releaseNotes>
     </releaseNotes>

@@ -9,7 +9,7 @@
     <iconUrl>http://www.scaffr.com/favicon.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
-      Installs the powershell commands that make ScaffR work
+      Installs the powershell commands that make ScaffR modules work.
     </description>
     <releaseNotes>
     </releaseNotes>

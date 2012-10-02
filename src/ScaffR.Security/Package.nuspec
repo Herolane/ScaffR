@@ -9,7 +9,7 @@
     <iconUrl>http://www.scaffr.com/favicon.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
-      Description required.
+      WIF Security implementation in ASP.NET MVC
     </description>
     <releaseNotes>
     </releaseNotes>

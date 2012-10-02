@@ -9,7 +9,7 @@
     <iconUrl>http://www.scaffr.com/favicon.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
-      Ninject module for ScaffR
+      ScaffR wrapper for Ninject
     </description>
     <releaseNotes>
     </releaseNotes>
