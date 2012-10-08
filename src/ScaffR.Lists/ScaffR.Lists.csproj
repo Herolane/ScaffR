@@ -48,6 +48,8 @@
   <ItemGroup>
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Lists\Lists.Countries.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Lists\Lists.UnitedStates.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Lists\Lists.CreditCards.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Lists\Lists.Months.cs.t4" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

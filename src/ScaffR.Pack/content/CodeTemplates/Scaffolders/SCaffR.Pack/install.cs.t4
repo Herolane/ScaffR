@@ -1,0 +1,5 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="ps1" #>
+param($installPath, $toolsPath, $package, $project)
+
+scaffold <#= Model.ProjectName #>

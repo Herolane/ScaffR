@@ -11,8 +11,11 @@ namespace $rootnamespace$.App_Start
     {
         public void Configure(BundleCollection bundles)
         {
-            bundles.Add<StylesheetBundle>("Content/Site.less");    
-            bundles.AddPerSubDirectory<StylesheetBundle>("Content/custom");
+            bundles.AddPerSubDirectory<StylesheetBundle>("Content/Framework");
+            bundles.AddPerSubDirectory<StylesheetBundle>("Content/Global");
+            bundles.AddPerSubDirectory<StylesheetBundle>("Content/Custom");
+            
+            bundles.AddPerSubDirectory<ScriptBundle>("Scripts");
         }
     }
 }

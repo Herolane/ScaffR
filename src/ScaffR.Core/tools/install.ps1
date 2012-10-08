@@ -4,6 +4,6 @@ Add-Project $coreProjectName | With-Reference "System.ServiceModel,System.Config
 
 Get-Project | With-Reference $coreProjectName
 
-install-package Newtonsoft.Json -project $coreProjectName
+install-package Newtonsoft.Json -project $coreProjectName -version 4.5.9
 
 Scaffold ScaffR.Core

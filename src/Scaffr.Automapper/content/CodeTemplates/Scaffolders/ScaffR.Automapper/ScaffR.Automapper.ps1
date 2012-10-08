@@ -6,4 +6,4 @@ param(
 	[switch]$Force = $false
 )
 
-Add-Template $baseProject.Name "App_Start\AutomapperConfig" "AutomapperConfig" -Force $TemplateFolders
+#Add-Template $baseProject.Name "App_Start\AutomapperConfig" "AutomapperConfig" -Force $TemplateFolders

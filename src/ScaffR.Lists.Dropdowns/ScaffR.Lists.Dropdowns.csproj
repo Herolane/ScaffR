@@ -46,12 +46,21 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Lists.Dropdowns\ScaffR.Lists.Dropdowns.ps1" />
     <None Include="content\Dropdowns\Dropdowns.Countries.cs.pp" />
+    <None Include="content\Dropdowns\Dropdowns.CreditCardExpirationYears.cs.pp" />
+    <None Include="content\Dropdowns\Dropdowns.CreditCardTypes.cs.pp" />
+    <None Include="content\Dropdowns\Dropdowns.Enum.cs.pp" />
+    <None Include="content\Dropdowns\Dropdowns.Months.cs.pp" />
     <None Include="content\Dropdowns\Dropdowns.States.cs.pp" />
+    <None Include="content\Models\Attributes\DropDownAttribute.cs.pp" />
+    <None Include="content\Filters\FillDropDowns.cs.pp" />
+    <None Include="content\Extensions\SelectListExtensions.cs.pp" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
+    <None Include="content\Views\Shared\EditorTemplates\DropDown.cshtml.pp" />
     <None Include="Package.nuspec" />
     <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />

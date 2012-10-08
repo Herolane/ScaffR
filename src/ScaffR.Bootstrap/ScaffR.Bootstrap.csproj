@@ -103,21 +103,26 @@
     <Content Include="content\Content\less\utilities.less" />
     <Content Include="content\Content\less\variables.less" />
     <Content Include="content\Content\less\wells.less" />
+    <Content Include="content\Scripts\bootstrap.js" />
     <None Include="content\App_Start\CassetteConfig.cs.pp" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Bootstrap\ScaffR.Bootstrap.ps1" />
-    <None Include="content\Content\custom\scaffr.less" />
     <None Include="BuildPublishPackage.cmd" />
     <None Include="content\Content\font\fontawesome-webfont.eot" />
     <None Include="content\Content\font\fontawesome-webfont.ttf" />
     <None Include="content\Content\font\fontawesome-webfont.woff" />
-    <None Include="content\Content\Site.less" />
+    <None Include="content\Content\Framework\bootstrap.less" />
+    <None Include="content\Views\Shared\EditorTemplates\Boolean.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\Bootstrap\Bootstrap.Form.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\DropDown.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\Password.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\String.cshtml.pp" />
     <None Include="Package.nuspec" />
     <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />
     <None Include="NuGet.exe" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="content\Scripts\" />
+    <Folder Include="content\Content\custom\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

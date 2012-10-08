@@ -1,0 +1,9 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="ps1" #>
+[T4Scaffolding.Scaffolder()][CmdletBinding()]
+param(
+    [string]$Project,
+	[string]$CodeLanguage,
+	[string[]]$TemplateFolders,
+	[switch]$Force = $false
+)
