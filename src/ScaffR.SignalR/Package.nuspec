@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>ScaffR.SignalR</id>
-    <version>1.1.3</version>
+    <version>1.1.4</version>
     <authors>Rod Johnson</authors>
     <owners>ScaffR</owners>
     <projectUrl>http://scaffr.codeplex.com</projectUrl>
@@ -16,8 +16,7 @@
     <copyright>ScaffR, 2012</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="ScaffR"/>
-      <dependency id="SignalR"/>
+      <dependency id="SignalR.Server"/>
     </dependencies>
   </metadata>
   <files>

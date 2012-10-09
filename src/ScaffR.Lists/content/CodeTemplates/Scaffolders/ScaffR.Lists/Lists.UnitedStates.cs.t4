@@ -8,6 +8,7 @@ namespace <#= Model.Namespace #>.Core.Common.Lists
     {
         public static readonly IDictionary<string, string> StateDictionary = new Dictionary<string, string> 
         {
+            {"", ""},
             {"Alabama", "AL"},
             {"Alaska", "AK"},
             {"American Samoa", "AS"},
