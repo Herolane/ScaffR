@@ -1,3 +1,4 @@
+/// <reference path="jquery-1.8.2.js" />
 /* ===================================================
  * bootstrap-transition.js v2.0.4
  * http://twitter.github.com/bootstrap/javascript.html#transitions

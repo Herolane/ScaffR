@@ -17,6 +17,7 @@
     <tags></tags>
     <dependencies>
       <dependency id="ScaffR"/>
+      <dependency id="SignalR"/>
     </dependencies>
   </metadata>
   <files>
