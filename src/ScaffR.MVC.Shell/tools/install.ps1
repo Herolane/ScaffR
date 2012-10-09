@@ -7,3 +7,4 @@ get-projectitem content/site.css | % {$_.Delete()}
 get-projectitem README.jQuery.vsdoc.txt | % { $_.Delete()}
 
 scaffold scaffr.website
+scaffold scaffr.webapi
