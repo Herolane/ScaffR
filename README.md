@@ -1,4 +1,4 @@
-ScaffR (Alpha)
+ScaffR 
 ======
 
 Overview
@@ -7,7 +7,7 @@ ScaffR is a code automation and scaffolding framework, written in powershell, th
 
 Need Help?  Have a Question?
 -----
-Feel free to ask questions to questions@scaffr.com.
+Feel free to ask questions to rod@scaffr.com.
 
 Philosophy
 -----
@@ -24,3 +24,7 @@ ScaffR takes full advantage of the following technologies:
 + Powershell
 + T4Scaffolding
 + Visual Studio DTE
+
+Scaffeine
+-------
+We recently open-sourced our other project, Scaffeine!  Production, ready components built with ScaffR.  http://www.github.com/wcpro/scaffeine
