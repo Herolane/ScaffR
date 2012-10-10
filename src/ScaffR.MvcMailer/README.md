@@ -1,10 +1,10 @@
-﻿ScaffR.Deploy (1.1.4)
+﻿ScaffR.MvcMailer (1.1.4)
 ======
-Deployment library for ScaffR
+ScaffR wrapper for MVC Mailer
 Usage
 ======
-<pre>install-package ScaffR.Deploy</pre>
-Dependencies (2)
+<pre>install-package ScaffR.MvcMailer</pre>
+Dependencies (1)
 =====
 
 ScaffR Packages
@@ -13,4 +13,3 @@ ScaffR Packages
 
 Other Packages
 ------
-* T4Scaffolding(1.0.6)

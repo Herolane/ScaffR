@@ -1,13 +1,14 @@
-﻿ScaffR (1.1.2)
+﻿ScaffR (1.1.4)
 ======
-Installs the powershell commands that make ScaffR work
+Installs the powershell commands that make ScaffR modules work.
 Usage
 ======
 <pre>install-package ScaffR</pre>
-Dependencies (2)
+Dependencies (3)
 =====
 
 Other Packages
 ------
-* T4Scaffolding(1.0.6)
+* T4Scaffolding()
 * EntityFramework(5.0.0)
+* WebActivator()

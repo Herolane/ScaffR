@@ -1,4 +1,4 @@
-﻿ScaffR.Core (1.1.2)
+﻿ScaffR.Core (1.1.4)
 ======
 Provides a simple domain layer.
 Usage

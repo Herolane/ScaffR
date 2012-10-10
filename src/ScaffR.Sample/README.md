@@ -1,10 +1,10 @@
-﻿ScaffR.Ninject (1.1.4)
+﻿ScaffR.Sample (1.1.4)
 ======
-ScaffR wrapper for Ninject
+Installs some sample data, courtesy of CodePlanner
 Usage
 ======
-<pre>install-package ScaffR.Ninject</pre>
-Dependencies (2)
+<pre>install-package ScaffR.Sample</pre>
+Dependencies (1)
 =====
 
 ScaffR Packages
@@ -13,4 +13,3 @@ ScaffR Packages
 
 Other Packages
 ------
-* Ninject.MVC3()

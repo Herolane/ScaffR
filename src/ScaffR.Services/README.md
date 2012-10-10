@@ -1,4 +1,4 @@
-﻿ScaffR.Services (1.1.2)
+﻿ScaffR.Services (1.1.4)
 ======
 Builds a complete service layer.
 Usage

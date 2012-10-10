@@ -1,6 +1,6 @@
-﻿ScaffR.Provider (1.1.2)
+﻿ScaffR.Provider (1.1.4)
 ======
-Description required.
+Obsolete provider implementation
 Usage
 ======
 <pre>install-package ScaffR.Provider</pre>

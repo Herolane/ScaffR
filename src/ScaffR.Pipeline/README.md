@@ -1,6 +1,6 @@
-﻿ScaffR.Pipeline (1.1.2)
+﻿ScaffR.Pipeline (1.1.4)
 ======
-Core library for developing testing tools using T4 Scaffolding.
+Obsolete pipeline framework
 Usage
 ======
 <pre>install-package ScaffR.Pipeline</pre>

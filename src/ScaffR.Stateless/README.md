@@ -1,6 +1,6 @@
-﻿ScaffR.Stateless (1.1.2)
+﻿ScaffR.Stateless (1.1.4)
 ======
-Description required.
+ScaffR wrapper for Stateless
 Usage
 ======
 <pre>install-package ScaffR.Stateless</pre>

@@ -1,6 +1,6 @@
-﻿ScaffR.Extensions (1.1.2)
+﻿ScaffR.Extensions (1.1.4)
 ======
-Provdies a useful set of extension methods.
+The only compiled code in scaffR.  This is just simplify some of the code.  This is designed to have "NO" dependencies whatsoever, just provies extension methods and such.
 Usage
 ======
 <pre>install-package ScaffR.Extensions</pre>

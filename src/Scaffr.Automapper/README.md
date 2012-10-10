@@ -1,9 +1,9 @@
-﻿ScaffR.Ninject (1.1.4)
+﻿Scaffr.Automapper (1.1.4)
 ======
-ScaffR wrapper for Ninject
+Wrapper for Automapper.
 Usage
 ======
-<pre>install-package ScaffR.Ninject</pre>
+<pre>install-package Scaffr.Automapper</pre>
 Dependencies (2)
 =====
 
@@ -13,4 +13,4 @@ ScaffR Packages
 
 Other Packages
 ------
-* Ninject.MVC3()
+* AutoMapper()

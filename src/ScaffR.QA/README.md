@@ -1,6 +1,6 @@
-﻿ScaffR.QA (1.1.2)
+﻿ScaffR.QA (1.1.4)
 ======
-Description required.
+Provides the QA tools for ScaffR-enabled projects.
 Usage
 ======
 <pre>install-package ScaffR.QA</pre>
