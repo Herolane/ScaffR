@@ -6,7 +6,7 @@ namespace $rootnamespace$.Models.Attributes
     using System.Web.Mvc;
 
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = true, Inherited = false)]
-    public class DropDownAttribute : UIHintAttribute
+    public class DropDownAttribute : UIHintAttribute, IDropDownAttribute
     {
         private readonly Type _serviceType;
         private readonly string _methodName;

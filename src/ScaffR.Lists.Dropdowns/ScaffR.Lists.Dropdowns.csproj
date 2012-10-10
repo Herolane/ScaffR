@@ -53,6 +53,8 @@
     <None Include="content\Dropdowns\Dropdowns.Enum.cs.pp" />
     <None Include="content\Dropdowns\Dropdowns.Months.cs.pp" />
     <None Include="content\Dropdowns\Dropdowns.States.cs.pp" />
+    <None Include="content\Models\Attributes\EnumDropDownAttribute.cs.pp" />
+    <None Include="content\Models\Attributes\IDropDownAttribute.cs.pp" />
     <None Include="content\Models\Attributes\DropDownAttribute.cs.pp" />
     <None Include="content\Filters\FillDropDowns.cs.pp" />
     <None Include="content\Extensions\SelectListExtensions.cs.pp" />
@@ -60,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
+    <None Include="content\Views\Shared\EditorTemplates\EnumDropDown.cshtml.pp" />
     <None Include="content\Views\Shared\EditorTemplates\DropDown.cshtml.pp" />
     <None Include="Package.nuspec" />
     <None Include="tools\init.ps1" />

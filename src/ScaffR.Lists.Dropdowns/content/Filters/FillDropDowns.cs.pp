@@ -22,7 +22,8 @@ namespace $rootnamespace$.Filters
             {
                 if (!(property.PropertyType.IsClass && !(property.PropertyType == typeof(string))))
                 {
-                    var att = (DropDownAttribute)GetCustomAttribute(property, typeof(DropDownAttribute));
+                    var att = (IDropDownAttribute)GetCustomAttribute(property, typeof(DropDownAttribute)) ??
+                              (IDropDownAttribute)GetCustomAttribute(property, typeof(EnumDropDownAttribute));
                     if (att != null)
                     {
                         var viewDataKey = "DDKey_" + property.Name;

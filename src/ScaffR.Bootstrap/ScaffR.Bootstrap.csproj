@@ -114,6 +114,7 @@
     <None Include="content\Views\Shared\EditorTemplates\Boolean.cshtml.pp" />
     <None Include="content\Views\Shared\EditorTemplates\Bootstrap\Bootstrap.Form.cshtml.pp" />
     <None Include="content\Views\Shared\EditorTemplates\DropDown.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\EnumDropDown.cshtml.pp" />
     <None Include="content\Views\Shared\EditorTemplates\Password.cshtml.pp" />
     <None Include="content\Views\Shared\EditorTemplates\String.cshtml.pp" />
     <None Include="Package.nuspec" />
