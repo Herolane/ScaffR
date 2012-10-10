@@ -9,7 +9,12 @@ Dependencies (1)
 
 ScaffR Packages
 ------
-* [ScaffR (1.1.2)](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR)
+* [ScaffR](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR)
 
 Other Packages
 ------
+
+Reverse Dependencies
+-----
+* [ScaffR.Lists.Dropdowns](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Lists.Dropdowns)
+* [ScaffR.MVC.Shell](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.MVC.Shell)

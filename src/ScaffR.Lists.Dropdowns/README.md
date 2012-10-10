@@ -9,8 +9,8 @@ Dependencies (2)
 
 ScaffR Packages
 ------
-* [ScaffR.Extensions ()](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Extensions)
-* [ScaffR.Lists ()](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Lists)
+* [ScaffR.Extensions](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Extensions)
+* [ScaffR.Lists](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Lists)
 
 Other Packages
 ------

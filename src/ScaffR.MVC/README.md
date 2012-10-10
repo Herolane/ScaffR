@@ -9,7 +9,7 @@ Dependencies (1)
 
 ScaffR Packages
 ------
-* [ScaffR.MVC.Shell ()](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.MVC.Shell)
+* [ScaffR.MVC.Shell](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.MVC.Shell)
 
 Other Packages
 ------

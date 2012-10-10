@@ -9,7 +9,7 @@ Dependencies (1)
 
 ScaffR Packages
 ------
-* [ScaffR.Core ()](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Core)
+* [ScaffR.Core](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Core)
 
 Other Packages
 ------

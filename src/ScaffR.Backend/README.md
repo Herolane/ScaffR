@@ -9,9 +9,14 @@ Dependencies (3)
 
 ScaffR Packages
 ------
-* [ScaffR.Services ()](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Services)
-* [ScaffR.Data ()](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Data)
-* [ScaffR.Core ()](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Core)
+* [ScaffR.Services](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Services)
+* [ScaffR.Data](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Data)
+* [ScaffR.Core](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Core)
 
 Other Packages
 ------
+
+Reverse Dependencies
+-----
+* [ScaffR.MVC.Shell](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.MVC.Shell)
+* [ScaffR.Users.Service](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Users.Service)

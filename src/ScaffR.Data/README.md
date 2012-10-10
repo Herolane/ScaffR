@@ -9,8 +9,13 @@ Dependencies (2)
 
 ScaffR Packages
 ------
-* [ScaffR.Core ()](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Core)
+* [ScaffR.Core](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Core)
 
 Other Packages
 ------
 * EntityFramework.SqlServerCompact([4.3.3])
+
+Reverse Dependencies
+-----
+* [ScaffR.Backend](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Backend)
+* [ScaffR.Services](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Services)

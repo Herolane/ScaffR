@@ -1,9 +1,9 @@
-﻿ScaffR.MvcMailer (1.1.4)
+﻿ScaffR.DependencyInjection (1.1.3)
 ======
-ScaffR wrapper for MVC Mailer
+Description required.
 Usage
 ======
-<pre>install-package ScaffR.MvcMailer</pre>
+<pre>install-package ScaffR.DependencyInjection</pre>
 Dependencies (1)
 =====
 
