@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2BDEA833-2EE0-4C8F-B4BD-07D2585C32F3}</ProjectGuid>
+    <ProjectGuid>{2FD48D6C-41BE-47C8-992A-D0514FF53B6E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ScaffR.DependencyInjection</RootNamespace>
@@ -54,6 +54,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Package.nuspec" />
+    <None Include="tools\DIHelpers\DIHelpers.psm1" />
     <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />
     <None Include="tools\uninstall.ps1" />

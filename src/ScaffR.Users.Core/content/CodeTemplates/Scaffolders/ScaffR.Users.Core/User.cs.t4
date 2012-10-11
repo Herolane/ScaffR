@@ -17,20 +17,6 @@ namespace <#= Model.Namespace #>.Core.Model
 		[DataType(DataType.MultilineText)]
 		public virtual string Comment { get; set; }
 				
-		public virtual bool IsApproved { get; set; }
-		
-		public virtual int PasswordFailuresSinceLastSuccess { get; set; }
-
-		public virtual DateTime? LastPasswordFailureDate { get; set; }
-
-		public virtual DateTime? LastActivityDate { get; set; }
-
-		public virtual DateTime? LastLoginDate { get; set; }
-
-		public virtual bool IsLockedOut { get; set; }
-
-		public virtual DateTime? LastPasswordChangedDate { get; set; }
-
 		public bool ResetPassword { get; set; }
 		
         public bool ShowWelcomePage { get; set; }

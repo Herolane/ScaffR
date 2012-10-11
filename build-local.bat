@@ -11,7 +11,7 @@ for /R %%i in (*.nuspec) do (
  SET NUSPEC=%%i
  echo %%i
 
- %NUGET% pack %%i -o %path% -Version 1.1.4
+ %NUGET% pack %%i -o %path%
 
 )
 

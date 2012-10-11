@@ -111,6 +111,7 @@
     <None Include="content\Content\font\fontawesome-webfont.ttf" />
     <None Include="content\Content\font\fontawesome-webfont.woff" />
     <None Include="content\Content\Framework\bootstrap.less" />
+    <None Include="content\Views\Shared\DisplayTemplates\Bootstrap\Bootstrap.Table.cshtml.pp" />
     <None Include="content\Views\Shared\EditorTemplates\Boolean.cshtml.pp" />
     <None Include="content\Views\Shared\EditorTemplates\Bootstrap\Bootstrap.Form.cshtml.pp" />
     <None Include="content\Views\Shared\EditorTemplates\DropDown.cshtml.pp" />
