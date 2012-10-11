@@ -11,6 +11,13 @@ namespace <#= Model.Namespace #>.App_Start
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+			// todo: this is not scalable.. should be added dynamically
+			routes.MapRoute(
+                name: "Users",
+                url: "users/{id}/{action}",
+                defaults: new { controller = "Users", action = "Index", id = UrlParameter.Optional });
+
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
