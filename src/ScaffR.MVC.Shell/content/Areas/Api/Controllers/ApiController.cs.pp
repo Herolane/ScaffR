@@ -39,20 +39,30 @@ namespace $rootnamespace$.Areas.Api.Controllers
 
         public virtual HttpResponseMessage Post(T entity)
         {
-            Service.SaveOrUpdate(entity);
-            var response = new HttpResponseMessage(HttpStatusCode.Created);
-            string uri = Url.Link("DefaultApi", new { id = entity.Id });
-            response.Headers.Location = new Uri(uri);
-            return Get(entity.Id);
+            if (ModelState.IsValid)
+            {
+                Service.SaveOrUpdate(entity);
+                var response = new HttpResponseMessage(HttpStatusCode.Created);
+                string uri = Url.Link("DefaultApi", new { id = entity.Id });
+                response.Headers.Location = new Uri(uri);
+                return Get(entity.Id);    
+            }
+
+            return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
         }
 
         public virtual HttpResponseMessage Put(T entity)
         {
-            Service.SaveOrUpdate(entity);
-            var response = Request.CreateResponse(HttpStatusCode.Created, entity);
-            string uri = Url.Link("DefaultApi", new { id = entity.Id });
-            response.Headers.Location = new Uri(uri);
-            return response;
+            if (ModelState.IsValid)
+            {
+                Service.SaveOrUpdate(entity);
+                var response = Request.CreateResponse(HttpStatusCode.Created, entity);
+                string uri = Url.Link("DefaultApi", new { id = entity.Id });
+                response.Headers.Location = new Uri(uri);
+                return response;    
+            }
+
+            return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
         }
 
         public virtual IEnumerable<T> Page(int page, int pageSize)

@@ -15,7 +15,8 @@ namespace $rootnamespace$.App_Start
             bundles.AddPerSubDirectory<StylesheetBundle>("Content/Global");
             bundles.AddPerSubDirectory<StylesheetBundle>("Content/Custom");
             
-            bundles.AddPerSubDirectory<ScriptBundle>("Scripts");
+            bundles.AddPerIndividualFile<ScriptBundle>("Scripts");
+            bundles.AddPerSubDirectory<ScriptBundle>("Scripts/Global");
         }
     }
 }
