@@ -15,7 +15,7 @@ namespace <#= Model.Namespace #>.App_Start
 			routes.MapRoute(
                 name: "Users",
                 url: "users/{id}/{action}",
-                defaults: new { controller = "Users", action = "Index", id = UrlParameter.Optional });
+                defaults: new { controller = "Users", action = "Manager", id = UrlParameter.Optional });
 
 
             routes.MapRoute(
