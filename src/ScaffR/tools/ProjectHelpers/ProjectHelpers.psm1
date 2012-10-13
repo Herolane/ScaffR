@@ -230,7 +230,7 @@ function Add-Project($projectName){
 		Install-Package ScaffR.Extensions `
 			-ProjectName $projectName
 
-		$items = @("Class1.cs", "App.Config")
+		$items = @("Class1.cs", "App.Config", "deleteme.txt")
 
 		$items | % { (get-projectitem $_ -Project $projectName).Delete() }
            

@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C9DEF310-DE39-45DE-BF71-90F101B0BCFA}</ProjectGuid>
+    <ProjectGuid>{9B4CF40E-315A-4AF3-8698-38B4B2254DE1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ScaffR.Data</RootNamespace>
-    <AssemblyName>ScaffR.Data</AssemblyName>
+    <RootNamespace>ScaffR.Infrastructure</RootNamespace>
+    <AssemblyName>ScaffR.Infrastructure</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -46,45 +46,15 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data\Migrations\Configuration.cs.t4" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data\BaseRepository.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data\DatabaseFactory.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data\DataContext.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data\IDatabaseFactory.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data\IDataContext.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data\IPage.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data\IRepository.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data\IUnitOfWork.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data\Migrations\ScaffR.Data.Migration.ps1" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data\Page.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data\ScaffR.Data.ps1" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data\UnitOfWork.cs.t4" />
-    <None Include="content\App.config.transform">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Repository.For\IRepository.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Repository.For\Repository.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Repository.For\ScaffR.Repository.For.ps1" />
-    <None Include="content\Web.config.transform">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="content\Web.debug.config.transform">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Package.nuspec">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="tools\init.ps1" />
-    <None Include="tools\install.ps1" />
-    <None Include="tools\uninstall.ps1" />
+    <None Include="Package.nuspec" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data\license.txt" />
+    <Content Include="content\deleteme.txt" />
     <Content Include="NuGet.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
