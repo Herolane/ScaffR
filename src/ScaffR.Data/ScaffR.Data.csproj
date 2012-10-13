@@ -59,6 +59,7 @@
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data\IPage.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data\IRepository.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data\IUnitOfWork.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data\Migrations\ScaffR.Data.Migration.ps1" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data\Page.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data\ScaffR.Data.ps1" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data\UnitOfWork.cs.t4" />

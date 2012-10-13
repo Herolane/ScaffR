@@ -17,7 +17,6 @@
     <tags></tags>
     <dependencies>
       <dependency id="ScaffR.Core" />
-      <dependency id="EntityFramework.SqlServerCompact" version="[4.3.3]"/>
     </dependencies>
   </metadata>
   <files>
