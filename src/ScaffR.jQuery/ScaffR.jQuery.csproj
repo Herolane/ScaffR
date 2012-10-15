@@ -51,20 +51,15 @@
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
     <None Include="Package.nuspec" />
-    <None Include="tools\init.ps1" />
-    <None Include="tools\install.ps1" />
-    <None Include="tools\uninstall.ps1" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="content\Scripts\Global\json2.js" />
-    <Content Include="content\Scripts\Global\jquery-1.8.2.js" />
-    <Content Include="content\Scripts\Global\jquery-ui-1.8.24.js" />
-    <Content Include="content\Scripts\Global\jquery.simplemodal.js" />
-    <Content Include="content\Scripts\Global\jquery.ui.timepicker.js" />
-    <Content Include="content\Scripts\Global\jquery.unobtrusive-ajax.js" />
-    <Content Include="content\Scripts\Global\jquery.validate.js" />
-    <Content Include="content\Scripts\Global\jquery.validate.unobtrusive.js" />
+    <Content Include="content\Scripts\Framework\json2.js" />
+    <Content Include="content\Scripts\Framework\jquery-1.8.2.js" />
+    <Content Include="content\Scripts\Framework\jquery-ui-1.8.24.js" />
+    <Content Include="content\Scripts\Framework\jquery.ui.timepicker.js" />
+    <Content Include="content\Scripts\Framework\jquery.validate.js" />
+    <Content Include="content\Scripts\Framework\jquery.validate.unobtrusive.js" />
     <Content Include="NuGet.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

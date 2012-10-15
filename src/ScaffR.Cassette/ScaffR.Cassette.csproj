@@ -52,9 +52,7 @@
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
     <None Include="content\Views\Shared\Global.cshtml.pp" />
-    <None Include="content\Web.config.transform">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="content\Views\_ViewStart.cshtml" />
     <None Include="Package.nuspec" />
     <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />
@@ -62,7 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="content\CodeTemplates\Scaffolders\" />
-    <Folder Include="lib\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="NuGet.exe" />

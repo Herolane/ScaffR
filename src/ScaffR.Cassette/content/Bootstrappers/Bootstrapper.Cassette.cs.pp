@@ -8,8 +8,9 @@
 	{
         public void Configure(BundleCollection configurable)
         {
-            configurable.AddPerSubDirectory<StylesheetBundle>("Content");
-            configurable.AddPerSubDirectory<ScriptBundle>("Scripts");
+            configurable.AddPerSubDirectory<StylesheetBundle>("Content/Framework");
+            
+			configurable.AddPerSubDirectory<ScriptBundle>("Scripts/Framework");
         }
 	}
 }

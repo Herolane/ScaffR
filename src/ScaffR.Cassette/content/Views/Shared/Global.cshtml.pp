@@ -1,5 +1,6 @@
 ﻿@{
-    Bundles.Reference("scripts/global");
+    Bundles.Reference("content/framework");
+    Bundles.Reference("scripts/framework");
 }
 
 <!doctype html>
