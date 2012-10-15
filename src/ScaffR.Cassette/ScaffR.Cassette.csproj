@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\Views\Shared\Global.cshtml.pp" />
+    <None Include="content\Views\Shared\Cassette.cshtml.pp" />
     <None Include="content\Views\_ViewStart.cshtml" />
     <None Include="Package.nuspec" />
     <None Include="tools\init.ps1" />

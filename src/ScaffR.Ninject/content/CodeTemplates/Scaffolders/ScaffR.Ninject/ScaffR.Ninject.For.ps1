@@ -7,15 +7,13 @@ param(
 	[switch]$Force = $false
 )
 
-##############################################################
-# register the service to ninject
-##############################################################
-Write-Host Registering service I$($ModelType)Service to ninject -ForegroundColor DarkGreen
-Add-CodeToMethod $baseProject.Name "\Bootstrappers\" "Bootstrapper.Ninject.cs" "Bootstrapper" "RegisterServices" "kernel.Bind<I$($ModelType)Service>().To<$($ModelType)Service>().InRequestScope();"
+$from = "I$($ModelType)Service"
+$to = "$($ModelType)Service"
 
-##############################################################
-# Register the repsoitory to ninject
-##############################################################
-Write-Host Registering service I$($ModelType)Repository to ninject -ForegroundColor DarkGreen
-Add-CodeToMethod $baseProject.Name "\Bootstrappers\" "Bootstrapper.Ninject.cs" "Bootstrapper" "RegisterServices" "kernel.Bind<I$($ModelType)Repository>().To<$($ModelType)Repository>().InRequestScope();"
+Register-NinjectDependency($from, $to)
+
+$from = I$($ModelType)Repository"
+$to = "$($ModelType)Repository"
+
+Register-NinjectDependency($from, to)
 

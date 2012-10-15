@@ -17,6 +17,8 @@
     <tags></tags>
     <dependencies>
       <dependency id="ScaffR"/>
+      <dependency id="ScaffR.Extensions"/>
+      <dependency id="ScaffR.MVC.Extensions"/>
     </dependencies>
   </metadata>
   <files>

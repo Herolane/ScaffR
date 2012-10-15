@@ -12,12 +12,6 @@ namespace $rootnamespace$.Bootstrappers
         {
             RouteTable.Routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            GlobalConfiguration.Configuration.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
-
             RouteTable.Routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

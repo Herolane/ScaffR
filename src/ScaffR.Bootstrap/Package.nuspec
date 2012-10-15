@@ -21,6 +21,7 @@
       <dependency id="ScaffR.Bootstrap.LESS" />
       <dependency id="ScaffR.Bootstrap.Templates" />
       <dependency id="ScaffR.Bootstrap.JavaScript" />
+      <dependency id="ScaffR.Bootstrap.Sitemap" />
     </dependencies>
   </metadata>
   <files>

@@ -50,6 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
+    <None Include="content\Views\Shared\Bootstrap\BasicMarketing.cshtml.pp" />
+    <None Include="content\Views\Shared\Bootstrap\BootstrapShared.cshtml.pp" />
+    <None Include="content\Views\Shared\Bootstrap\FluidLayout.cshtml.pp" />
+    <None Include="content\Views\Shared\Bootstrap\StarterTemplate.cshtml.pp" />
     <None Include="content\Views\Shared\DisplayTemplates\Bootstrap\Bootstrap.Table.cshtml.pp">
       <SubType>Designer</SubType>
     </None>

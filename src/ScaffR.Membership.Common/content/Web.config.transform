@@ -1,0 +1,12 @@
+﻿<configuration>
+  <system.web>
+    <authentication mode="Forms">
+      <forms loginUrl="/Account/Logon" timeout="2880" defaultUrl="/Home/Start" />
+    </authentication>
+    <siteMap defaultProvider="Public" enabled="true">
+      <providers>
+        <add name="Account" type="MvcSiteMapProvider.DefaultSiteMapProvider, MvcSiteMapProvider" siteMapFile="~/Sitemaps/Account.Sitemap" securityTrimmingEnabled="false" cacheDuration="5" enableLocalization="true" scanAssembliesForSiteMapNodes="false" includeAssembliesForScan="" excludeAssembliesForScan="" attributesToIgnore="visibility" nodeKeyGenerator="MvcSiteMapProvider.DefaultNodeKeyGenerator, MvcSiteMapProvider" controllerTypeResolver="MvcSiteMapProvider.DefaultControllerTypeResolver, MvcSiteMapProvider" actionMethodParameterResolver="MvcSiteMapProvider.DefaultActionMethodParameterResolver, MvcSiteMapProvider" aclModule="MvcSiteMapProvider.DefaultAclModule, MvcSiteMapProvider" siteMapNodeUrlResolver="MvcSiteMapProvider.DefaultSiteMapNodeUrlResolver, MvcSiteMapProvider" siteMapNodeVisibilityProvider="MvcSiteMapProvider.DefaultSiteMapNodeVisibilityProvider, MvcSiteMapProvider" siteMapProviderEventHandler="MvcSiteMapProvider.DefaultSiteMapProviderEventHandler, MvcSiteMapProvider" />
+      </providers>
+    </siteMap>
+  </system.web>
+</configuration>

@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{83DB86EC-C94E-4901-8A25-E22CB766200D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Scaffeine.Membership.Shell</RootNamespace>
+    <AssemblyName>Scaffeine.Membership.Shell</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Membership.Common\ScaffR.Membership.ChangePassword.ps1" />
+    <None Include="content\Controllers\Account\AccountController.ChangePassword.cs.pp" />
+    <None Include="content\Controllers\Account\AccountController.ForgotPassword.cs.pp" />
+    <None Include="content\Controllers\Account\AccountController.Logon.cs.pp" />
+    <None Include="content\Controllers\Account\AccountController.Profile.cs.pp" />
+    <None Include="content\Controllers\Account\AccountController.Register.cs.pp" />
+    <None Include="content\Controllers\Account\AccountController.Settings.cs.pp" />
+    <None Include="content\Filters\UserContextFilter.cs.pp" />
+    <None Include="content\Filters\UserContextFilters\ChangePasswordRequired.cs.pp" />
+    <None Include="content\Filters\UserContextFilters\SetProfileValues.cs.pp" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="content\Models\ChangePasswordModel.cs.pp" />
+    <None Include="content\Models\ForgotPasswordModel.cs.pp" />
+    <None Include="content\Models\ForgotPasswordResetModel.cs.pp" />
+    <None Include="content\Models\LogOnModel.cs.pp" />
+    <None Include="content\Models\ProfileModel.cs.pp" />
+    <None Include="content\Models\SettingsModel.cs.pp" />
+    <None Include="content\Views\Account\ChangePassword.cshtml.pp" />
+    <None Include="content\Views\Account\Emails.cshtml.pp" />
+    <None Include="content\Views\Account\ForgotPassword.cshtml.pp" />
+    <None Include="content\Views\Account\Logon.cshtml.pp" />
+    <None Include="content\Views\Account\Notifications.cshtml.pp" />
+    <None Include="content\Views\Account\Profile.cshtml.pp" />
+    <None Include="content\Views\Account\Register.cshtml.pp" />
+    <None Include="content\Views\Account\Settings.cshtml.pp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BuildPublishPackage.cmd" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Membership.Common\ScaffR.Membership.ps1" />
+    <None Include="content\Controllers\Account\AccountController.cs.pp" />
+    <None Include="content\Models\RegisterModel.cs.pp" />
+    <None Include="content\Sitemaps\Account.sitemap" />
+    <None Include="content\Sitemaps\Modules.sitemap.transform" />
+    <None Include="content\Web.config.transform">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Package.nuspec" />
+    <None Include="tools\init.ps1" />
+    <None Include="tools\install.ps1" />
+    <None Include="tools\uninstall.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="content\Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NuGet.exe" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>-->
+  <Target Name="AfterBuild">
+    <!-- Load up the information from the assembly -->
+    <GetAssemblyIdentity AssemblyFiles="$(OutputPath)$(AssemblyName).dll">
+      <Output TaskParameter="Assemblies" ItemName="OutputAssemblyInfo" />
+    </GetAssemblyIdentity>
+    <Message Text="Info: %(OutputAssemblyInfo.Version)" />
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="BuildPublishPackage.cmd %(OutputAssemblyInfo.Version)" Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " />
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="BuildPublishPackage.cmd %(OutputAssemblyInfo.Version) Publish" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " />
+  </Target>
+</Project>

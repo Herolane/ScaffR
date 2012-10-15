@@ -17,7 +17,7 @@
     <tags>CodeFirst, Architecture, N-Tier</tags>
     <dependencies>      
       <dependency id="ScaffR.Services"/>
-      <dependency id="ScaffR.Data"/>
+      <dependency id="ScaffR.Data.Common"/>
       <dependency id="ScaffR.Core"/>
     </dependencies>
   </metadata>
