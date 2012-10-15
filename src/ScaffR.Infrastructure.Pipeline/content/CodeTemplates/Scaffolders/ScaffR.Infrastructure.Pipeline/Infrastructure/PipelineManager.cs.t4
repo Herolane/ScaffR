@@ -1,6 +1,6 @@
 <#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
 <#@ Output Extension="cs" #>
-namespace <#= Model.Namespace #>.Core.Infrastructure.Pipeline
+namespace <#= Model.Namespace #>.Infrastructure.Pipeline
 {
     using Interfaces.Pipeline;
 

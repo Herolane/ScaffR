@@ -10,7 +10,7 @@ param(
  	@("PipelineConfigurationElement")
 
 foreach ($tml in $templates){
-	add-template $coreProjectName "Configuration\Pipeline\$tml" $tml -Force:$Force $TemplateFolders
+	add-template $infrastructureProjectName "Configuration\Pipeline\$tml" $tml -Force:$Force $TemplateFolders
 }
 
  $templates = 
@@ -21,8 +21,8 @@ foreach ($tml in $templates){
 		"PipelineManager")
 
 foreach ($tml in $templates){
-	$outputPath = "Infrastructure\Pipeline\$tml"
-	add-template $coreProjectName $outputPath $tml -Force:$Force $TemplateFolders
+	$outputPath = "Pipeline\$tml"
+	add-template $infrastructureProjectName $outputPath $tml -Force:$Force $TemplateFolders
 }
 
  $templates = 
@@ -30,5 +30,5 @@ foreach ($tml in $templates){
 
 foreach ($tml in $templates){
 	$outputPath = "Interfaces\Pipeline\$tml"
-	add-template $coreProjectName $outputPath $tml -Force:$Force $TemplateFolders
+	add-template $infrastructureProjectName $outputPath $tml -Force:$Force $TemplateFolders
 }

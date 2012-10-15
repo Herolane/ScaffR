@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\App_Start\EventBootstrapper.cs.pp" />
+    <None Include="content\Bootstrappers\Bootstrapper.EventHandlers.cs.pp" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Infrastructure.Eventing\IHandles.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Infrastructure.Eventing\IMessageBus.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Infrastructure.Eventing\MessageBus.cs.t4" />

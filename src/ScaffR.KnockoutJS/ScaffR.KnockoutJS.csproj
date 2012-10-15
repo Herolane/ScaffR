@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="content\Scripts\knockout-2.1.0.js" />
+    <Content Include="content\Scripts\Global\knockout-2.1.0.js" />
     <Content Include="NuGet.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

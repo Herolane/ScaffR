@@ -2,7 +2,7 @@
 <#@ Output Extension="cs" #>
 using System.Configuration;
 
-namespace <#= Model.Namespace #>.Core.Configuration.Pipeline
+namespace <#= Model.Namespace #>.Infrastructure.Configuration.Pipeline
 {
     public class PipelineConfigurationElement : ConfigurationElement
     {

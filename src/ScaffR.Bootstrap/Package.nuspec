@@ -16,10 +16,11 @@
     <copyright>World-Class Programmers 2012</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="ScaffR" version="1.1.2" />
-      <dependency id="Cassette.AspNet" version="2.0.0" />
-      <dependency id="Cassette.Less" version="2.0.0" />
-      <dependency id="T4Scaffolding" version="1.0.6" />
+      <dependency id="ScaffR" />
+      <dependency id="ScaffR.Bootstrap.Layouts" />
+      <dependency id="ScaffR.Bootstrap.LESS" />
+      <dependency id="ScaffR.Bootstrap.Templates" />
+      <dependency id="ScaffR.Bootstrap.JavaScript" />
     </dependencies>
   </metadata>
   <files>

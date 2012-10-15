@@ -5,11 +5,3 @@ param(
 	[string[]]$TemplateFolders,
 	[switch]$Force = $false
 )
-
- $templates = 
- 	@("CassetteConfiguration")
-
-foreach ($tml in $templates){
-	$outputPath = $tml
-	#add-template $baseProject.Name $outputPath $tml -Force:$true $TemplateFolders
-}

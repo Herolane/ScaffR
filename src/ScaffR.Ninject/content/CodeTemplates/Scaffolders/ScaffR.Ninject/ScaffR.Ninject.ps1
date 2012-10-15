@@ -6,4 +6,8 @@ param(
 	[switch]$Force = $false
 )
 
-Add-Template $baseProject.Name "App_Start\NinjectWebCommon" "NinjectWebCommon" -Force $TemplateFolders
+$outputPath = "DependencyInjection\NinjectResolver"
+Add-Template $infrastructureProjectName $outputPath "NinjectResolver" -Force:$Force $TemplateFolders
+
+$outputPath = "DependencyInjection\NinjectScope"
+Add-Template $infrastructureProjectName $outputPath "NinjectScope" -Force:$Force $TemplateFolders

@@ -6,4 +6,9 @@
     </sectionGroup>
   </configSections>
 
+  <$rootnamespace$>
+    <$rootnamespace$.Core>
+    </$rootnamespace$.Core>
+  </$rootnamespace$>
+
 </configuration>

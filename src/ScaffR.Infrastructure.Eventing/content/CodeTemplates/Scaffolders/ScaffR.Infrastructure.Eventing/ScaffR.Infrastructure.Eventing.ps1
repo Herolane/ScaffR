@@ -7,10 +7,10 @@ param(
 )
 
 $outputPath = "Interfaces\Eventing\IHandles"
-Add-Template $coreProjectName $outputPath "IHandles" -Force:$Force $TemplateFolders
+Add-Template $infrastructureProjectName $outputPath "IHandles" -Force:$Force $TemplateFolders
 
 $outputPath = "Interfaces\Eventing\IMessageBus"
-Add-Template $coreProjectName $outputPath "IMessageBus" -Force:$Force $TemplateFolders
+Add-Template $infrastructureProjectName $outputPath "IMessageBus" -Force:$Force $TemplateFolders
 
-$outputPath = "Infrastructure\Eventing\MessageBus"
-Add-Template $coreProjectName $outputPath "MessageBus" -Force:$Force $TemplateFolders
+$outputPath = "Eventing\MessageBus"
+Add-Template $infrastructureProjectName $outputPath "MessageBus" -Force:$Force $TemplateFolders

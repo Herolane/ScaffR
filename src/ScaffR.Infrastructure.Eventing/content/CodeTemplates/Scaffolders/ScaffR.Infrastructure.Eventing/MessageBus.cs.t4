@@ -1,6 +1,6 @@
 ﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
 <#@ Output Extension="cs" #>
-namespace <#= Model.Namespace #>.Core.Infrastructure.Eventing
+namespace <#= Model.Namespace #>.Infrastructure.Eventing
 {
     using System;
     using System.Collections.Generic;
