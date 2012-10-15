@@ -72,15 +72,14 @@
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Website\ScaffR.Website.ps1" />
     <None Include="content\Models\Attributes\TextboxAttribute.cs.pp" />
     <None Include="content\Models\Attributes\TextboxSize.cs.pp" />
-    <None Include="content\Views\Web.config.transform">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Package.nuspec" />
     <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />
     <None Include="tools\uninstall.ps1" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="content\Views\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="content\Scripts\Global\global.bootstrap.js" />
     <Content Include="content\Scripts\Global\global.input.js" />

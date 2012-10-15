@@ -1,4 +1,4 @@
-namespace $rootnamespace$.Models.Sitemap
+namespace $rootnamespace$.Extensions.Sitemap
 {
     using System.Web.Mvc;
 

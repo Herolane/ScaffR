@@ -6,7 +6,6 @@
         <add namespace="$rootnamespace$.Core.Common.Site" />
         <add namespace="$rootnamespace$.Extensions.Sitemap" />
         <add namespace="MvcSiteMapProvider.Web.Html" />
-        <add namespace="$rootnamespace$.Helpers" />
       </namespaces>
     </pages>
   </system.web.webPages.razor>

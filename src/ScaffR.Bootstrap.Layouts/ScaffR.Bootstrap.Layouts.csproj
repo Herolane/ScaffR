@@ -46,17 +46,22 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <None Include="content\Controllers\HomeController.cs.pp" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
+    <None Include="content\Views\Home\Index.cshtml" />
+    <None Include="content\Views\Shared\Bootstrap\BasicMarketing.cshtml.pp" />
+    <None Include="content\Views\Shared\Bootstrap\BootstrapShared.cshtml.pp" />
+    <None Include="content\Views\Shared\Bootstrap\FluidLayout.cshtml.pp" />
+    <None Include="content\Views\Shared\Bootstrap\StarterTemplate.cshtml.pp" />
     <None Include="Package.nuspec">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="content\Views\Shared\layouthere.txt" />
     <Content Include="NuGet.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

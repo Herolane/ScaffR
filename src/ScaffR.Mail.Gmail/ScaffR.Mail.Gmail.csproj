@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{840812F4-1E83-4FB0-B7C7-DF626A670D2D}</ProjectGuid>
+    <ProjectGuid>{EEE80137-386D-4851-9DF3-3BDB32941ACB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ScaffR.MVC</RootNamespace>
-    <AssemblyName>ScaffR.MVC</AssemblyName>
+    <RootNamespace>Scaffeine.Mail.Gmail</RootNamespace>
+    <AssemblyName>Scaffeine.Mail.Gmail</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -46,20 +46,21 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
+    <None Include="content\Web.config.transform">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Package.nuspec">
       <SubType>Designer</SubType>
     </None>
-    <None Include="tools\init.ps1" />
-    <None Include="tools\install.ps1" />
-    <None Include="tools\uninstall.ps1" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="content\CodeTemplates\Scaffolders\deleteme.txt" />
-    <Content Include="NuGet.exe" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="NuGet.exe" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
