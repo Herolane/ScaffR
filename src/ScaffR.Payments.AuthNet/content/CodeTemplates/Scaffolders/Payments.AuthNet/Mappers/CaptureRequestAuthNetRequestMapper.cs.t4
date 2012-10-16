@@ -1,0 +1,30 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Payments.AuthNet.Mappers
+{
+    using AutoMapper;
+
+    using <#= Model.Namespace #>.Payments.Interfaces;
+
+    public class CaptureRequestAuthNetRequestMapper : TypeConverter<CaptureRequest, AuthNetRequest>
+    {
+        private readonly IRequestFactory<AuthNetRequest> _factory;
+
+        public CaptureRequestAuthNetRequestMapper(IRequestFactory<AuthNetRequest> factory)
+        {
+            _factory = factory;
+        }
+
+        protected override AuthNetRequest ConvertCore(CaptureRequest request)
+        {
+            var authRequest = _factory.Create();
+
+            authRequest.Transaction.PreviousAuthCode = request.PreviousApprovalCode;
+            authRequest.Transaction.Type = AuthType.CaptureOnly;
+            authRequest.Card = new Card(request.CcNumber, request.CcSecurityCode, request.CcExpMonth + request.CcExpYear);
+            authRequest.Transaction.Amount = (double)request.Amount;
+
+            return authRequest;
+        }
+    }
+}

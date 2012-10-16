@@ -1,0 +1,13 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Model
+{
+	public enum MessageStatus
+    {
+        Unreaded = 1,
+        Readed = 2,
+        Sent = 3,
+        Deleted = 4,
+        Archivied = 5
+    }
+}

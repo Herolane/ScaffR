@@ -1,0 +1,9 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Payments.Interfaces
+{
+    public interface IRequestFactory<T>
+    {
+        T Create();
+    }
+}

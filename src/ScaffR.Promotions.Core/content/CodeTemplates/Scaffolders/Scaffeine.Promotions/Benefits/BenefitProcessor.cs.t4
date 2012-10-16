@@ -1,0 +1,15 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+using System;
+using <#= Model.Namespace #>.Core.Infrastructure.Pipeline;
+
+namespace <#= Model.Namespace #>.Core.Common.Promotions.Benefits
+{
+    class BenefitProcessor : ICoreProcessor<BenefitContext>
+    {
+        public void Execute(BenefitContext data)
+        {
+            Console.WriteLine("Executing benefit processor");
+        }
+    }
+}

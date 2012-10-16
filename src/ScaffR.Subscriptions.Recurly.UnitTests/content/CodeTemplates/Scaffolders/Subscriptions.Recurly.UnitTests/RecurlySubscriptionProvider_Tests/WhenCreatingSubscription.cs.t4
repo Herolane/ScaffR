@@ -1,0 +1,15 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Subscriptions.Recurly.UnitTests.RecurlySubscriptionProvider_Tests
+{
+    using NUnit.Framework;
+
+    public class WhenCreatingSubscription
+    {
+        [Test]
+        public void ErrorShouldOccurIfNoProvider()
+        {
+            Assert.IsTrue(true);
+        }
+    }
+}

@@ -1,0 +1,30 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Payments.AuthNet
+{
+    /// <summary>
+    ///   The authorize net response code.
+    /// </summary>
+    public enum ResponseCode
+    {
+        /// <summary>
+        ///   The approved.
+        /// </summary>
+        Approved = 1, 
+
+        /// <summary>
+        ///   The declined.
+        /// </summary>
+        Declined = 2, 
+
+        /// <summary>
+        ///   The error.
+        /// </summary>
+        Error = 3, 
+
+        /// <summary>
+        ///   The held for review.
+        /// </summary>
+        HeldForReview = 4
+    }
+}

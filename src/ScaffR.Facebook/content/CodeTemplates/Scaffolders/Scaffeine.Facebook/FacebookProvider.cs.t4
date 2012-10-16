@@ -1,0 +1,89 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Facebook
+{
+    using System;
+    using System.Configuration.Provider;
+    using System.IO;
+    using System.Net;
+    using <#= Model.Namespace #>.Integrations;
+
+    public class FacebookProvider : IntegrationProvider
+    {
+        protected string ClientId;
+        protected string ClientSecret;
+
+        public override void Initialize(string name, System.Collections.Specialized.NameValueCollection config)
+        {
+            if (config == null)
+            {
+                throw new ArgumentNullException("config");
+            }
+
+            if (string.IsNullOrEmpty(name))
+            {
+                name = "Facebook";
+            }
+
+            if (string.IsNullOrWhiteSpace(config["description"]))
+            {
+                config.Remove("description");
+                config.Add("description", "Integration provider for Facebook");
+            }
+
+            base.Initialize(name, config);
+
+            ClientId = config["clientId"];
+            if (string.IsNullOrEmpty(this.ClientId))
+            {
+                throw new ProviderException("Empty or missing Client");
+            }
+
+            config.Remove("clientSecret");
+
+            ClientSecret = config["companyName"];
+            if (string.IsNullOrEmpty(this.ClientSecret))
+            {
+                throw new ProviderException("Empty or missing Company Name");
+            }           
+
+            if (config.Count > 0)
+            {
+                var attr = config.GetKey(0);
+                if (!string.IsNullOrWhiteSpace(attr))
+                {
+                    throw new ProviderException("Unrecognized attribute: " + attr);
+                }
+            }
+        }
+
+        public override string GetConnectUrl(string redirectUrl)
+        {
+            const string urlFormat = @"https://graph.facebook.com/oauth/authorize?type=web_server&client_id={0}&redirect_uri={1}";
+            return string.Format(urlFormat, ClientId, redirectUrl);
+        }
+
+        public override string GetTokenUrl(string code, string redirectUrl)
+        {
+            const string urlFormat = @"https://graph.facebook.com/oauth/access_token?client_id={0}&redirect_uri={1}&client_secret={2}&code={3}";
+            return string.Format(urlFormat, ClientId, redirectUrl, ClientSecret, code);
+        }
+
+        public override string GetAccessToken(string tokenUrl)
+        {
+            var request = WebRequest.Create(tokenUrl);
+            var response = request.GetResponse();
+            var stream = response.GetResponseStream();
+            var encode = System.Text.Encoding.GetEncoding("utf-8");
+            if (stream != null)
+            {
+                var streamReader = new StreamReader(stream, encode);
+                string accessToken = streamReader.ReadToEnd().Replace("access_token=", string.Empty);
+                streamReader.Close();
+                response.Close();
+                return accessToken;
+            }
+            throw new ProviderException("Unable to get token");
+        }
+    }
+}

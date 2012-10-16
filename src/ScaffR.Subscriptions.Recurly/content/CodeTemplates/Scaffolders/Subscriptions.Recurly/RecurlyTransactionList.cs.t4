@@ -1,0 +1,99 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="RecurlyTransactionList.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The recurly transaction list.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace <#= Model.Namespace #>.Subscriptions.Recurly
+{
+    using System.Collections.Generic;
+    using System.Net;
+    using System.Xml;
+
+    /// <summary>
+    /// The recurly transaction list.
+    /// </summary>
+    public class RecurlyTransactionList : List<RecurlyTransaction>
+    {
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecurlyTransactionList"/> class.
+        /// </summary>
+        internal RecurlyTransactionList()
+        {
+        }
+
+        #endregion
+
+        #region Public Methods and Operators
+
+        /// <summary>
+        /// The get transactions.
+        /// </summary>
+        /// <param name="accountCode">
+        /// The account code.
+        /// </param>
+        /// <returns>
+        /// The <#= Model.Namespace #>.Subscriptions.Recurly.RecurlyTransaction[].
+        /// </returns>
+        public static RecurlyTransaction[] GetTransactions(string accountCode)
+        {
+            var transactionList = new RecurlyTransactionList();
+
+            HttpStatusCode statusCode = RecurlyClient.PerformRequest(
+                RecurlyClient.HttpRequestMethod.Get, 
+                RecurlyTransaction.TransactionsUrl(accountCode), 
+                transactionList.ReadXml);
+
+            if (statusCode == HttpStatusCode.NotFound)
+            {
+                return null;
+            }
+
+            return transactionList.ToArray();
+        }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// The read xml.
+        /// </summary>
+        /// <param name="reader">
+        /// The reader.
+        /// </param>
+        internal void ReadXml(XmlTextReader reader)
+        {
+            while (reader.Read())
+            {
+                // End of account element, get out of here
+                if ((reader.Name == "transactions" || reader.Name == "payments" || reader.Name == "refunds")
+                    && reader.NodeType == XmlNodeType.EndElement)
+                {
+                    break;
+                }
+
+                if (reader.NodeType == XmlNodeType.Element)
+                {
+                    switch (reader.Name)
+                    {
+                        case "transaction":
+                        case "payment":
+                        case "refund":
+                            this.Add(new RecurlyTransaction(reader));
+                            break;
+                    }
+                }
+            }
+        }
+
+        #endregion
+    }
+}

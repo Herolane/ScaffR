@@ -1,0 +1,24 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Common.Ordering.Filters.Orders
+{
+    using Infrastructure.Pipeline;
+    using Configuration;
+
+    public class ProcessOrderLineItems : Filter<OrderContext>
+    {
+        public override bool Process(ref OrderContext data)
+        {
+            foreach (var orderLine in data.Order.OrderItems)
+            {
+                var ctx = new OrderLineContext(orderLine);
+
+                var mgr = PipelineFactory.Create<OrderLineContext>(CoreSection.GetConfig().Ordering.OrderLinePipeline);
+
+                mgr.Process(ref ctx);
+            }
+
+            return false;
+        }
+    }
+}

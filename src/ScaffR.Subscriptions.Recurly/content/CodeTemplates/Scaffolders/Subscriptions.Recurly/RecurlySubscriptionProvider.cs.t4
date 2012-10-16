@@ -1,0 +1,233 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Subscriptions.Recurly
+{
+    using System;
+    using System.Collections.Specialized;
+    using System.Configuration.Provider;
+    using Core.Common.Subscriptions;
+
+    /// <summary>
+    /// Defines username, password, and subdomain properties for web.config/app.config files.
+    /// </summary>
+    public class RecurlySubscriptionProvider : SubscriptionsProvider
+    {
+        #region Enums
+
+        /// <summary>
+        /// Recurly account type
+        /// </summary>
+        public enum EnvironmentType
+        {
+            /// <summary>
+            /// Production or sandbox Recurly accounts
+            /// </summary>
+            Production,
+
+            /// <summary>
+            /// Local development by Recurly developers
+            /// </summary>
+            Development
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Gets the current.
+        /// </summary>
+        public static RecurlySubscriptionProvider Current
+        {
+            get
+            {
+                return (RecurlySubscriptionProvider)SubscriptionsManager.Providers["Recurly"];
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the api key.
+        /// </summary>
+        public string ApiKey { get; set; }
+
+        /// <summary>
+        /// Gets or sets the environment.
+        /// </summary>
+        public EnvironmentType Environment { get; set; }
+
+        /// <summary>
+        /// Gets or sets the private key.
+        /// </summary>
+        public string PrivateKey { get; set; }
+
+        /// <summary>
+        /// Gets or sets the subdomain.
+        /// </summary>
+        public string Subdomain { get; set; }
+
+        #endregion
+
+        #region Public Methods and Operators
+
+        public override bool ReopenAccount(string accountCode)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// The cancel subscription.
+        /// </summary>
+        /// <param name="request">
+        /// The request.
+        /// </param>
+        /// <returns>
+        /// The Subscriptions.CancelSubscriptionResponse.
+        /// </returns>
+        /// <exception cref="NotImplementedException">
+        /// </exception>
+        public override CancelSubscriptionResponse CancelSubscription(CancelSubscriptionRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// The create subscription.
+        /// </summary>
+        /// <param name="request">
+        /// The request.
+        /// </param>
+        /// <returns>
+        /// The MvcApplication24.Subscriptions.CreateSubscriptionResponse.
+        /// </returns>
+        public override AccountResponse CreateAccount(AccountRequest request)
+        {//twili4all
+            var acct = new RecurlyAccount(request.Accountcode)
+            {
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                Email = request.Email,
+                AcceptLanguage = request.AcceptLanguage,
+                Username = request.Username,
+                BillingInfo = new RecurlyBillingInfo(request.Accountcode)
+                {
+                    FirstName = request.FirstName,
+                    Address1 = request.Address1,
+                    Address2 = request.Address2,
+                    City = request.City,
+                    State = request.State,
+                    Country = request.Country,
+                    IpAddress = request.IPAddress,
+                    LastName = request.LastName,
+                    PhoneNumber = request.Phone,
+                    PostalCode = request.ZipCode
+                }
+            };
+
+            acct.Create();
+
+            var newAcct = RecurlyAccount.Get(request.Accountcode);
+
+            return new AccountResponse
+                       {
+                           CreationDate = DateTime.Now,
+                           AccountCode = newAcct.AccountCode
+                       };
+
+        }
+
+        public override AccountResponse UpdateAccount(AccountRequest request)
+        {
+            var acct = new RecurlyAccount(request.Accountcode)
+                           {
+                               FirstName = request.FirstName,
+                               LastName = request.LastName,
+                               Email = request.Email,
+                               CompanyName = request.CompanyName
+                           };
+
+            acct.Update();
+
+            // todo: implement automapper here
+            return new AccountResponse();
+        }
+
+        public override bool CloseAccount(string accountCode)
+        {
+            var account = new RecurlyAccount(accountCode);
+            account.CloseAccount();
+            return true;
+        }
+
+        /// <summary>
+        /// The initialize.
+        /// </summary>
+        /// <param name="name">
+        /// The name.
+        /// </param>
+        /// <param name="config">
+        /// The config.
+        /// </param>
+        /// <exception cref="ArgumentNullException">
+        /// </exception>
+        /// <exception cref="ProviderException">
+        /// </exception>
+        public override void Initialize(string name, NameValueCollection config)
+        {
+            if (config == null)
+            {
+                throw new ArgumentNullException("config");
+            }
+
+            if (string.IsNullOrEmpty(name))
+            {
+                name = "Recurly";
+            }
+
+            if (string.IsNullOrWhiteSpace(config["description"]))
+            {
+                config.Remove("description");
+                config.Add("description", "Subscription provider for Recurly");
+            }
+
+            base.Initialize(name, config);
+
+            ApiKey = config["apiKey"];
+            if (string.IsNullOrEmpty(ApiKey))
+            {
+                throw new ProviderException("Empty or missing Api Key");
+            }
+
+            config.Remove("apiKey");
+
+            Subdomain = config["apiSubdomain"];
+            if (string.IsNullOrEmpty(Subdomain))
+            {
+                throw new ProviderException("Empty or missing API Subdomain");
+            }
+
+            config.Remove("apiSubdomain");
+
+            PrivateKey = config["privateKey"];
+            if (string.IsNullOrEmpty(PrivateKey))
+            {
+                throw new ProviderException("Empty or missing Private Key");
+            }
+
+            config.Remove("privateKey");
+
+            Environment = (EnvironmentType)Enum.Parse(typeof(EnvironmentType), config["environmentType"]);
+            config.Remove("environmentType");
+
+            if (config.Count > 0)
+            {
+                string attr = config.GetKey(0);
+                if (!string.IsNullOrWhiteSpace(attr))
+                {
+                    throw new ProviderException("Unrecognized attribute: " + attr);
+                }
+            }
+        }
+
+        #endregion
+    }
+}

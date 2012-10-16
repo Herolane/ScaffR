@@ -1,0 +1,144 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Payments.AuthNet
+{
+    using System;
+
+    using <#= Model.Namespace #>.Payments.Interfaces;
+
+    /// <summary>
+    ///   The authorize net response.
+    /// </summary>
+    public class AuthNetResponse : IResponse
+    {
+        public string AVSResponse;
+
+        /// <summary>
+        ///   The amount.
+        /// </summary>
+        public double Amount;
+
+        /// <summary>
+        ///   The approval code.
+        /// </summary>
+        public string ApprovalCode;
+
+        /// <summary>
+        ///   The cavv response code.
+        /// </summary>
+        public string CAVVResponseCode;
+
+        /// <summary>
+        ///   The card code.
+        /// </summary>
+        public string CardCode;
+
+        /// <summary>
+        ///   The description.
+        /// </summary>
+        public string Description;
+
+        /// <summary>
+        ///   The invoice number.
+        /// </summary>
+        public string InvoiceNumber;
+
+        /// <summary>
+        ///   The md 5 hash.
+        /// </summary>
+        public string Md5Hash;
+
+        /// <summary>
+        ///   The method.
+        /// </summary>
+        public string Method;
+
+        /// <summary>
+        ///   The response code.
+        /// </summary>
+        public ResponseCode ResponseCode;
+
+        /// <summary>
+        ///   The response reason code.
+        /// </summary>
+        public int ResponseReasonCode;
+
+        /// <summary>
+        ///   The response reason text.
+        /// </summary>
+        public string ResponseReasonText;
+
+        /// <summary>
+        ///   The response subcode.
+        /// </summary>
+        public string ResponseSubcode;
+
+        /// <summary>
+        ///   The transaction id.
+        /// </summary>
+        public string TransactionId;
+
+        /// <summary>
+        ///   The type.
+        /// </summary>
+        public string Type;
+
+        /// <summary>
+        ///   The _response text.
+        /// </summary>
+        private readonly string _responseText;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuthNetResponse"/> class.
+        /// </summary>
+        /// <param name="responseText">
+        /// The response text. 
+        /// </param>
+        public AuthNetResponse(string responseText)
+        {
+            this._responseText = responseText;
+
+            string[] values = responseText.Split('|');
+
+            Enum.TryParse(values[0], out this.ResponseCode);
+            this.ResponseSubcode = values[1];
+            int.TryParse(values[2], out this.ResponseReasonCode);
+            this.ResponseReasonText = values[3];
+            this.ApprovalCode = values[4];
+            this.AVSResponse = AuthNet.AVSResponse.Values[values[5]];
+            this.TransactionId = values[6];
+            double.TryParse(values[9], out this.Amount);
+            this.Md5Hash = values[37].Trim('|');
+        }
+
+        /// <summary>
+        ///   Gets the display text.
+        /// </summary>
+        public string DisplayText
+        {
+            get
+            {
+                return this.ResponseReasonText;
+            }
+        }
+
+        /// <summary>
+        ///   Gets the response text.
+        /// </summary>
+        public string ResponseText
+        {
+            get
+            {
+                return this._responseText;
+            }
+        }
+
+        public bool Approved
+        {
+            get
+            {
+                return ResponseCode == ResponseCode.Approved;
+            }
+        }
+    }
+}

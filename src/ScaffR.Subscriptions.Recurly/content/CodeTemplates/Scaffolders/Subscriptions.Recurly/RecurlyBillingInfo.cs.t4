@@ -1,0 +1,325 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Subscriptions.Recurly
+{
+    using System;
+    using System.Diagnostics;
+    using System.Net;
+    using System.Web;
+    using System.Xml;
+
+    /// <summary>
+    /// The recurly billing info.
+    /// </summary>
+    public class RecurlyBillingInfo
+    {
+        #region Constants
+
+        /// <summary>
+        /// The url postfix.
+        /// </summary>
+        private const string UrlPostfix = "/billing_info";
+
+        /// <summary>
+        /// The url prefix.
+        /// </summary>
+        private const string UrlPrefix = "/accounts/";
+
+        #endregion
+
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecurlyBillingInfo"/> class.
+        /// </summary>
+        /// <param name="accountCode">
+        /// The account code.
+        /// </param>
+        public RecurlyBillingInfo(string accountCode)
+            : this()
+        {
+            this.AccountCode = accountCode;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecurlyBillingInfo"/> class.
+        /// </summary>
+        /// <param name="account">
+        /// The account.
+        /// </param>
+        public RecurlyBillingInfo(RecurlyAccount account)
+            : this()
+        {
+            this.AccountCode = account.AccountCode;
+        }
+
+        /// <summary>
+        /// Prevents a default instance of the <see cref="RecurlyBillingInfo"/> class from being created.
+        /// </summary>
+        private RecurlyBillingInfo()
+        {
+            this.CreditCard = new RecurlyCreditCard();
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Account Code or unique ID for the account in Recurly
+        /// </summary>
+        public string AccountCode { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the address 1.
+        /// </summary>
+        public string Address1 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the address 2.
+        /// </summary>
+        public string Address2 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the city.
+        /// </summary>
+        public string City { get; set; }
+
+        /// <summary>
+        /// 2-letter ISO country code
+        /// </summary>
+        public string Country { get; set; }
+
+        /// <summary>
+        /// Gets the credit card.
+        /// </summary>
+        public RecurlyCreditCard CreditCard { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the first name.
+        /// </summary>
+        public string FirstName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the ip address.
+        /// </summary>
+        public string IpAddress { get; set; }
+
+        /// <summary>
+        /// Gets or sets the last name.
+        /// </summary>
+        public string LastName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the phone number.
+        /// </summary>
+        public string PhoneNumber { get; set; }
+
+        /// <summary>
+        /// Zip code or Postal code
+        /// </summary>
+        public string PostalCode { get; set; }
+
+        /// <summary>
+        /// 2-letter state or province preferred
+        /// </summary>
+        public string State { get; set; }
+
+        /// <summary>
+        /// VAT Numbers
+        /// </summary>
+        public string VatNumber { get; set; }
+
+        #endregion
+
+        #region Public Methods and Operators
+
+        /// <summary>
+        /// Lookup a Recurly account's billing info
+        /// </summary>
+        /// <param name="accountCode">
+        /// </param>
+        /// <returns>
+        /// The <#= Model.Namespace #>.Subscriptions.Recurly.RecurlyBillingInfo.
+        /// </returns>
+        public static RecurlyBillingInfo Get(string accountCode)
+        {
+            var billingInfo = new RecurlyBillingInfo();
+
+            HttpStatusCode statusCode = RecurlyClient.PerformRequest(
+                RecurlyClient.HttpRequestMethod.Get, BillingInfoUrl(accountCode), billingInfo.ReadXml);
+
+            if (statusCode == HttpStatusCode.NotFound)
+            {
+                return null;
+            }
+
+            return billingInfo;
+        }
+
+        /// <summary>
+        /// Delete an account's billing info.
+        /// </summary>
+        public void ClearBillingInfo()
+        {
+            RecurlyClient.PerformRequest(RecurlyClient.HttpRequestMethod.Delete, BillingInfoUrl(this.AccountCode));
+        }
+
+        /// <summary>
+        /// Update an account's billing info in Recurly
+        /// </summary>
+        public void Create()
+        {
+            this.Update();
+        }
+
+        /// <summary>
+        /// Update an account's billing info in Recurly
+        /// </summary>
+        public void Update()
+        {
+            RecurlyClient.PerformRequest(
+                RecurlyClient.HttpRequestMethod.Put, BillingInfoUrl(this.AccountCode), this.WriteXml);
+        }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// The read xml.
+        /// </summary>
+        /// <param name="reader">
+        /// The reader.
+        /// </param>
+        internal void ReadXml(XmlTextReader reader)
+        {
+            while (reader.Read())
+            {
+                // End of billing_info element, get out of here
+                if (reader.Name == "billing_info" && reader.NodeType == XmlNodeType.EndElement)
+                {
+                    break;
+                }
+
+                if (reader.NodeType == XmlNodeType.Element)
+                {
+                    switch (reader.Name)
+                    {
+                        case "account_code":
+                            this.AccountCode = reader.ReadElementContentAsString();
+                            break;
+
+                        case "first_name":
+                            this.FirstName = reader.ReadElementContentAsString();
+                            break;
+
+                        case "last_name":
+                            this.LastName = reader.ReadElementContentAsString();
+                            break;
+
+                        case "address1":
+                            this.Address1 = reader.ReadElementContentAsString();
+                            break;
+
+                        case "address2":
+                            this.Address2 = reader.ReadElementContentAsString();
+                            break;
+
+                        case "city":
+                            this.City = reader.ReadElementContentAsString();
+                            break;
+
+                        case "state":
+                            this.State = reader.ReadElementContentAsString();
+                            break;
+
+                        case "zip":
+                            this.PostalCode = reader.ReadElementContentAsString();
+                            break;
+
+                        case "country":
+                            this.Country = reader.ReadElementContentAsString();
+                            break;
+
+                        case "ip_address":
+                            this.IpAddress = reader.ReadElementContentAsString();
+                            break;
+
+                        case "phone":
+                            this.PhoneNumber = reader.ReadElementContentAsString();
+                            break;
+
+                        case "vat_number":
+                            this.VatNumber = reader.ReadElementContentAsString();
+                            break;
+
+                        case "credit_card":
+                            this.CreditCard = new RecurlyCreditCard();
+                            this.CreditCard.ReadXml(reader);
+                            break;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// The write xml.
+        /// </summary>
+        /// <param name="xmlWriter">
+        /// The xml writer.
+        /// </param>
+        internal void WriteXml(XmlTextWriter xmlWriter)
+        {
+            xmlWriter.WriteStartElement("billing_info"); // Start: billing_info
+
+            xmlWriter.WriteElementString("account_code", this.AccountCode);
+            xmlWriter.WriteElementString("first_name", this.FirstName);
+            xmlWriter.WriteElementString("last_name", this.LastName);
+            xmlWriter.WriteElementString("address1", this.Address1);
+            xmlWriter.WriteElementString("address2", this.Address2);
+            xmlWriter.WriteElementString("city", this.City);
+            xmlWriter.WriteElementString("state", this.State);
+            xmlWriter.WriteElementString("zip", this.PostalCode);
+            xmlWriter.WriteElementString("country", this.Country);
+            xmlWriter.WriteElementString("phone", this.PhoneNumber);
+
+            if (!string.IsNullOrEmpty(this.IpAddress))
+            {
+                xmlWriter.WriteElementString("ip_address", this.IpAddress);
+            }
+            else
+            {
+                Debug.WriteLine("Recurly Client Library: Recording IP Address is strongly recommended.");
+            }
+
+            if (!string.IsNullOrEmpty(this.VatNumber))
+            {
+                xmlWriter.WriteElementString("vat_number", this.VatNumber);
+            }
+
+            if (this.CreditCard != null)
+            {
+                this.CreditCard.WriteXml(xmlWriter);
+            }
+
+            xmlWriter.WriteEndElement(); // End: billing_info
+        }
+
+        /// <summary>
+        /// The billing info url.
+        /// </summary>
+        /// <param name="accountCode">
+        /// The account code.
+        /// </param>
+        /// <returns>
+        /// The System.String.
+        /// </returns>
+        private static string BillingInfoUrl(string accountCode)
+        {
+            return UrlPrefix + HttpUtility.UrlEncode(accountCode) + UrlPostfix;
+        }
+
+        #endregion
+    }
+}

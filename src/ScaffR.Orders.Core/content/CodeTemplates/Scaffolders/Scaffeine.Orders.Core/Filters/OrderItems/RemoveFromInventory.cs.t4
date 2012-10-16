@@ -1,0 +1,14 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Common.Ordering.Filters.OrderItems
+{
+    using Infrastructure.Pipeline;
+
+    public class RemoveFromInventory : Filter<OrderLineContext>
+    {
+        public override bool Process(ref OrderLineContext data)
+        {
+            return false;
+        }
+    }
+}

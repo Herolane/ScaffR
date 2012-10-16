@@ -1,0 +1,25 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Model
+{
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+
+    public class ShoppingCart : DomainObject
+    {
+        private ICollection<ShoppingCartItem> _items;
+        public string SessionId { get; set; }
+
+        public string IPAddress { get; set; }
+
+        public int? CustomerId { get; set; }
+
+        public Customer Customer { get; set; }
+
+        public virtual ICollection<ShoppingCartItem> Items
+        {
+            get { return _items ?? (_items = new Collection<ShoppingCartItem>()); }
+            set { _items = value; }
+        }
+    }
+}

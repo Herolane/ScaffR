@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>ScaffR.Facebook</id>
+    <version>1.1.4</version>
+    <authors>Rod Johnson</authors>
+    <owners>World-Class Programmers, LLC</owners>
+    <projectUrl>https://www.github.com/wcpro/scaffeine</projectUrl>
+    <iconUrl>http://www.scaffr.com/favicon.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Core library for developing testing tools using T4 Scaffolding.
+    </description>
+    <releaseNotes>
+    </releaseNotes>
+    <copyright>World-Class Programmers 2012</copyright>
+    <tags></tags>
+    <dependencies>
+      <dependency id="ScaffR"/>
+      <dependency id="Scaffeine.Integrations"/>
+      <dependency id="T4Scaffolding" />
+    </dependencies>
+  </metadata>
+  <files>
+    
+    <file src="tools\**" target="tools" />
+    <file src="content\**" target="content" />
+  </files>
+</package>

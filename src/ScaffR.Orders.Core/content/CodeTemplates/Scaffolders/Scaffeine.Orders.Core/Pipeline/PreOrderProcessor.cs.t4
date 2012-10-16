@@ -1,0 +1,22 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Common.Ordering
+{
+    using Configuration;
+    using Infrastructure.Pipeline;
+
+    public class PreOrderProcessor : ICoreProcessor<OrderContext>
+    {
+        public void Execute(OrderContext data)
+        {
+            foreach(var orderLine in data.Order.OrderItems)
+            {
+                var ctx = new OrderLineContext(orderLine);
+
+                var mgr = PipelineFactory.Create<OrderLineContext>(CoreSection.GetConfig().Ordering.OrderLinePipeline);
+
+                mgr.Process(ref ctx, true);                
+            }
+        }
+    }
+}

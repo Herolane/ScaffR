@@ -1,0 +1,60 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Payments
+{
+	using System;
+
+	public class AuthCaptureTransaction : IDisposable
+	{
+		private AuthorizationResponse _response;
+		private AuthorizationRequest _request;
+
+		private Exception _exception;
+
+		public AuthCaptureTransaction(AuthorizationRequest request)
+		{
+			this.ProcessRequest(request);
+		}
+
+		public AuthorizationRequest Request
+		{
+			get { return _request; }
+		}
+
+		public AuthorizationResponse Response
+		{
+			get { return _response; }
+		}
+
+		public void Dispose()
+		{
+			if (_response.Approved && _exception == null)
+			{
+				var request = new CaptureRequest
+				{
+					Amount = _request.Amount,
+					CcNumber = _request.CcNumber,
+					CcSecurityCode = _request.CcSecurityCode,
+					CcExpMonth = _request.CcExpMonth,
+					CcExpYear = _request.CcExpYear,
+					PreviousApprovalCode = _response.ApprovalCode
+				};
+
+				var response = PaymentsManager.Capture(request);
+			}
+		}
+
+		private void ProcessRequest(AuthorizationRequest request)
+		{            
+			try
+			{
+				_request = request;
+				_response = PaymentsManager.Authorization(request);
+			}
+			catch (Exception ex)
+			{
+				_exception = ex;
+			}
+		}
+	}
+}

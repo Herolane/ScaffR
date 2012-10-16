@@ -1,0 +1,76 @@
+order 
+order status (lowest of the order lines) 
+
+order lines
+quantity
+sales price
+shopping inforation
+tax
+shipping info
+warrenty information
+
+order status on the order, and on the order lines
+
+Authorized
+
+
+IOrders
+ICatalogs
+IProducts
+
+Product
+  CatalogItem
+  	Vendor
+
+
+public enum OrderStatus
+    {
+        [Description("Order has been entered")]
+        Entered,
+
+        [Description("Order has started processing")]
+        Processing,
+
+        [Description("Order has been determined not to be fruad")]
+        Approved,
+
+        [Description("Order has been set as fraudulant")]
+        Rejected,
+
+        [Description("Order is being revied for possible fraud")]
+        Review,
+
+        [Description("Order payment has been authorize")]
+        Authorized,
+
+        [Description("Order payment was not authorized")]
+        NotAuthorized,
+
+        [Description("Order was canceled for non payment")]
+        Canceled,
+
+        [Description("An item on this order has been backordered")]
+        Backordered,
+
+        [Description("Order has been shipped")]
+        Shipped,
+
+        [Description("Order is now fully complete")]
+        Complete,
+    }
+
+
+
+Scaffeine.Shell
+Scaffeine
+
+SCaffeine.Dashboard.Shell
+
+
+Scaffeine.Dashboard
+	todo
+	calendar	
+
+Statfame.Dashboard
+
+

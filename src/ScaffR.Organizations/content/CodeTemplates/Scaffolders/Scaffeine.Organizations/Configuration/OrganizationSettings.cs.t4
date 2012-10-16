@@ -1,0 +1,22 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Configuration.Organizations
+{
+    using System.Configuration;
+
+    public class OrganizationSettings : ConfigurationElement
+    {
+        [ConfigurationProperty("providers")]
+        public ProviderSettingsCollection Providers
+        {
+            get { return (ProviderSettingsCollection)base["providers"]; }
+        }
+
+        [ConfigurationProperty("defaultProvider")]
+        public string DefaultProvider
+        {
+            get { return (string)base["defaultProvider"]; }
+            set { base["defaultProvider"] = value; }
+        }
+    }
+}

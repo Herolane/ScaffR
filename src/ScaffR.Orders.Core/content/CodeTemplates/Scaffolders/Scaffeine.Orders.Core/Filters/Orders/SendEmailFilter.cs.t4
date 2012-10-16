@@ -1,0 +1,14 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Common.Ordering.Filters.Orders
+{
+    using Infrastructure.Pipeline;
+
+    public class SendEmailFilter : Filter<OrderContext>
+    {
+        public override bool Process(ref OrderContext data)
+        {
+            return true;
+        }
+    }
+}

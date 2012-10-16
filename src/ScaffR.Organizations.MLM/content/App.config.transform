@@ -1,0 +1,13 @@
+﻿<configuration>
+
+  <$rootnamespace$>
+    <$rootnamespace$.Core>
+      <organizations defaultProvider="MLM">
+        <providers>
+          <add name="MLM" type="$rootnamespace$.Core.Common.Organizations.Providers.MLMProvider, $rootnamespace$.Core"/>
+        </providers>
+      </organizations>
+    </$rootnamespace$.Core>
+  </$rootnamespace$>
+
+</configuration>

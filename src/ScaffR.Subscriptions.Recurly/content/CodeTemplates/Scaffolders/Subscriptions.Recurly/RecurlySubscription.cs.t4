@@ -1,0 +1,548 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="RecurlySubscription.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The recurly subscription.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace <#= Model.Namespace #>.Subscriptions.Recurly
+{
+    using System;
+    using System.Net;
+    using System.Web;
+    using System.Xml;
+
+    /// <summary>
+    /// The recurly subscription.
+    /// </summary>
+    public class RecurlySubscription
+    {
+        #region Constants
+
+        /// <summary>
+        /// The url postfix.
+        /// </summary>
+        private const string UrlPostfix = "/subscription";
+
+        /// <summary>
+        /// The url prefix.
+        /// </summary>
+        private const string UrlPrefix = "/accounts/";
+
+        #endregion
+
+        #region Fields
+
+        /// <summary>
+        /// The trial period ends at.
+        /// </summary>
+        private DateTime? trialPeriodEndsAt;
+
+        #endregion
+
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecurlySubscription"/> class.
+        /// </summary>
+        /// <param name="account">
+        /// The account.
+        /// </param>
+        public RecurlySubscription(RecurlyAccount account)
+        {
+            this.Account = account;
+            this.Quantity = 1;
+        }
+
+        #endregion
+
+        #region Enums
+
+        /// <summary>
+        /// The change timeframe.
+        /// </summary>
+        public enum ChangeTimeframe
+        {
+            /// <summary>
+            /// The now.
+            /// </summary>
+            Now, 
+
+            /// <summary>
+            /// The renewal.
+            /// </summary>
+            Renewal
+        }
+
+        /// <summary>
+        /// The refund type.
+        /// </summary>
+        public enum RefundType
+        {
+            /// <summary>
+            /// The full.
+            /// </summary>
+            Full, 
+
+            /// <summary>
+            /// The partial.
+            /// </summary>
+            Partial, 
+
+            /// <summary>
+            /// The none.
+            /// </summary>
+            None
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Account in Recurly
+        /// </summary>
+        public RecurlyAccount Account { get; private set; }
+
+        // Additional information
+        /// <summary>
+        /// Date the subscription started.
+        /// </summary>
+        public DateTime? ActivatedAt { get; private set; }
+
+        /// <summary>
+        /// If set, the date the subscriber canceled their subscription.
+        /// </summary>
+        public DateTime? CanceledAt { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the coupon code.
+        /// </summary>
+        public string CouponCode { get; set; }
+
+        /// <summary>
+        /// The subscription is paid until this date. Next invoice date.
+        /// </summary>
+        public DateTime? CurrentPeriodEndsAt { get; private set; }
+
+        /// <summary>
+        /// Date the current invoice period started.
+        /// </summary>
+        public DateTime? CurrentPeriodStartedAt { get; private set; }
+
+        /// <summary>
+        /// If set, the subscription will expire/terminate on this date.
+        /// </summary>
+        public DateTime? ExpiresAt { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the plan code.
+        /// </summary>
+        public string PlanCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the quantity.
+        /// </summary>
+        public int? Quantity { get; set; }
+
+        /// <summary>
+        /// Gets the state.
+        /// </summary>
+        public string State { get; private set; }
+
+        /// <summary>
+        /// Date the trial ends, if the subscription has/had a trial.
+        /// 
+        /// This may optionally be set on new subscriptions to specify an exact time for the 
+        /// subscription to commence.  The subscription will be active and in "trial" until
+        /// this date.
+        /// </summary>
+        public DateTime? TrialPeriodEndsAt
+        {
+            get
+            {
+                return this.trialPeriodEndsAt;
+            }
+
+            set
+            {
+                if (this.ActivatedAt.HasValue)
+                {
+                    throw new InvalidOperationException("Cannot set TrialPeriodEndsAt on existing subscriptions.");
+                }
+
+                if (value.HasValue && (value < DateTime.UtcNow))
+                {
+                    throw new ArgumentException("TrialPeriodEndsAt must occur in the future.");
+                }
+
+                this.trialPeriodEndsAt = value;
+            }
+        }
+
+        /// <summary>
+        /// Date the trial started, if the subscription has a trial.
+        /// </summary>
+        public DateTime? TrialPeriodStartedAt { get; private set; }
+
+        /// <summary>
+        /// Unit amount per quantity.  Leave null to keep as is. Set to override plan's default amount.
+        /// </summary>
+        public int? UnitAmountInCents { get; set; }
+
+        #endregion
+
+        #region Public Methods and Operators
+
+        /// <summary>
+        /// Cancel an active subscription.  The subscription will not renew, but will continue to be active
+        /// through the remainder of the current term.
+        /// </summary>
+        /// <param name="accountCode">
+        /// Subscriber's Account Code
+        /// </param>
+        public static void CancelSubscription(string accountCode)
+        {
+            RecurlyClient.PerformRequest(RecurlyClient.HttpRequestMethod.Delete, SubscriptionUrl(accountCode));
+        }
+
+        /// <summary>
+        /// The get.
+        /// </summary>
+        /// <param name="accountCode">
+        /// The account code.
+        /// </param>
+        /// <returns>
+        /// The <#= Model.Namespace #>.Subscriptions.Recurly.RecurlySubscription.
+        /// </returns>
+        public static RecurlySubscription Get(string accountCode)
+        {
+            return Get(new RecurlyAccount(accountCode));
+        }
+
+        /// <summary>
+        /// The get.
+        /// </summary>
+        /// <param name="account">
+        /// The account.
+        /// </param>
+        /// <returns>
+        /// The <#= Model.Namespace #>.Subscriptions.Recurly.RecurlySubscription.
+        /// </returns>
+        public static RecurlySubscription Get(RecurlyAccount account)
+        {
+            var sub = new RecurlySubscription(account);
+
+            HttpStatusCode statusCode = RecurlyClient.PerformRequest(
+                RecurlyClient.HttpRequestMethod.Get, SubscriptionUrl(account.AccountCode), sub.ReadXml);
+
+            if (statusCode == HttpStatusCode.NotFound)
+            {
+                return null;
+            }
+
+            return sub;
+        }
+
+        /// <summary>
+        /// Reactivate a canceled subscription.  The subscription will renew at the end of its current term.
+        /// </summary>
+        /// <param name="accountCode">
+        /// Subscriber's Account Code
+        /// </param>
+        public static void ReactivateSubscription(string accountCode)
+        {
+            RecurlyClient.PerformRequest(
+                RecurlyClient.HttpRequestMethod.Post, SubscriptionUrl(accountCode) + "/reactivate");
+        }
+
+        /// <summary>
+        /// Immediately terminate the subscription and issue a refund.  The refund can be for the full amount
+        /// or prorated until its paid-thru date.  If you need to refund a specific amount, please issue a
+        /// refund against the individual transaction instead.
+        /// </summary>
+        /// <param name="accountCode">
+        /// Subscriber's Account Code
+        /// </param>
+        /// <param name="refundType">
+        /// </param>
+        public static void RefundSubscription(string accountCode, RefundType refundType)
+        {
+            string refundTypeParameter = refundType.ToString().ToLower();
+
+            string refundUrl = string.Format("{0}?refund={1}", SubscriptionUrl(accountCode), refundTypeParameter);
+
+            RecurlyClient.PerformRequest(RecurlyClient.HttpRequestMethod.Delete, refundUrl);
+        }
+
+        /// <summary>
+        /// Terminate the subscription immediately and do not issue a refund.
+        /// </summary>
+        /// <param name="accountCode">
+        /// </param>
+        public static void TerminateSubscription(string accountCode)
+        {
+            RefundSubscription(accountCode, RefundType.None);
+        }
+
+        /// <summary>
+        /// The change subscription.
+        /// </summary>
+        /// <param name="timeframe">
+        /// The timeframe.
+        /// </param>
+        public void ChangeSubscription(ChangeTimeframe timeframe)
+        {
+            RecurlyClient.WriteXmlDelegate writeXmlDelegate;
+
+            if (timeframe == ChangeTimeframe.Now)
+            {
+                writeXmlDelegate = this.WriteChangeSubscriptionNowXml;
+            }
+            else
+            {
+                writeXmlDelegate = this.WriteChangeSubscriptionAtRenewalXml;
+            }
+
+            HttpStatusCode statusCode = RecurlyClient.PerformRequest(
+                RecurlyClient.HttpRequestMethod.Put, 
+                SubscriptionUrl(this.Account.AccountCode), 
+                writeXmlDelegate, 
+                this.ReadXml);
+        }
+
+        /// <summary>
+        /// The create.
+        /// </summary>
+        public void Create()
+        {
+            HttpStatusCode statusCode = RecurlyClient.PerformRequest(
+                RecurlyClient.HttpRequestMethod.Post, 
+                SubscriptionUrl(this.Account.AccountCode), 
+                this.WriteSubscriptionXml, 
+                this.ReadXml);
+        }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// The read xml.
+        /// </summary>
+        /// <param name="reader">
+        /// The reader.
+        /// </param>
+        internal void ReadXml(XmlTextReader reader)
+        {
+            while (reader.Read())
+            {
+                // End of subscription element, get out of here
+                if (reader.Name == "subscription" && reader.NodeType == XmlNodeType.EndElement)
+                {
+                    break;
+                }
+
+                if (reader.NodeType == XmlNodeType.Element)
+                {
+                    DateTime dateVal;
+                    switch (reader.Name)
+                    {
+                        case "account":
+                            this.Account = new RecurlyAccount(reader);
+                            break;
+
+                        case "plan_code":
+                            this.PlanCode = reader.ReadElementContentAsString();
+                            break;
+
+                        case "state":
+                            this.State = reader.ReadElementContentAsString();
+                            break;
+
+                        case "quantity":
+                            this.Quantity = reader.ReadElementContentAsInt();
+                            break;
+
+                        case "unit_amount_in_cents":
+                            this.UnitAmountInCents = reader.ReadElementContentAsInt();
+                            break;
+
+                        case "activated_at":
+                            if (DateTime.TryParse(reader.ReadElementContentAsString(), out dateVal))
+                            {
+                                this.ActivatedAt = dateVal;
+                            }
+
+                            break;
+
+                        case "canceled_at":
+                            if (DateTime.TryParse(reader.ReadElementContentAsString(), out dateVal))
+                            {
+                                this.CanceledAt = dateVal;
+                            }
+
+                            break;
+
+                        case "expires_at":
+                            if (DateTime.TryParse(reader.ReadElementContentAsString(), out dateVal))
+                            {
+                                this.ExpiresAt = dateVal;
+                            }
+
+                            break;
+
+                        case "current_period_started_at":
+                            if (DateTime.TryParse(reader.ReadElementContentAsString(), out dateVal))
+                            {
+                                this.CurrentPeriodStartedAt = dateVal;
+                            }
+
+                            break;
+
+                        case "current_period_ends_at":
+                            if (DateTime.TryParse(reader.ReadElementContentAsString(), out dateVal))
+                            {
+                                this.CurrentPeriodEndsAt = dateVal;
+                            }
+
+                            break;
+
+                        case "trial_started_at":
+                            if (DateTime.TryParse(reader.ReadElementContentAsString(), out dateVal))
+                            {
+                                this.TrialPeriodStartedAt = dateVal;
+                            }
+
+                            break;
+
+                        case "trial_ends_at":
+                            if (DateTime.TryParse(reader.ReadElementContentAsString(), out dateVal))
+                            {
+                                this.trialPeriodEndsAt = dateVal;
+                            }
+
+                            break;
+
+                        case "pending_subscription":
+
+                            // TODO: Parse pending subscription
+                            break;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// The write change subscription at renewal xml.
+        /// </summary>
+        /// <param name="xmlWriter">
+        /// The xml writer.
+        /// </param>
+        protected void WriteChangeSubscriptionAtRenewalXml(XmlTextWriter xmlWriter)
+        {
+            this.WriteChangeSubscriptionXml(xmlWriter, ChangeTimeframe.Renewal);
+        }
+
+        /// <summary>
+        /// The write change subscription now xml.
+        /// </summary>
+        /// <param name="xmlWriter">
+        /// The xml writer.
+        /// </param>
+        protected void WriteChangeSubscriptionNowXml(XmlTextWriter xmlWriter)
+        {
+            this.WriteChangeSubscriptionXml(xmlWriter, ChangeTimeframe.Now);
+        }
+
+        /// <summary>
+        /// The write change subscription xml.
+        /// </summary>
+        /// <param name="xmlWriter">
+        /// The xml writer.
+        /// </param>
+        /// <param name="timeframe">
+        /// The timeframe.
+        /// </param>
+        protected void WriteChangeSubscriptionXml(XmlTextWriter xmlWriter, ChangeTimeframe timeframe)
+        {
+            xmlWriter.WriteStartElement("subscription"); // Start: subscription
+
+            xmlWriter.WriteElementString("timeframe", timeframe == ChangeTimeframe.Now ? "now" : "renewal");
+
+            if (!string.IsNullOrEmpty(this.PlanCode))
+            {
+                xmlWriter.WriteElementString("plan_code", this.PlanCode);
+            }
+
+            if (this.Quantity.HasValue)
+            {
+                xmlWriter.WriteElementString("quantity", this.Quantity.Value.ToString());
+            }
+
+            if (this.UnitAmountInCents.HasValue)
+            {
+                xmlWriter.WriteElementString("unit_amount_in_cents", this.UnitAmountInCents.Value.ToString());
+            }
+
+            xmlWriter.WriteEndElement(); // End: subscription
+        }
+
+        /// <summary>
+        /// The write subscription xml.
+        /// </summary>
+        /// <param name="xmlWriter">
+        /// The xml writer.
+        /// </param>
+        protected void WriteSubscriptionXml(XmlTextWriter xmlWriter)
+        {
+            xmlWriter.WriteStartElement("subscription"); // Start: subscription
+
+            xmlWriter.WriteElementString("plan_code", this.PlanCode);
+
+            if (!string.IsNullOrEmpty(this.CouponCode))
+            {
+                xmlWriter.WriteElementString("coupon_code", this.CouponCode);
+            }
+
+            if (this.Quantity.HasValue)
+            {
+                xmlWriter.WriteElementString("quantity", this.Quantity.Value.ToString());
+            }
+
+            if (this.UnitAmountInCents.HasValue)
+            {
+                xmlWriter.WriteElementString("unit_amount_in_cents", this.UnitAmountInCents.Value.ToString());
+            }
+
+            if (this.TrialPeriodEndsAt.HasValue)
+            {
+                xmlWriter.WriteElementString("trial_ends_at", this.TrialPeriodEndsAt.Value.ToString("s"));
+            }
+
+            this.Account.WriteXml(xmlWriter);
+
+            xmlWriter.WriteEndElement(); // End: subscription
+        }
+
+        /// <summary>
+        /// The subscription url.
+        /// </summary>
+        /// <param name="accountCode">
+        /// The account code.
+        /// </param>
+        /// <returns>
+        /// The System.String.
+        /// </returns>
+        private static string SubscriptionUrl(string accountCode)
+        {
+            return UrlPrefix + HttpUtility.UrlEncode(accountCode) + UrlPostfix;
+        }
+
+        #endregion
+    }
+}

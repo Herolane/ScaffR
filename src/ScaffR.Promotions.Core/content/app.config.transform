@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <$rootnamespace$>
+    <$rootnamespace$.Core>
+      <promotions>
+        <!--<promotion name="sample">
+          <prerequisites processor="$rootnamespace$.Core.Common.Promotions.Prerequisites.PrerequisiteProcessor, $rootnamespace$.Core">
+            <filters>
+              <add name="Step1" type="$rootnamespace$.Filters.Prerequisites.Prerequisite1, $rootnamespace$" />
+              <add name="Step2" type="$rootnamespace$.Filters.Prerequisites.Prerequisite1, $rootnamespace$" />
+              <add name="Step3" type="$rootnamespace$.Filters.Prerequisites.Prerequisite1, $rootnamespace$" />
+              <add name="Step4" type="$rootnamespace$.Filters.Prerequisites.Prerequisite1, $rootnamespace$" />
+            </filters>
+          </prerequisites>
+          <benefits processor="$rootnamespace$.Core.Common.Promotions.Benefits.BenefitProcessor, $rootnamespace$.Core">
+            <filters>
+              <add name="Step1" type="$rootnamespace$.Filters.Benefits.Benefit1, $rootnamespace$" />
+            </filters>
+          </benefits>
+        </promotion>-->
+      </promotions>
+    </$rootnamespace$.Core>
+  </$rootnamespace$>
+</configuration>

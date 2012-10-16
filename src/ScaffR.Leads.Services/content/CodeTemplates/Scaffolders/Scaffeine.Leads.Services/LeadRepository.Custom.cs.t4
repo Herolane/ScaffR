@@ -1,0 +1,16 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Data
+{
+    using Core.Model;
+    using System.Data.Entity;
+    using System.Linq;
+
+	public partial class LeadRepository
+    {
+        public override Lead GetById(int id)
+        {
+            return Dbset.Include(l => l.Order).Include(l=> l.Order.OrderItems).First(l => l.Id == id);
+        }
+	}
+}

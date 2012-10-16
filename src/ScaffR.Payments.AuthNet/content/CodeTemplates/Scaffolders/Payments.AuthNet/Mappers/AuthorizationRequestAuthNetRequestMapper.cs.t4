@@ -1,0 +1,43 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Payments.AuthNet.Mappers
+{
+    using AutoMapper;
+
+    using <#= Model.Namespace #>.Payments.Interfaces;
+
+    public class AuthorizationRequestAuthNetRequestMapper : TypeConverter<AuthorizationRequest, AuthNetRequest>
+    {
+        private readonly IRequestFactory<AuthNetRequest> _factory;
+
+        public AuthorizationRequestAuthNetRequestMapper(IRequestFactory<AuthNetRequest> factory)
+        {
+            _factory = factory;
+        }
+
+        protected override AuthNetRequest ConvertCore(AuthorizationRequest request)
+        {
+            var authRequest = _factory.Create();
+            
+            authRequest.Customer.FirstName = request.FirstName;
+            authRequest.Customer.LastName = request.LastName;
+            authRequest.Customer.Address = request.AddressLine1;
+            authRequest.Customer.City = request.City;
+            authRequest.Customer.State = request.State;
+            authRequest.Customer.Zip = request.Zip;
+            authRequest.Customer.Country = request.Country;
+            authRequest.Customer.Email = request.Email;
+            authRequest.Customer.CustomerId = request.CustomerId;
+            authRequest.Customer.EmailCustomer = request.EmailCustomer;
+            authRequest.Customer.IpAddress = request.IPAddress;
+            authRequest.Customer.Phone = request.PhoneNumber;
+
+            authRequest.Transaction.Amount = (double)request.Amount;
+            authRequest.Transaction.Recurring = false;
+            authRequest.Transaction.Type = AuthType.AuthOnly;
+            authRequest.Card = new Card(request.CcNumber, request.CcSecurityCode, request.CcExpMonth + request.CcExpYear);
+
+            return authRequest;
+        }
+    }
+}

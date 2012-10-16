@@ -1,0 +1,11 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+using <#= Model.Namespace #>.Core.Infrastructure.Pipeline;
+
+namespace <#= Model.Namespace #>.Core.Common.Promotions.Benefits
+{
+    public class BenefitContext : IPipelineContext
+    {        
+        public string CurrentStep { get; set; }
+    }
+}

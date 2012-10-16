@@ -1,0 +1,67 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Payments.AuthNet
+{
+    using System.Collections.Specialized;
+    using AutoMapper;
+    using <#= Model.Namespace #>.Payments.Infrastructure;
+
+    public class AuthNetRequest
+    {
+        private readonly TestMode _testMode;
+
+        private readonly AuthNetProvider _provider;
+
+        public AuthNetRequest(AuthNetProvider provider)
+        {
+            this._provider = provider;
+            this._testMode = provider.TestMode;                        
+        }
+
+        public Authentication Authentication { get; set; }
+
+        public Card Card { get; set; }
+
+        public Customer Customer { get; set; }
+
+        public Merchant Merchant { get; set; }
+
+        public Product Product { get; set; }
+
+        public Ship Ship { get; set; }
+
+        public Transaction Transaction { get; set; }
+
+        public AuthNetProvider Provider
+        {
+            get
+            {
+                return _provider;
+            }
+        }
+
+        private string PostUrl
+        {
+            get
+            {                
+                if (this.Provider.TestMode == TestMode.TestAccountTest
+                    || this.Provider.TestMode == TestMode.TestAccountLive)
+                {
+                    return AuthNetProvider.TestUrl;
+                }
+
+                return AuthNetProvider.LiveUrl;
+            }
+        }
+
+        public AuthNetResponse GetResponse()
+        {
+            return new AuthNetResponse(new HttpPostStrategy().GetResponse(this.PostUrl, Mapper.Map<AuthNetRequest, NameValueCollection>(this)));
+        }
+
+        public bool IsTest()
+        {
+            return this._testMode == TestMode.LiveTest || this._testMode == TestMode.TestAccountTest;
+        }
+    }
+}

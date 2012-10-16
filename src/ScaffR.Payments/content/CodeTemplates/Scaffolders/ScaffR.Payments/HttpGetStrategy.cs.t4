@@ -1,0 +1,38 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Payments.Infrastructure
+{
+    using System;
+    using System.Collections.Specialized;
+    using System.IO;
+    using System.Net;
+    using System.Text;
+
+    using <#= Model.Namespace #>.Payments.Interfaces;
+
+    public class HttpGetStrategy : IRequestStrategy
+    {
+        public string GetResponse(string url, NameValueCollection collection)
+        {
+            var sb = new StringBuilder(url + "?");
+
+            foreach (string s in collection.Keys)
+            {
+                sb.AppendFormat("{0}={1}&", s, collection[s]);
+            }
+
+            var value = sb.ToString().TrimEnd(new [] { '?', '&' });
+            var httpRequest = (HttpWebRequest)WebRequest.Create(new Uri(value));
+            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+            var responseStream = httpResponse.GetResponseStream();
+
+            if (responseStream != null)
+            {
+                var appReader = new StreamReader(responseStream);
+                return appReader.ReadToEnd();
+            }
+
+            return null;
+        }
+    }
+}

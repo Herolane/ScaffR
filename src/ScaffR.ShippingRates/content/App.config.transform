@@ -1,0 +1,16 @@
+﻿<configuration>
+
+  <configSections>
+    <sectionGroup name="$rootnamespace$">
+      <section name="$rootnamespace$.ShippingRates" type="$rootnamespace$.ShippingRates.ShippingRatesSection, $rootnamespace$.ShippingRates" requirePermission="false"/>
+    </sectionGroup>
+  </configSections>
+
+  <$rootnamespace$>
+    <$rootnamespace$.ShippingRates>
+      <providers>
+      </providers>
+    </$rootnamespace$.ShippingRates>
+  </$rootnamespace$>
+
+</configuration>

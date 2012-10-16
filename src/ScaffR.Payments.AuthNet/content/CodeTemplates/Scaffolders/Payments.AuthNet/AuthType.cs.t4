@@ -1,0 +1,35 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Payments.AuthNet
+{
+    /// <summary>
+    ///   The auth type.
+    /// </summary>
+    public enum AuthType
+    {
+        /// <summary>
+        ///   The auth capture.
+        /// </summary>
+        AuthCapture, 
+
+        /// <summary>
+        ///   The auth only.
+        /// </summary>
+        AuthOnly, 
+
+        /// <summary>
+        ///   The void.
+        /// </summary>
+        Void, 
+
+        /// <summary>
+        ///   The capture only.
+        /// </summary>
+        CaptureOnly, 
+
+        /// <summary>
+        ///   The credit.
+        /// </summary>
+        Credit
+    }
+}

@@ -1,0 +1,19 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Model
+{
+    public class ShoppingCartItem : DomainObject
+    {
+        public int? ProductId { get; set; }
+
+        public int Quantity { get; set; }
+
+        public decimal SalesPrice { get; set; }
+
+        public decimal SalesTax { get; set; }
+
+        public int ShoppingCartId { get; set; }
+
+        public Product Product { get; set; }
+    }
+}

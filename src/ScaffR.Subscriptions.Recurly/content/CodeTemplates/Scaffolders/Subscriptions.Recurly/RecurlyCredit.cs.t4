@@ -1,0 +1,193 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Subscriptions.Recurly
+{
+    using System;
+    using System.Web;
+    using System.Xml;
+
+    /// <summary>
+    /// The recurly credit.
+    /// </summary>
+    public class RecurlyCredit : RecurlyLineItem
+    {
+        #region Constants
+
+        /// <summary>
+        /// The url postfix.
+        /// </summary>
+        private const string UrlPostfix = "/credits";
+
+        #endregion
+
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecurlyCredit"/> class.
+        /// </summary>
+        internal RecurlyCredit()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecurlyCredit"/> class.
+        /// </summary>
+        /// <param name="xmlReader">
+        /// The xml reader.
+        /// </param>
+        internal RecurlyCredit(XmlTextReader xmlReader)
+        {
+            this.ReadXml(xmlReader);
+        }
+
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// Gets the xml root node name.
+        /// </summary>
+        protected override string XmlRootNodeName
+        {
+            get
+            {
+                return "credit";
+            }
+        }
+
+        #endregion
+
+        #region Public Methods and Operators
+
+        /// <summary>
+        /// The credit account.
+        /// </summary>
+        /// <param name="accountCode">
+        /// The account code.
+        /// </param>
+        /// <param name="amountInCents">
+        /// The amount in cents.
+        /// </param>
+        /// <param name="description">
+        /// The description.
+        /// </param>
+        /// <returns>
+        /// The <#= Model.Namespace #>.Subscriptions.Recurly.RecurlyCredit.
+        /// </returns>
+        public static RecurlyCredit CreditAccount(string accountCode, int amountInCents, string description)
+        {
+            return CreditAccount(accountCode, amountInCents, 1, description);
+        }
+
+        /// <summary>
+        /// The credit account.
+        /// </summary>
+        /// <param name="accountCode">
+        /// The account code.
+        /// </param>
+        /// <param name="amountInCents">
+        /// The amount in cents.
+        /// </param>
+        /// <param name="quantity">
+        /// The quantity.
+        /// </param>
+        /// <param name="description">
+        /// The description.
+        /// </param>
+        /// <returns>
+        /// The <#= Model.Namespace #>.Subscriptions.Recurly.RecurlyCredit.
+        /// </returns>
+        public static RecurlyCredit CreditAccount(
+            string accountCode, int amountInCents, int quantity, string description)
+        {
+            var credit = new RecurlyCredit();
+            credit.AmountInCents = amountInCents;
+            credit.Quantity = quantity;
+            credit.StartDate = DateTime.UtcNow;
+            credit.Description = description;
+
+            /* HttpStatusCode statusCode = */
+            RecurlyClient.PerformRequest(
+                RecurlyClient.HttpRequestMethod.Post, CreditsUrl(accountCode), credit.WriteXml, null);
+
+            return credit;
+        }
+
+        /// <summary>
+        /// The equals.
+        /// </summary>
+        /// <param name="obj">
+        /// The obj.
+        /// </param>
+        /// <returns>
+        /// The System.Boolean.
+        /// </returns>
+        public override bool Equals(object obj)
+        {
+            if (obj is RecurlyCredit)
+            {
+                return this.Equals((RecurlyCredit)obj);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// The equals.
+        /// </summary>
+        /// <param name="credit">
+        /// The credit.
+        /// </param>
+        /// <returns>
+        /// The System.Boolean.
+        /// </returns>
+        public bool Equals(RecurlyCredit credit)
+        {
+            return this.Id == credit.Id;
+        }
+
+        /// <summary>
+        /// The get hash code.
+        /// </summary>
+        /// <returns>
+        /// The System.Int32.
+        /// </returns>
+        public override int GetHashCode()
+        {
+            return this.Id.GetHashCode();
+        }
+
+        /// <summary>
+        /// The to string.
+        /// </summary>
+        /// <returns>
+        /// The System.String.
+        /// </returns>
+        public override string ToString()
+        {
+            return "Recurly Credit: " + this.Id;
+        }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// The credits url.
+        /// </summary>
+        /// <param name="accountCode">
+        /// The account code.
+        /// </param>
+        /// <returns>
+        /// The System.String.
+        /// </returns>
+        internal static string CreditsUrl(string accountCode)
+        {
+            return RecurlyAccount.UrlPrefix + HttpUtility.UrlEncode(accountCode) + UrlPostfix;
+        }
+
+        #endregion
+    }
+}

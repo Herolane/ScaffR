@@ -1,0 +1,15 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+
+protected override void OnModelCreating(DbModelBuilder modelBuilder)
+{
+	modelBuilder.Entity<Lead>()
+        .HasOptional<Order>(l => l.Order)
+		.WithOptionalDependent(o => o.Lead);
+
+    modelBuilder.Entity<Lead>()
+        .HasOptional<Customer>(l => l.Customer)
+		.WithOptionalDependent(c => c.Lead);
+
+	base.OnModelCreating(modelBuilder);
+}

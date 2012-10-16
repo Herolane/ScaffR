@@ -1,0 +1,110 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Payments.AuthNet
+{
+    using System;
+    using System.Collections.Specialized;
+    using System.Configuration.Provider;
+
+    using AutoMapper;
+    using <#= Model.Namespace #>.Payments.AuthNet.Mappers;
+    using <#= Model.Namespace #>.Payments.Interfaces;
+
+    public class AuthNetProvider : PaymentProvider, IRequestFactory<AuthNetRequest>
+    {
+        public const string LiveUrl = "https://secure.authorize.net/gateway/transact.dll";
+
+        public const string TestUrl = "https://test.authorize.net/gateway/transact.dll";
+
+        public AuthNetProvider()
+        {
+            Mapper.CreateMap<AuthorizationRequest, AuthNetRequest>().ConvertUsing(new AuthorizationRequestAuthNetRequestMapper(this));
+            Mapper.CreateMap<CaptureRequest, AuthNetRequest>().ConvertUsing(new CaptureRequestAuthNetRequestMapper(this));
+            Mapper.CreateMap<AuthNetResponse, AuthorizationResponse>().ConvertUsing(new AuthNetResponseAuthorizationResponseMapper());
+            Mapper.CreateMap<AuthNetResponse, CaptureResponse>().ConvertUsing(new AuthNetResponseCaptureResponseMapper());
+            Mapper.CreateMap<AuthNetRequest, NameValueCollection>().ConvertUsing(new AuthNetRequestNameValueCollectionMapper());
+        }
+
+        public string CompanyName { get; set; }
+
+        public string LoginId { get; set; }
+
+        public TestMode TestMode { get; set; }
+
+        public string TransactionKey { get; set; }
+
+        public override void Initialize(string name, NameValueCollection config)
+        {
+            if (config == null)
+            {
+                throw new ArgumentNullException("config");
+            }
+
+            if (string.IsNullOrEmpty(name))
+            {
+                name = "AuthNet";
+            }
+
+            if (string.IsNullOrWhiteSpace(config["description"]))
+            {
+                config.Remove("description");
+                config.Add("description", "Payment provider for Authorize.Net");
+            }
+
+            base.Initialize(name, config);
+
+            this.LoginId = config["loginId"];
+            if (string.IsNullOrEmpty(this.LoginId))
+            {
+                throw new ProviderException("Empty or missing LoginID");
+            }
+
+            config.Remove("loginId");
+
+            this.CompanyName = config["companyName"];
+            if (string.IsNullOrEmpty(this.CompanyName))
+            {
+                throw new ProviderException("Empty or missing Company Name");
+            }
+
+            config.Remove("companyName");
+
+            this.TransactionKey = config["transactionKey"];
+            if (string.IsNullOrEmpty(this.TransactionKey))
+            {
+                throw new ProviderException("Empty or missing Transaction Key");
+            }
+
+            config.Remove("transactionKey");
+
+            this.TestMode = (TestMode)Enum.Parse(typeof(TestMode), config["testMode"]);
+            config.Remove("testMode");
+
+            if (config.Count > 0)
+            {
+                var attr = config.GetKey(0);
+                if (!string.IsNullOrWhiteSpace(attr))
+                {
+                    throw new ProviderException("Unrecognized attribute: " + attr);
+                }
+            }
+        }
+
+        public override CaptureResponse Capture(CaptureRequest request)
+        {
+            var authNetRequest = Mapper.Map<CaptureRequest, AuthNetRequest>(request);
+            return Mapper.Map<AuthNetResponse, CaptureResponse>(authNetRequest.GetResponse());
+        }
+
+        public override AuthorizationResponse Authorization(AuthorizationRequest request)
+        {
+            var authNetRequest = Mapper.Map<AuthorizationRequest, AuthNetRequest>(request);
+            return Mapper.Map<AuthNetResponse, AuthorizationResponse>(authNetRequest.GetResponse());
+        }
+
+        public AuthNetRequest Create()
+        {
+            return new AuthNetRequestBuilder(this).Build();
+        }
+    }
+}

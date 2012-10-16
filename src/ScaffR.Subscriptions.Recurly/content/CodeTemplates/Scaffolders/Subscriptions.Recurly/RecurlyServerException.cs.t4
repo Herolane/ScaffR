@@ -1,0 +1,36 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Subscriptions.Recurly
+{
+    /// <summary>
+    /// An Internal Server Error occurred on Recurly's side.
+    /// </summary>
+    public class RecurlyServerException : RecurlyException
+    {
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecurlyServerException"/> class.
+        /// </summary>
+        /// <param name="errors">
+        /// The errors.
+        /// </param>
+        internal RecurlyServerException(RecurlyError[] errors)
+            : base("Recurly experienced an internal server error.", errors)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecurlyServerException"/> class.
+        /// </summary>
+        /// <param name="message">
+        /// The message.
+        /// </param>
+        internal RecurlyServerException(string message)
+            : base(message)
+        {
+        }
+
+        #endregion
+    }
+}

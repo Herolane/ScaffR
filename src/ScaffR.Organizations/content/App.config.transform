@@ -1,0 +1,11 @@
+﻿<configuration>
+
+  <$rootnamespace$>
+    <$rootnamespace$.Core>
+      <organization>
+        <providers></providers>
+      </organization>
+    </$rootnamespace$.Core>
+  </$rootnamespace$>
+
+</configuration>

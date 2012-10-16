@@ -1,0 +1,78 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Payments.AuthNet.Mappers
+{
+    using System.Collections.Specialized;
+    using System.Globalization;
+
+    using AutoMapper;
+
+    public class AuthNetRequestNameValueCollectionMapper : TypeConverter<AuthNetRequest, NameValueCollection>
+    {
+        protected override NameValueCollection ConvertCore(AuthNetRequest source)
+        {
+            var values = new NameValueCollection
+                {
+                    { "x_login", source.Authentication.LoginId }, 
+                    { "x_tran_key", source.Authentication.TransactionKey }, 
+                    { "x_version", "3.1" }, 
+                    { "x_test_request", source.IsTest() ? "TRUE" : "FALSE" }, 
+                    { "x_delim_data", "TRUE" }, 
+                    { "x_relay_response", "FALSE" }, 
+                    { "x_delim_char", "|" }, 
+                    { "x_first_name", source.Customer.FirstName }, 
+                    { "x_last_name", source.Customer.LastName }, 
+                    { "x_address", source.Customer.Address }, 
+                    { "x_city", source.Customer.City }, 
+                    { "x_state", source.Customer.State }, 
+                    { "x_zip", source.Customer.Zip }, 
+                    { "x_country", source.Customer.Country }, 
+                    { "x_phone", source.Customer.Phone }, 
+                    { "x_email", source.Customer.Email }, 
+                    { "x_email_customer", source.Customer.EmailCustomer.ToString(CultureInfo.InvariantCulture).ToUpper() }, 
+                    { "x_merchant_email", source.Merchant.MerchantEmail }, 
+                    { "x_amount", source.Transaction.Amount.ToString() }, 
+                    { "x_card_num", source.Card.CardNumber }, 
+                    { "x_card_code", source.Card.Code }, 
+                    { "x_exp_date", source.Card.ExpDate }, 
+                    { "x_method", "CC" }
+                };
+
+            switch (source.Transaction.Type)
+            {
+                case AuthType.AuthCapture:
+                    values.Add("x_type", "AUTH_CAPTURE");
+                    break;
+                case AuthType.AuthOnly:
+                    values.Add("x_type", "AUTH_ONLY");
+                    break;
+                case AuthType.Void:
+                    values.Add("x_type", "VOID");
+                    values.Add("x_trans_id", source.Transaction.TransactionId);
+                    break;
+                case AuthType.CaptureOnly:
+                    values.Add("x_type", "CAPTURE_ONLY");
+                    values.Add("x_auth_code", source.Transaction.PreviousAuthCode);
+                    break;
+                case AuthType.Credit:
+                    values.Add("x_type", "CREDIT");
+                    values.Add("x_trans_id", source.Transaction.TransactionId);
+                    break;
+            }
+
+            values.Add("x_customer_ip", source.Customer.IpAddress);
+            values.Add("x_recurring_billing", "NO");
+            values.Add("x_ship_first_name", source.Ship.FirstName);
+            values.Add("x_ship_last_name", source.Ship.LastName);
+            values.Add("x_ship_address", source.Ship.Address);
+            values.Add("x_ship_city", source.Ship.City);
+            values.Add("x_ship_zip", source.Ship.Zip);
+            values.Add("x_ship_country", source.Ship.Country);
+            values.Add("x_description", source.Product.Description);
+            values.Add("x_duplidate_window", "0");
+            values.Add("x_currency_code", source.Transaction.CurrencyCode);
+
+            return values;
+        }
+    }
+}

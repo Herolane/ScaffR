@@ -1,0 +1,11 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Ordering
+{
+    using System.Configuration.Provider;
+
+    public abstract class OrderProvider : ProviderBase
+    {
+
+    }
+}

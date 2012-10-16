@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A2ADE471-847E-4F19-B575-A3CDABD53632}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Scaffeine.Orders.Core</RootNamespace>
+    <AssemblyName>Scaffeine.Orders.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\OrderItems\RemoveFromInventory.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Order.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\OrderLineItem.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\OrderStatus.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Extensions\OrderExtensions.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Extensions\OrderLineItemExtensions.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\SessionInformation.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Pipeline\OrderContext.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Pipeline\OrderLineContext.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Pipeline\OrderLineProcessor.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Pipeline\PostOrderProcessor.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Pipeline\PreOrderProcessor.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Configuration\CoreSection.Ordering.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Configuration\Ordering\OrderingElement.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\OrderItems\MarkAsShipped.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\OrderItems\RemoveFromInventory.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\OrderItems\UpdateAvailableQuantity.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\Orders\CheckFraudFilter.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\Orders\CheckInventory.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\Orders\MarkAsCompleted.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\Orders\OrderItemsShippedFilter.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\Orders\PreAuthCreditCard.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\Orders\ProcessOrderLineItems.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\Orders\SendEmailFilter.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\Orders\SettleAuthorization.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\Orders\UpdateFraudCheck.cs.t4" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BuildPublishPackage.cmd" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Scaffeine.Orders.Core.ps1" />
+    <None Include="content\App.config.transform">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="content\Web.config.transform">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Package.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tools\install.ps1" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="notes.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>-->
+  <Target Name="AfterBuild">
+    <!-- Load up the information from the assembly -->
+    <GetAssemblyIdentity AssemblyFiles="$(OutputPath)$(AssemblyName).dll">
+      <Output TaskParameter="Assemblies" ItemName="OutputAssemblyInfo" />
+    </GetAssemblyIdentity>
+    <Message Text="Info: %(OutputAssemblyInfo.Version)" />
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="BuildPublishPackage.cmd %(OutputAssemblyInfo.Version)" Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " />
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="BuildPublishPackage.cmd %(OutputAssemblyInfo.Version) Publish" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " />
+  </Target>
+</Project>

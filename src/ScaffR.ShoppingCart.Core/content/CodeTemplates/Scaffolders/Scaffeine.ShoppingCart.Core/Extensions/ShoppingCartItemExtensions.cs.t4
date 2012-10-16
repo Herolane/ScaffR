@@ -1,0 +1,14 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Common.ShoppingCart.Extensions
+{
+    using Model;
+
+    public static class ShoppingCartItemExtensions
+    {
+        public static decimal GetShoppingCartLineItemTotalWithTax(this ShoppingCartItem item)
+        {
+            return ((item.SalesPrice) * item.Quantity) + item.SalesTax;
+        }
+    }
+}

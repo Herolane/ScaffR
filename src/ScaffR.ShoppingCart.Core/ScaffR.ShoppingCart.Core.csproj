@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AC92AF4A-5B8D-4B7D-B515-FA4D93F29AF6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Scaffeine.ShoppingCart.Core</RootNamespace>
+    <AssemblyName>Scaffeine.ShoppingCart.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.ShoppingCart.Core\Extensions\ShoppingCartExtensions.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.ShoppingCart.Core\Extensions\ShoppingCartItemExtensions.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.ShoppingCart.Core\Scaffeine.ShoppingCart.Core.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.ShoppingCart.Core\ShoppingCart.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.ShoppingCart.Core\ShoppingCartItem.cs.t4" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BuildPublishPackage.cmd" />
+    <None Include="Package.nuspec" />
+    <None Include="tools\install.ps1" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="NuGet.exe" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>-->
+  <Target Name="AfterBuild">
+    <!-- Load up the information from the assembly -->
+    <GetAssemblyIdentity AssemblyFiles="$(OutputPath)$(AssemblyName).dll">
+      <Output TaskParameter="Assemblies" ItemName="OutputAssemblyInfo" />
+    </GetAssemblyIdentity>
+    <Message Text="Info: %(OutputAssemblyInfo.Version)" />
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="BuildPublishPackage.cmd %(OutputAssemblyInfo.Version)" Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " />
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="BuildPublishPackage.cmd %(OutputAssemblyInfo.Version) Publish" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " />
+  </Target>
+</Project>

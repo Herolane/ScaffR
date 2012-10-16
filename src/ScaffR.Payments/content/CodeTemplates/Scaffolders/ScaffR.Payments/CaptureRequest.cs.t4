@@ -1,0 +1,19 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Payments
+{
+    public partial class CaptureRequest
+    {
+        public decimal Amount { get; set; }
+
+        public string PreviousApprovalCode { get; set; }
+
+        public string CcNumber { get; set; }
+
+        public string CcExpMonth { get; set; }
+
+        public string CcExpYear { get; set; }
+
+        public string CcSecurityCode { get; set; }
+    }
+}

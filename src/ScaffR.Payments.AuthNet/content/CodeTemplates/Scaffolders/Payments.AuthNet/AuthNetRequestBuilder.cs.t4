@@ -1,0 +1,32 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Payments.AuthNet
+{
+    public class AuthNetRequestBuilder
+    {
+        private readonly AuthNetProvider _provider;
+
+        public AuthNetRequestBuilder(AuthNetProvider provider)
+        {
+            this._provider = provider;
+        }
+
+        public AuthNetRequest Build()
+        {
+            var authRequest = new AuthNetRequest(this._provider)
+                {
+                    Customer = new Customer(),
+                    Transaction = new Transaction(),   
+                    Merchant = new Merchant
+                        {
+                            CompanyName = this._provider.CompanyName,
+                            DuplicateWindow = "FALSE"
+                        },
+                    Authentication = new Authentication(this._provider.LoginId, this._provider.TransactionKey),
+                    Ship = new Ship(),
+                    Product = new Product()
+                };
+            return authRequest;
+        }
+    }
+}

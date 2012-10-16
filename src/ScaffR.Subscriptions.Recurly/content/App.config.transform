@@ -1,0 +1,13 @@
+﻿<configuration>
+
+  <$rootnamespace$>
+    <$rootnamespace$.Core>
+      <subscriptions defaultProvider="Recurly">
+        <providers>
+          <add name="Recurly" type="$rootnamespace$.Subscriptions.Recurly.RecurlySubscriptionProvider, $rootnamespace$.Subscriptions.Recurly" apiKey="" apiSubdomain="" privateKey=""/>
+        </providers>
+      </subscriptions>
+    </$rootnamespace$.Core>
+  </$rootnamespace$>
+
+</configuration>

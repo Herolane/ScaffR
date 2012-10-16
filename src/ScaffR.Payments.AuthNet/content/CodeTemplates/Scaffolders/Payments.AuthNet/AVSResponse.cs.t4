@@ -1,0 +1,26 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Payments.AuthNet
+{
+    using System.Collections.Specialized;
+
+    public class AVSResponse
+    {
+        public static readonly NameValueCollection Values = new NameValueCollection
+            {
+                { "A", "Address (Street) matches, ZIP does not" }, 
+                { "B", "Address information not provided for AVS check" }, 
+                { "E", "AVS error" }, 
+                { "G", "Non-U.S. Card Issuing Bank" }, 
+                { "N", "No Match on Address (Street) or ZIP" }, 
+                { "P", "AVS not applicable for this transaction" }, 
+                { "R", "Retry—System unavailable or timed out" }, 
+                { "S", "Service not supported by issuer" }, 
+                { "U", "Address information is unavailable" }, 
+                { "W", "Nine digit ZIP matches, Address (Street) does not" }, 
+                { "X", "Address (Street) and nine digit ZIP match" }, 
+                { "Y", "Address (Street) and five digit ZIP match" }, 
+                { "Z", "Five digit ZIP matches, Address (Street) does not" }
+            };
+    }
+}

@@ -1,0 +1,11 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Payments.Interfaces
+{
+    using System.Collections.Specialized;
+
+    public interface IRequestStrategy
+    {
+        string GetResponse(string url, NameValueCollection collection);
+    }
+}

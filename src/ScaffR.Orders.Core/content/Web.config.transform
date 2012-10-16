@@ -1,0 +1,32 @@
+﻿<configuration>
+
+  <$rootnamespace$>
+    <$rootnamespace$.Core>
+      <ordering>
+        <preOrderPipeline processor="$rootnamespace$.Core.Common.Ordering.PreOrderProcessor, $rootnamespace$.Core">
+          <filters>
+            <add name="CheckFraudFilter" type="$rootnamespace$.Core.Common.Ordering.Filters.Orders.CheckFraudFilter, $rootnamespace$.Core" />
+            <add name="PreAuthCreditCard" type="$rootnamespace$.Core.Common.Ordering.Filters.Orders.PreAuthCreditCard, $rootnamespace$.Core" />
+          </filters>
+        </preOrderPipeline>
+        <orderLinePipeline processor="$rootnamespace$.Core.Common.Ordering.OrderLineProcessor, $rootnamespace$.Core">
+          <filters>
+            <add name="UpdateAvailableQuantity" type="$rootnamespace$.Core.Common.Ordering.Filters.OrderItems.UpdateAvailableQuantity, $rootnamespace$.Core" />
+            <add name="MarkAsShipped" type="$rootnamespace$.Core.Common.Ordering.Filters.OrderItems.MarkAsShipped, $rootnamespace$.Core" />
+            <add name="RemoveFromInventory" type="$rootnamespace$.Core.Common.Ordering.Filters.OrderItems.RemoveFromInventory, $rootnamespace$.Core" />
+          </filters>
+        </orderLinePipeline>
+        <postOrderPipeline processor="$rootnamespace$.Core.Common.Ordering.PostOrderProcessor, $rootnamespace$.Core">
+          <prerequisites>
+            <add name="OrderItemsShipped" type="$rootnamespace$.Core.Common.Ordering.Filters.Orders.OrderItemsShippedFilter, $rootnamespace$.Core" />
+          </prerequisites>
+          <filters>
+            <add name="SettleAuthorization" type="$rootnamespace$.Core.Common.Ordering.Filters.Orders.SettleAuthorization, $rootnamespace$.Core" />
+            <add name="UpdateFraudCheck" type="$rootnamespace$.Core.Common.Ordering.Filters.Orders.UpdateFraudCheck, $rootnamespace$.Core" />
+          </filters>
+        </postOrderPipeline>
+      </ordering>
+    </$rootnamespace$.Core>
+  </$rootnamespace$>
+
+</configuration>

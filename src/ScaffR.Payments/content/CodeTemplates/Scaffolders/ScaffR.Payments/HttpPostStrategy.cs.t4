@@ -1,0 +1,20 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Payments.Infrastructure
+{
+    using System.Collections.Specialized;
+    using System.Net;
+    using System.Text;
+
+    using <#= Model.Namespace #>.Payments.Interfaces;
+
+    public class HttpPostStrategy : IRequestStrategy
+    {        
+        public string GetResponse(string url, NameValueCollection values)
+        {
+            var client = new WebClient();
+            byte[] response = client.UploadValues(url, "POST", values);
+            return Encoding.ASCII.GetString(response);
+        }
+    }
+}

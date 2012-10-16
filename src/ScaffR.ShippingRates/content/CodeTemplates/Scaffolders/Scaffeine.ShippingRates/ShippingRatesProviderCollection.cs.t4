@@ -1,0 +1,25 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.ShippingRates
+{
+    using System;
+    using System.Configuration.Provider;
+
+    public partial class ShippingRatesProviderCollection : ProviderCollection
+    {
+        public new ShippingRatesProvider this[string name]
+        {
+            get { return (ShippingRatesProvider)base[name]; }
+        }
+
+        public override void Add(ProviderBase provider)
+        {
+            if (provider == null)
+                throw new ArgumentNullException("provider");
+
+            if (!(provider is ShippingRatesProvider)) throw new ArgumentException("Invalid provider type", "provider");
+
+            base.Add(provider);
+        }
+    }
+}

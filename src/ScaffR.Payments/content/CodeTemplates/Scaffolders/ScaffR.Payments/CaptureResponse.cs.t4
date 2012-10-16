@@ -1,0 +1,43 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Payments
+{
+    using <#= Model.Namespace #>.Payments.Interfaces;
+
+    public partial class CaptureResponse : IResponse
+    {
+        private readonly string _responseText;
+
+        private readonly bool _approved;
+
+        public CaptureResponse(bool approved, string responseText)
+        {
+            _responseText = responseText;
+            _approved = approved;
+        }
+
+        public string TransactionResult { get; set; }
+
+        public string ApprovalCode { get; set; }
+
+        public string OrderId { get; set; }
+
+        public string ErrorMessage { get; set; }
+
+        public bool Approved
+        {
+            get
+            {
+                return _approved;
+            }
+        }
+
+        public string ResponseText
+        {
+            get
+            {
+                return _responseText;
+            }
+        }
+    }
+}

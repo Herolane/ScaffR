@@ -1,0 +1,76 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Subscriptions.Recurly
+{
+    using System;
+
+    /// <summary>
+    /// Base class for exceptions thrown by Recurly's API.
+    /// </summary>
+    public class RecurlyException : ApplicationException
+    {
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecurlyException"/> class.
+        /// </summary>
+        /// <param name="errors">
+        /// The errors.
+        /// </param>
+        internal RecurlyException(RecurlyError[] errors)
+        {
+            this.Errors = errors;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecurlyException"/> class.
+        /// </summary>
+        /// <param name="message">
+        /// The message.
+        /// </param>
+        internal RecurlyException(string message)
+            : base(message)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecurlyException"/> class.
+        /// </summary>
+        /// <param name="message">
+        /// The message.
+        /// </param>
+        /// <param name="innerException">
+        /// The inner exception.
+        /// </param>
+        internal RecurlyException(string message, Exception innerException)
+            : base(message, innerException)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecurlyException"/> class.
+        /// </summary>
+        /// <param name="message">
+        /// The message.
+        /// </param>
+        /// <param name="errors">
+        /// The errors.
+        /// </param>
+        internal RecurlyException(string message, RecurlyError[] errors)
+            : base(message)
+        {
+            this.Errors = errors;
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Error details from Recurly
+        /// </summary>
+        public RecurlyError[] Errors { get; private set; }
+
+        #endregion
+    }
+}

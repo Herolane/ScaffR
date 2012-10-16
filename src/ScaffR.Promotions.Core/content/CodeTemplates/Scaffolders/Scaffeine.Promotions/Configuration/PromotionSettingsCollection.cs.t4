@@ -1,0 +1,73 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+using System;
+using System.Configuration;
+
+namespace <#= Model.Namespace #>.Core.Configuration.Promotions
+{
+    [ConfigurationCollection(typeof(PromotionSettings))]
+    public partial class PromotionSettingsCollection : ConfigurationElementCollection
+    {
+        internal const string PropertyName = "add";
+
+        protected override bool IsElementName(string elementName)
+        {
+            return elementName.Equals(PropertyName, StringComparison.InvariantCultureIgnoreCase);
+        }
+
+        protected override string ElementName
+        {
+            get { return PropertyName; }
+        }
+
+        public void Add(PromotionSettings provider)
+        {
+            if (provider != null)
+            {
+                BaseAdd(provider);
+            }
+        }
+
+        public void Remove(String name)
+        {
+            BaseRemove(name);
+        }
+
+        public void Clear()
+        {
+            BaseClear();
+        }
+
+        protected override ConfigurationElement CreateNewElement()
+        {
+            return new PromotionSettings();
+        }
+        protected override Object GetElementKey(ConfigurationElement element)
+        {
+            return ((PromotionSettings)element).Name;
+        }
+
+        public new PromotionSettings this[string key]
+        {
+            get
+            {
+                return (PromotionSettings)BaseGet(key);
+            }
+        }
+
+        public PromotionSettings this[int index]
+        {
+            get
+            {
+                return (PromotionSettings)BaseGet(index);
+            }
+            set
+            {
+                if (BaseGet(index) != null)
+                    BaseRemoveAt(index);
+
+                BaseAdd(index, value);
+            }
+        } 
+    }
+}

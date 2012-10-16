@@ -1,0 +1,12 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Subscriptions.Recurly
+{
+    public class ForgedQueryStringException : RecurlyException
+    {
+        internal ForgedQueryStringException(string message)
+            : base(message)
+        {
+        }
+    }
+}

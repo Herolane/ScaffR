@@ -1,0 +1,18 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Common.Ordering.Filters.OrderItems
+{
+    using System.Web.Mvc;
+    using Infrastructure.Pipeline;
+    using Interfaces.Service;
+
+    public class UpdateAvailableQuantity : Filter<OrderLineContext>
+    {
+        private readonly IProductService ProductService = DependencyResolver.Current.GetService<IProductService>();
+
+        public override bool Process(ref OrderLineContext data)
+        {           
+            return false;
+        }
+    }
+}

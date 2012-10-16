@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7CABDA49-6F15-4340-A5CE-5DF2B8EB8D77}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Scaffeine.Subscriptions.Recurly</RootNamespace>
+    <AssemblyName>Scaffeine.Subscriptions.Recurly</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\RecurlySubscriptionProvider.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\Subscriptions.Recurly.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\ForgedQueryStringException.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\RecurlyAccount.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\RecurlyAccountCoupon.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\RecurlyBillingInfo.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\RecurlyCharge.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\RecurlyClient.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\RecurlyCredit.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\RecurlyCreditCard.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\RecurlyError.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\RecurlyException.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\RecurlyInvoice.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\RecurlyInvoiceList.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\RecurlyLineItem.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\RecurlyLineItemList.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\RecurlyPlan.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\RecurlyServerException.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\RecurlySubscription.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\RecurlyTransaction.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\RecurlyTransactionList.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\RecurlyTransparent.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\TemporarilyUnavailableException.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\ValidationException.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\InvalidCredentialsException.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly\NotFoundException.cs.t4" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BuildPublishPackage.cmd" />
+    <None Include="content\App.config.transform">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="content\Web.config.transform">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Package.nuspec" />
+    <None Include="tools\init.ps1" />
+    <None Include="tools\install.ps1" />
+    <None Include="tools\uninstall.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NuGet.exe" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>-->
+  <Target Name="AfterBuild">
+    <!-- Load up the information from the assembly -->
+    <GetAssemblyIdentity AssemblyFiles="$(OutputPath)$(AssemblyName).dll">
+      <Output TaskParameter="Assemblies" ItemName="OutputAssemblyInfo" />
+    </GetAssemblyIdentity>
+    <Message Text="Info: %(OutputAssemblyInfo.Version)" />
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="BuildPublishPackage.cmd %(OutputAssemblyInfo.Version)" Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " />
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="BuildPublishPackage.cmd %(OutputAssemblyInfo.Version) Publish" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " />
+  </Target>
+</Project>

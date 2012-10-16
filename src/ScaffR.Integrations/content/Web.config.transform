@@ -1,0 +1,16 @@
+﻿<configuration>
+
+  <configSections>
+    <sectionGroup name="$rootnamespace$">
+      <section name="$rootnamespace$.Organizations" type="$rootnamespace$.Organizations.OrganizationsSection, $rootnamespace$.Organizations" requirePermission="false"/>
+    </sectionGroup>
+  </configSections>
+
+  <$rootnamespace$>
+    <$rootnamespace$.Organizations>
+      <providers>
+      </providers>
+    </$rootnamespace$.Organizations>
+  </$rootnamespace$>
+
+</configuration>

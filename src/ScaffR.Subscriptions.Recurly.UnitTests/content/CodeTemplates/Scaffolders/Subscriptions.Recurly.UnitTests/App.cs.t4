@@ -1,0 +1,17 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="config" #>
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <sectionGroup name="ConsoleApplication12">
+      <section name="ConsoleApplication12.Subscriptions" type="ConsoleApplication12.Subscriptions.SubscriptionsSection, ConsoleApplication12.Subscriptions" requirePermission="false" />
+    </sectionGroup>
+  </configSections>
+  <ConsoleApplication12>
+    <ConsoleApplication12.Subscriptions defaultProvider="Recurly">
+      <providers>
+        <add name="Recurly" type="ConsoleApplication12.Subscriptions.Recurly.RecurlySubscriptionProvider, ConsoleApplication12.Subscriptions.Recurly" />
+      </providers>
+    </ConsoleApplication12.Subscriptions>
+  </ConsoleApplication12>
+</configuration>

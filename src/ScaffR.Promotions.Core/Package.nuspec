@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>ScaffR.Promotions.Core</id>
+    <version>1.1.4</version>
+    <authors>Rod Johnson</authors>
+    <owners>Rod Johnson</owners>
+    <projectUrl>https://github.com/wcpro/Scaffeine</projectUrl>
+    <iconUrl>http://www.scaffr.com/favicon.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Promotions
+    </description>
+    <releaseNotes>
+    </releaseNotes>
+    <copyright>Copyright Scaffeine 2012</copyright>
+    <tags></tags>
+    <dependencies>
+      <dependency id="ScaffR.Infrastructure.Pipeline" />      
+    </dependencies>
+  </metadata>
+  <files>    
+    <file src="tools\**" target="tools" />
+    <file src="content\**" target="content" />
+  </files>
+</package>

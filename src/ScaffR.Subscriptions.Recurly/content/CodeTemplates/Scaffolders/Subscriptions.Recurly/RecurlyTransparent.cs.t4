@@ -1,0 +1,327 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Subscriptions.Recurly
+{
+    using System;
+    using System.Net;
+    using System.Security.Cryptography;
+    using System.Text;
+    using System.Web;
+    using System.Web.UI.HtmlControls;
+
+    /// <summary>
+    /// Transparent Post API
+    /// </summary>
+    public class RecurlyTransparent
+    {
+        #region Constants
+
+        /// <summary>
+        /// The results url prefix.
+        /// </summary>
+        private const string ResultsUrlPrefix = "/transparent/results/";
+
+        /// <summary>
+        /// The subscribe url format.
+        /// </summary>
+        private const string SubscribeUrlFormat = "/transparent/{0}/subscription";
+
+        /// <summary>
+        /// The transaction url format.
+        /// </summary>
+        private const string TransactionUrlFormat = "/transparent/{0}/transaction";
+
+        /// <summary>
+        /// The update billing url format.
+        /// </summary>
+        private const string UpdateBillingUrlFormat = "/transparent/{0}/billing_info";
+
+        #endregion
+
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecurlyTransparent"/> class.
+        /// </summary>
+        /// <param name="redirectUrl">
+        /// The redirect url.
+        /// </param>
+        /// <param name="accountCode">
+        /// The account code.
+        /// </param>
+        public RecurlyTransparent(string redirectUrl, string accountCode)
+        {
+            this.RedirectUrl = redirectUrl;
+            this.AccountCode = accountCode;
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Create Subscription POST URL
+        /// </summary>
+        public static string SubscriptionUrl
+        {
+            get
+            {
+                return Url(SubscribeUrlFormat);
+            }
+        }
+
+        /// <summary>
+        /// Create Transaction POST URL
+        /// </summary>
+        public static string TransactionUrl
+        {
+            get
+            {
+                return Url(TransactionUrlFormat);
+            }
+        }
+
+        /// <summary>
+        /// Update Billing Info POST URL
+        /// </summary>
+        public static string UpdateBillingUrl
+        {
+            get
+            {
+                return Url(UpdateBillingUrlFormat);
+            }
+        }
+
+        /// <summary>
+        /// Gets the account code.
+        /// </summary>
+        public string AccountCode { get; private set; }
+
+        /// <summary>
+        /// Gets the redirect url.
+        /// </summary>
+        public string RedirectUrl { get; private set; }
+
+        #endregion
+
+        #region Public Methods and Operators
+
+        /// <summary>
+        /// The get subscription result.
+        /// </summary>
+        /// <param name="resultKey">
+        /// The result key.
+        /// </param>
+        /// <returns>
+        /// The <#= Model.Namespace #>.Subscriptions.Recurly.RecurlySubscription.
+        /// </returns>
+        public static RecurlySubscription GetSubscriptionResult(string resultKey)
+        {
+            var subscription = new RecurlySubscription(new RecurlyAccount(string.Empty));
+            HttpStatusCode statusCode = GetResult(resultKey, subscription.ReadXml);
+
+            if (statusCode == HttpStatusCode.NotFound)
+            {
+                return null;
+            }
+
+            return subscription;
+        }
+
+        /// <summary>
+        /// The get transaction result.
+        /// </summary>
+        /// <param name="resultKey">
+        /// The result key.
+        /// </param>
+        /// <returns>
+        /// The <#= Model.Namespace #>.Subscriptions.Recurly.RecurlyTransaction.
+        /// </returns>
+        public static RecurlyTransaction GetTransactionResult(string resultKey)
+        {
+            var transaction = new RecurlyTransaction();
+            HttpStatusCode statusCode = GetResult(resultKey, transaction.ReadXml);
+
+            if (statusCode == HttpStatusCode.NotFound)
+            {
+                return null;
+            }
+
+            return transaction;
+        }
+
+        /// <summary>
+        /// The get update billing result.
+        /// </summary>
+        /// <param name="resultKey">
+        /// The result key.
+        /// </param>
+        /// <returns>
+        /// The <#= Model.Namespace #>.Subscriptions.Recurly.RecurlyBillingInfo.
+        /// </returns>
+        public static RecurlyBillingInfo GetUpdateBillingResult(string resultKey)
+        {
+            var billingInfo = new RecurlyBillingInfo(new RecurlyAccount(string.Empty));
+            HttpStatusCode statusCode = GetResult(resultKey, billingInfo.ReadXml);
+
+            if (statusCode == HttpStatusCode.NotFound)
+            {
+                return null;
+            }
+
+            return billingInfo;
+        }
+
+        /// <summary>
+        /// Validate the Transparent Post result has not been tampered with.
+        /// </summary>
+        /// <param name="currentRequest">
+        /// The current Request.
+        /// </param>
+        public static void ValidateResult(HttpRequest currentRequest)
+        {
+            int statusCode;
+
+            if (int.TryParse(currentRequest.Params["status"], out statusCode))
+            {
+                ValidateResult(
+                    currentRequest.Params["type"], 
+                    statusCode, 
+                    currentRequest.Params["result"], 
+                    currentRequest.Params["confirm"]);
+            }
+        }
+
+        /// <summary>
+        /// Validate the Transparent Post result has not been tampered with.
+        /// </summary>
+        /// <param name="type">
+        /// Response type
+        /// </param>
+        /// <param name="status">
+        /// HTTP Status Code
+        /// </param>
+        /// <param name="resultKey">
+        /// 32-character result key
+        /// </param>
+        /// <param name="confirm">
+        /// 32-character confirmation key
+        /// </param>
+        public static void ValidateResult(string type, int status, string resultKey, string confirm)
+        {
+            string resultHash =
+                ComputePrivateHash(string.Format("type={0}&status={1}&result={2}", type, status, resultKey));
+
+            if (!resultHash.Equals(confirm, StringComparison.OrdinalIgnoreCase))
+            {
+                throw new ForgedQueryStringException("Query string confirmation does not match.");
+            }
+        }
+
+        /// <summary>
+        /// Hidden input field containing protected data
+        /// </summary>
+        /// <returns>
+        /// The System.Web.UI.HtmlControls.HtmlInputHidden.
+        /// </returns>
+        public HtmlInputHidden HiddenFieldData()
+        {
+            var input = new HtmlInputHidden
+                {
+                   Name = "data", Value = this.EncodedData(), EnableViewState = false, EnableTheming = false 
+                };
+
+            return input;
+        }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// The compute private hash.
+        /// </summary>
+        /// <param name="dataToProtect">
+        /// The data to protect.
+        /// </param>
+        /// <returns>
+        /// The System.String.
+        /// </returns>
+        /// <exception cref="RecurlyException">
+        /// </exception>
+        private static string ComputePrivateHash(string dataToProtect)
+        {
+            if (string.IsNullOrEmpty(RecurlySubscriptionProvider.Current.PrivateKey))
+            {
+                throw new RecurlyException("A Private Key must be configured to use the Recurly Transparent Post API.");
+            }
+
+            byte[] saltBinary = SHA1.Create().ComputeHash(Encoding.ASCII.GetBytes(dataToProtect));
+            string saltHex = BitConverter.ToString(saltBinary).Replace("-", string.Empty).ToLower();
+            string salt = saltHex.Substring(0, 20);
+
+            var hmacSha1 = new HMACSHA1(Encoding.ASCII.GetBytes(RecurlySubscriptionProvider.Current.PrivateKey));
+            hmacSha1.Initialize();
+
+            byte[] privateKeyBinary = Encoding.ASCII.GetBytes(salt);
+            byte[] passkeyBinary = hmacSha1.ComputeHash(privateKeyBinary, 0, privateKeyBinary.Length);
+
+            return Convert.ToBase64String(passkeyBinary).Trim();
+        }
+
+        /// <summary>
+        /// The get result.
+        /// </summary>
+        /// <param name="resultKey">
+        /// The result key.
+        /// </param>
+        /// <param name="readXmlDelegate">
+        /// The read xml delegate.
+        /// </param>
+        /// <returns>
+        /// The System.Net.HttpStatusCode.
+        /// </returns>
+        private static HttpStatusCode GetResult(string resultKey, RecurlyClient.ReadXmlDelegate readXmlDelegate)
+        {
+            HttpStatusCode statusCode = RecurlyClient.PerformRequest(
+                RecurlyClient.HttpRequestMethod.Get, 
+                ResultsUrlPrefix + HttpUtility.UrlEncode(resultKey), 
+                readXmlDelegate);
+
+            return statusCode;
+        }
+
+        /// <summary>
+        /// The url.
+        /// </summary>
+        /// <param name="urlFormat">
+        /// The url format.
+        /// </param>
+        /// <returns>
+        /// The System.String.
+        /// </returns>
+        private static string Url(string urlFormat)
+        {
+            return RecurlyClient.ServerUrl(RecurlySubscriptionProvider.Current.Environment)
+                   + string.Format(urlFormat, RecurlySubscriptionProvider.Current.Subdomain);
+        }
+
+        /// <summary>
+        /// The encoded data.
+        /// </summary>
+        /// <returns>
+        /// The System.String.
+        /// </returns>
+        private string EncodedData()
+        {
+            string dataToProtect = string.Format(
+                "redirect_url={0}&account%5Baccount_code%5D={1}", 
+                HttpUtility.UrlEncode(this.RedirectUrl), 
+                HttpUtility.UrlEncode(this.AccountCode));
+
+            return string.Format("{0}|{1}", ComputePrivateHash(dataToProtect), dataToProtect);
+        }
+
+        #endregion
+    }
+}

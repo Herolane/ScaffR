@@ -1,0 +1,115 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Subscriptions.Recurly
+{
+    using System.Collections.Generic;
+    using System.Net;
+    using System.Web;
+    using System.Xml;
+
+    /// <summary>
+    /// The recurly invoice list.
+    /// </summary>
+    public class RecurlyInvoiceList : List<RecurlyInvoice>
+    {
+        #region Constants
+
+        /// <summary>
+        /// The url postfix.
+        /// </summary>
+        private const string UrlPostfix = "/invoices";
+
+        #endregion
+
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecurlyInvoiceList"/> class.
+        /// </summary>
+        internal RecurlyInvoiceList()
+        {
+        }
+
+        #endregion
+
+        #region Public Methods and Operators
+
+        /// <summary>
+        /// The get invoices.
+        /// </summary>
+        /// <param name="accountCode">
+        /// The account code.
+        /// </param>
+        /// <param name="pageNumber">
+        /// The page number.
+        /// </param>
+        /// <returns>
+        /// The <#= Model.Namespace #>.Subscriptions.Recurly.RecurlyInvoice[].
+        /// </returns>
+        public static RecurlyInvoice[] GetInvoices(string accountCode, int pageNumber = 1)
+        {
+            var invoiceList = new RecurlyInvoiceList();
+
+            HttpStatusCode statusCode = RecurlyClient.PerformRequest(
+                RecurlyClient.HttpRequestMethod.Get, AccountInvoicesUrl(accountCode, pageNumber), invoiceList.ReadXml);
+
+            if (statusCode == HttpStatusCode.NotFound)
+            {
+                return null;
+            }
+
+            return invoiceList.ToArray();
+        }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// The read xml.
+        /// </summary>
+        /// <param name="reader">
+        /// The reader.
+        /// </param>
+        internal void ReadXml(XmlTextReader reader)
+        {
+            while (reader.Read())
+            {
+                // End of invoices element, get out of here
+                if (reader.Name == "invoices" && reader.NodeType == XmlNodeType.EndElement)
+                {
+                    break;
+                }
+
+                if (reader.NodeType == XmlNodeType.Element)
+                {
+                    switch (reader.Name)
+                    {
+                        case "invoice":
+                            this.Add(new RecurlyInvoice(reader));
+                            break;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// The account invoices url.
+        /// </summary>
+        /// <param name="accountCode">
+        /// The account code.
+        /// </param>
+        /// <param name="pageNumber">
+        /// The page number.
+        /// </param>
+        /// <returns>
+        /// The System.String.
+        /// </returns>
+        private static string AccountInvoicesUrl(string accountCode, int pageNumber)
+        {
+            return RecurlyAccount.UrlPrefix + HttpUtility.UrlEncode(accountCode) + UrlPostfix + "?page=" + pageNumber;
+        }
+
+        #endregion
+    }
+}

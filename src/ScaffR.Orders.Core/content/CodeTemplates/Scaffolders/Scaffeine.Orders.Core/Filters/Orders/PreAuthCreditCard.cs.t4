@@ -1,0 +1,20 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Common.Ordering.Filters.Orders
+{
+    using Infrastructure.Pipeline;
+    using Extensions;
+
+    public class PreAuthCreditCard : Filter<OrderContext>
+    {
+        public override bool Process(ref OrderContext data)
+        {
+            var total = data.Order.GetOrderTotal();
+            var card = data.Order.Customer.BillingInformation;
+            var customer = data.Order.Customer;
+
+            // if authorized, true, else, false
+            return true;
+        }
+    }
+}

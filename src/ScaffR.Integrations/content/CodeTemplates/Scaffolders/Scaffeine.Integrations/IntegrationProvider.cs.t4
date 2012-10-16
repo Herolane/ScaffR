@@ -1,0 +1,13 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Integrations
+{
+    using System.Configuration.Provider;
+
+    public abstract class IntegrationProvider : ProviderBase
+    {
+        public abstract string GetConnectUrl(string redirectUrl);
+        public abstract string GetTokenUrl(string code, string redirectUrl);
+        public abstract string GetAccessToken(string tokenUrl);
+    }
+}

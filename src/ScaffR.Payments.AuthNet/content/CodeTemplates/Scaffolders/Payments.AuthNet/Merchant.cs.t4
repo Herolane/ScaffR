@@ -1,0 +1,29 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Payments.AuthNet
+{
+    /// <summary>
+    ///   The merchant.
+    /// </summary>
+    public class Merchant
+    {
+        #region Fields
+
+        /// <summary>
+        ///   The company name.
+        /// </summary>
+        public string CompanyName;
+
+        /// <summary>
+        ///   The duplicate window.
+        /// </summary>
+        public string DuplicateWindow;
+
+        /// <summary>
+        ///   The merchant email.
+        /// </summary>
+        public string MerchantEmail;
+
+        #endregion
+    }
+}

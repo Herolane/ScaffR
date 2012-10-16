@@ -1,0 +1,19 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Payments.AuthNet.Mappers
+{
+    using AutoMapper;
+
+    public class AuthNetResponseAuthorizationResponseMapper : TypeConverter<AuthNetResponse, AuthorizationResponse>
+    {
+        protected override AuthorizationResponse ConvertCore(AuthNetResponse source)
+        {
+            var authResponse = new AuthorizationResponse(source.Approved, string.Empty)
+            {
+                ApprovalCode = source.ApprovalCode,
+                ErrorMessage = source.DisplayText
+            };
+            return authResponse;
+        }
+    }
+}

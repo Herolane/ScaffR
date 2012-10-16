@@ -1,0 +1,148 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Subscriptions.Recurly
+{
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Net;
+    using System.Xml;
+
+    /// <summary>
+    /// An individual error message.
+    /// For more information, please visit http://docs.recurly.com/api/errors
+    /// </summary>
+    public class RecurlyError
+    {
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecurlyError"/> class.
+        /// </summary>
+        /// <param name="reader">
+        /// The reader.
+        /// </param>
+        internal RecurlyError(XmlTextReader reader)
+        {
+            if (reader.HasAttributes)
+            {
+                try
+                {
+                    this.Field = reader.GetAttribute("field");
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                }
+
+                try
+                {
+                    this.Code = reader.GetAttribute("code");
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                }
+            }
+
+            this.Message = reader.ReadElementContentAsString();
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Error code set for certain transaction failures.
+        /// </summary>
+        public string Code { get; internal set; }
+
+        /// <summary>
+        /// Field causing the error, if appropriate.
+        /// </summary>
+        public string Field { get; internal set; }
+
+        /// <summary>
+        /// Error message
+        /// </summary>
+        public string Message { get; internal set; }
+
+        #endregion
+
+        #region Public Methods and Operators
+
+        /// <summary>
+        /// The to string.
+        /// </summary>
+        /// <returns>
+        /// The System.String.
+        /// </returns>
+        public override string ToString()
+        {
+            if (!string.IsNullOrEmpty(this.Field))
+            {
+                return string.Format("{0} (Field: {1})", this.Message, this.Field);
+            }
+            else if (!string.IsNullOrEmpty(this.Code))
+            {
+                return string.Format("{0} (Code: {1})", this.Message, this.Code);
+            }
+            else
+            {
+                return this.Message;
+            }
+        }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// The read response and parse errors.
+        /// </summary>
+        /// <param name="response">
+        /// The response.
+        /// </param>
+        /// <returns>
+        /// The <#= Model.Namespace #>.Subscriptions.Recurly.RecurlyError[].
+        /// </returns>
+        internal static RecurlyError[] ReadResponseAndParseErrors(HttpWebResponse response)
+        {
+            if (response == null)
+            {
+                return new RecurlyError[0];
+            }
+
+            using (Stream responseStream = response.GetResponseStream())
+            {
+                var errors = new List<RecurlyError>();
+
+                try
+                {
+                    using (var xmlReader = new XmlTextReader(responseStream))
+                    {
+                        // Parse errors collection
+                        while (xmlReader.Read())
+                        {
+                            if (xmlReader.Name == "errors" && xmlReader.NodeType == XmlNodeType.EndElement)
+                            {
+                                break;
+                            }
+
+                            if (xmlReader.Name == "error" && xmlReader.NodeType == XmlNodeType.Element)
+                            {
+                                errors.Add(new RecurlyError(xmlReader));
+                            }
+                        }
+                    }
+                }
+                catch (XmlException)
+                {
+                    // Do nothing
+                }
+
+                return errors.ToArray();
+            }
+        }
+
+        #endregion
+    }
+}

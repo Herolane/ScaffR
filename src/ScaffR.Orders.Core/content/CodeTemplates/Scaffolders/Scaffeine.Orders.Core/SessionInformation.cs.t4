@@ -1,0 +1,10 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Model
+{
+    public class SessionInformation
+    {
+        public string IPAddress { get; set; }
+        public string SessionId { get; set; }
+    }
+}

@@ -1,0 +1,178 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Subscriptions.Recurly
+{
+    using System.Net;
+    using System.Web;
+    using System.Xml;
+
+    /// <summary>
+    /// The recurly plan.
+    /// </summary>
+    public class RecurlyPlan
+    {
+        #region Constants
+
+        /// <summary>
+        /// The url prefix.
+        /// </summary>
+        private const string UrlPrefix = "/company/plans/";
+
+        #endregion
+
+        #region Enums
+
+        /// <summary>
+        /// The interval unit.
+        /// </summary>
+        public enum IntervalUnit
+        {
+            /// <summary>
+            /// The days.
+            /// </summary>
+            Days, 
+
+            /// <summary>
+            /// The months.
+            /// </summary>
+            Months
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Gets the description.
+        /// </summary>
+        public string Description { get; private set; }
+
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        public string Name { get; private set; }
+
+        /// <summary>
+        /// Gets the plan code.
+        /// </summary>
+        public string PlanCode { get; private set; }
+
+        /// <summary>
+        /// Gets the plan interval length.
+        /// </summary>
+        public int PlanIntervalLength { get; private set; }
+
+        /// <summary>
+        /// Gets the plan interval unit.
+        /// </summary>
+        public IntervalUnit PlanIntervalUnit { get; private set; }
+
+        /// <summary>
+        /// Gets the trial interval length.
+        /// </summary>
+        public int TrialIntervalLength { get; private set; }
+
+        /// <summary>
+        /// Gets the unit amount in cents.
+        /// </summary>
+        public int UnitAmountInCents { get; private set; }
+
+        #endregion
+
+        #region Public Methods and Operators
+
+        /// <summary>
+        /// The get.
+        /// </summary>
+        /// <param name="planCode">
+        /// The plan code.
+        /// </param>
+        /// <returns>
+        /// The <#= Model.Namespace #>.Subscriptions.Recurly.RecurlyPlan.
+        /// </returns>
+        public static RecurlyPlan Get(string planCode)
+        {
+            var plan = new RecurlyPlan();
+
+            HttpStatusCode statusCode = RecurlyClient.PerformRequest(
+                RecurlyClient.HttpRequestMethod.Get, UrlPrefix + HttpUtility.UrlEncode(planCode), plan.ReadXml);
+
+            if (statusCode == HttpStatusCode.NotFound)
+            {
+                return null;
+            }
+
+            return plan;
+        }
+
+        /// <summary>
+        /// The to string.
+        /// </summary>
+        /// <returns>
+        /// The System.String.
+        /// </returns>
+        public override string ToString()
+        {
+            return "Recurly Plan: " + this.PlanCode;
+        }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// The read xml.
+        /// </summary>
+        /// <param name="reader">
+        /// The reader.
+        /// </param>
+        internal void ReadXml(XmlTextReader reader)
+        {
+            while (reader.Read())
+            {
+                // End of account element, get out of here
+                if (reader.Name == "plan" && reader.NodeType == XmlNodeType.EndElement)
+                {
+                    break;
+                }
+
+                if (reader.NodeType == XmlNodeType.Element)
+                {
+                    switch (reader.Name)
+                    {
+                        case "plan_code":
+                            this.PlanCode = reader.ReadElementContentAsString();
+                            break;
+
+                        case "description":
+                            this.Description = reader.ReadElementContentAsString();
+                            break;
+
+                        case "name":
+                            this.Name = reader.ReadElementContentAsString();
+                            break;
+
+                        case "unit_amount_in_cents":
+                            this.UnitAmountInCents = reader.ReadElementContentAsInt();
+                            break;
+
+                        case "plan_interval_length":
+                            this.PlanIntervalLength = reader.ReadElementContentAsInt();
+                            break;
+
+                        case "plan_interval_unit":
+                            string unit = reader.ReadElementContentAsString();
+                            this.PlanIntervalUnit = unit == "days" ? IntervalUnit.Days : IntervalUnit.Months;
+                            break;
+
+                        case "trial_interval_length":
+                            this.TrialIntervalLength = reader.ReadElementContentAsInt();
+                            break;
+                    }
+                }
+            }
+        }
+
+        #endregion
+    }
+}

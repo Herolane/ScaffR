@@ -1,0 +1,13 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Payments
+{
+    using System.Configuration.Provider;
+
+    public abstract class PaymentProvider : ProviderBase
+    {
+        public abstract AuthorizationResponse Authorization(AuthorizationRequest request);
+
+        public abstract CaptureResponse Capture(CaptureRequest request);
+    }
+}

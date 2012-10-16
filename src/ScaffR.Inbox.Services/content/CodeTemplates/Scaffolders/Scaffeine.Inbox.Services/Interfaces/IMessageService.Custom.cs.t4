@@ -1,0 +1,16 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Interfaces.Service
+{
+    using System.Collections.Generic;
+    using Model;
+    
+    public partial interface IMessageService
+    {
+        void SendMessage(int userId, string subject, string textBody, int[] attachments, int[] receivers, int? parentId = null);
+
+        IEnumerable<Message> GetMessagesForFolder(int userId, int folderId);
+
+        IEnumerable<Folder> GetUserFolders(int userId);
+    }
+}

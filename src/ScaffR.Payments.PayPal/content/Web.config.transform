@@ -1,0 +1,11 @@
+﻿<configuration>
+
+  <$rootnamespace$>
+    <$rootnamespace$.Payments>
+      <providers>
+        <add name="PayPal" type="$rootnamespace$.Payments.PayPal.PayPalPaymentProvider, $rootnamespace$.Payments.PayPal"/>
+      </providers>
+    </$rootnamespace$.Payments>
+  </$rootnamespace$>
+
+</configuration>

@@ -1,0 +1,13 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Interfaces.Data
+{
+    using Model;
+	using System.Collections.Generic;
+    
+    public partial interface IMessageRepository
+    {
+        Attachment GetAttachmentById(int attachmentId);
+        IEnumerable<Folder> GetUserFolders(int userId);
+    }
+}

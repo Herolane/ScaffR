@@ -1,0 +1,53 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.ShippingRates
+{
+    using System.Configuration.Provider;
+    using System.Web.Configuration;
+
+    public partial class ShippingRatesManager
+    {
+        private static readonly object _lock = new object();
+        private static volatile ShippingRatesProvider _provider;
+        private static ShippingRatesProviderCollection _providers;
+
+        public static ShippingRatesProvider Provider
+        {
+            get
+            {
+                LoadProviders();
+                return _provider;
+            }
+        }
+
+        public static ShippingRatesProviderCollection Providers
+        {
+            get
+            {
+                LoadProviders();
+                return _providers;
+            }
+        }
+
+        private static void LoadProviders()
+        {
+            if (_provider == null)
+            {
+                lock (_lock)
+                {
+                    if (_provider == null)
+                    {
+                        var section = (ShippingRatesSection)WebConfigurationManager.GetSection("<#= Model.Namespace #>/<#= Model.Namespace #>.ShippingRates");
+
+                        _providers = new ShippingRatesProviderCollection();
+                        ProvidersHelper.InstantiateProviders(section.Providers, _providers, typeof(ShippingRatesProvider));
+                        _provider = _providers[section.DefaultProvider];
+
+                        if (_provider == null)
+                            throw new ProviderException("Unable to load default SubscriptionProvider");
+                    }
+                }
+            }
+        }
+    }
+}

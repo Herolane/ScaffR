@@ -1,0 +1,19 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Configuration
+{
+    using System.Configuration;
+    using Subscriptions;
+
+    public partial class CoreSection
+    {
+        [ConfigurationProperty("subscriptions", IsRequired = true)]
+        public SubscriptionsElement Subscriptions
+        {
+            get
+            {
+                return (SubscriptionsElement)base["subscriptions"];
+            }
+        }
+    }
+}

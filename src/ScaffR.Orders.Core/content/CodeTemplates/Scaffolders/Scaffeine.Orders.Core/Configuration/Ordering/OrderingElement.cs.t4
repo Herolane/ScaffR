@@ -1,0 +1,36 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Configuration.Ordering
+{
+    using System.Configuration;
+    using Pipeline;
+
+    public class OrderingElement : ConfigurationElement
+    {
+        [ConfigurationProperty("preOrderPipeline", IsRequired = true)]
+        public PipelineConfigurationElement PreOrderPipeline
+        {
+            get
+            {
+                return (PipelineConfigurationElement)base["preOrderPipeline"];
+            }
+        }
+
+        [ConfigurationProperty("orderLinePipeline", IsRequired = true)]
+        public PipelineConfigurationElement OrderLinePipeline
+        {
+            get
+            {
+                return (PipelineConfigurationElement)base["orderLinePipeline"];
+            }
+        }
+        [ConfigurationProperty("postOrderPipeline", IsRequired = true)]
+        public PipelineConfigurationElement PostOrderPipeline
+        {
+            get
+            {
+                return (PipelineConfigurationElement)base["postOrderPipeline"];
+            }
+        }
+    }
+}

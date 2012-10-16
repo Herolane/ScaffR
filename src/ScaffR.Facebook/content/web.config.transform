@@ -1,0 +1,11 @@
+﻿<configuration>
+
+  <$rootnamespace$>
+    <$rootnamespace$.Integrations>
+      <providers>
+        <add name="Facebook" type="$rootnamespace$.Facebook.FacebookProvider, $rootnamespace$.Facebook"/>
+      </providers>
+    </$rootnamespace$.Integrations>
+  </$rootnamespace$>
+
+</configuration>

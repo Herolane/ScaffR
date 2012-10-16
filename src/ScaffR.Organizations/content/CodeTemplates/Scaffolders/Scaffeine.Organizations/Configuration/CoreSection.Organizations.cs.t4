@@ -1,0 +1,19 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Configuration
+{
+    using System.Configuration;
+    using Organizations;
+
+    public partial class CoreSection
+    {
+        [ConfigurationProperty("organizations", IsRequired = true)]
+        public OrganizationSettings Organization
+        {
+            get
+            {
+                return (OrganizationSettings)base["organizations"];
+            }
+        }
+    }
+}

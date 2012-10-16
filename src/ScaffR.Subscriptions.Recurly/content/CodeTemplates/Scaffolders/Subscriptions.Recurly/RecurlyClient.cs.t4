@@ -1,0 +1,444 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="RecurlyClient.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Class for the Recurly client library.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace <#= Model.Namespace #>.Subscriptions.Recurly
+{
+    using System;
+    using System.Diagnostics;
+    using System.IO;
+    using System.Net;
+    using System.Reflection;
+    using System.Text;
+    using System.Xml;
+
+    /// <summary>
+    /// Class for the Recurly client library.
+    /// </summary>
+    internal class RecurlyClient
+    {
+        #region Constants
+
+        /// <summary>
+        /// The development server url.
+        /// </summary>
+        private const string DevelopmentServerUrl = "http://api.lvh.me:3000";
+
+        /// <summary>
+        /// The production server url.
+        /// </summary>
+        private const string ProductionServerUrl = "https://api.recurly.com";
+
+        #endregion
+
+        #region Static Fields
+
+        /// <summary>
+        /// The _authorization header value.
+        /// </summary>
+        private static string _authorizationHeaderValue;
+
+        /// <summary>
+        /// The _user agent.
+        /// </summary>
+        private static string _userAgent;
+
+        #endregion
+
+        #region Delegates
+
+        /// <summary>
+        /// The read xml delegate.
+        /// </summary>
+        /// <param name="xmlReader">
+        /// The xml reader.
+        /// </param>
+        public delegate void ReadXmlDelegate(XmlTextReader xmlReader);
+
+        /// <summary>
+        /// The write xml delegate.
+        /// </summary>
+        /// <param name="xmlWriter">
+        /// The xml writer.
+        /// </param>
+        public delegate void WriteXmlDelegate(XmlTextWriter xmlWriter);
+
+        #endregion
+
+        #region Enums
+
+        /// <summary>
+        /// The http request method.
+        /// </summary>
+        public enum HttpRequestMethod
+        {
+            /// <summary>
+            /// The get.
+            /// </summary>
+            Get, 
+
+            /// <summary>
+            /// The post.
+            /// </summary>
+            Post, 
+
+            /// <summary>
+            /// The put.
+            /// </summary>
+            Put, 
+
+            /// <summary>
+            /// The delete.
+            /// </summary>
+            Delete
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Recurly API Key
+        /// </summary>
+        public static string ApiKey
+        {
+            get
+            {
+                return RecurlySubscriptionProvider.Current.ApiKey;
+            }
+        }
+
+        /// <summary>
+        /// Recurly Site Subdomain
+        /// </summary>
+        public static string ApiSubdomain
+        {
+            get
+            {
+                return RecurlySubscriptionProvider.Current.Subdomain;
+            }
+        }
+
+        /// <summary>
+        /// Recurly Environment: Production or Sandbox
+        /// </summary>
+        public static RecurlySubscriptionProvider.EnvironmentType Environment
+        {
+            get
+            {
+                return RecurlySubscriptionProvider.Current.Environment;
+            }
+        }
+
+        /// <summary>
+        /// Recurly Private Key for Transparent Post API
+        /// </summary>
+        public static string PrivateKey
+        {
+            get
+            {
+                return RecurlySubscriptionProvider.Current.PrivateKey;
+            }
+        }
+
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// Create the web request header value for the API Authorization.
+        /// </summary>
+        private static string AuthorizationHeaderValue
+        {
+            get
+            {
+                if (_authorizationHeaderValue == null)
+                {
+                    if (!string.IsNullOrEmpty(ApiKey))
+                    {
+                        _authorizationHeaderValue = "Basic " + Convert.ToBase64String(Encoding.UTF8.GetBytes(ApiKey));
+                    }
+                }
+
+                return _authorizationHeaderValue;
+            }
+        }
+
+        /// <summary>
+        /// User Agent header for connecting to Recurly. If an error occurs, Recurly uses this information to find
+        /// better diagnose the problem.
+        /// </summary>
+        private static string UserAgent
+        {
+            get
+            {
+                if (_userAgent == null)
+                {
+                    _userAgent =
+                        string.Format("Recurly .NET Client v" + Assembly.GetExecutingAssembly().GetName().Version);
+                }
+
+                return _userAgent;
+            }
+        }
+
+        #endregion
+
+        #region Public Methods and Operators
+
+        /// <summary>
+        /// The perform request.
+        /// </summary>
+        /// <param name="method">
+        /// The method.
+        /// </param>
+        /// <param name="urlPath">
+        /// The url path.
+        /// </param>
+        /// <returns>
+        /// The System.Net.HttpStatusCode.
+        /// </returns>
+        public static HttpStatusCode PerformRequest(HttpRequestMethod method, string urlPath)
+        {
+            return PerformRequest(method, urlPath, null, null);
+        }
+
+        /// <summary>
+        /// The perform request.
+        /// </summary>
+        /// <param name="method">
+        /// The method.
+        /// </param>
+        /// <param name="urlPath">
+        /// The url path.
+        /// </param>
+        /// <param name="readXmlDelegate">
+        /// The read xml delegate.
+        /// </param>
+        /// <returns>
+        /// The System.Net.HttpStatusCode.
+        /// </returns>
+        public static HttpStatusCode PerformRequest(
+            HttpRequestMethod method, string urlPath, ReadXmlDelegate readXmlDelegate)
+        {
+            return PerformRequest(method, urlPath, null, readXmlDelegate);
+        }
+
+        /// <summary>
+        /// The perform request.
+        /// </summary>
+        /// <param name="method">
+        /// The method.
+        /// </param>
+        /// <param name="urlPath">
+        /// The url path.
+        /// </param>
+        /// <param name="writeXmlDelegate">
+        /// The write xml delegate.
+        /// </param>
+        /// <returns>
+        /// The System.Net.HttpStatusCode.
+        /// </returns>
+        public static HttpStatusCode PerformRequest(
+            HttpRequestMethod method, string urlPath, WriteXmlDelegate writeXmlDelegate)
+        {
+            return PerformRequest(method, urlPath, writeXmlDelegate, null);
+        }
+
+        /// <summary>
+        /// The perform request.
+        /// </summary>
+        /// <param name="method">
+        /// The method.
+        /// </param>
+        /// <param name="urlPath">
+        /// The url path.
+        /// </param>
+        /// <param name="writeXmlDelegate">
+        /// The write xml delegate.
+        /// </param>
+        /// <param name="readXmlDelegate">
+        /// The read xml delegate.
+        /// </param>
+        /// <returns>
+        /// The System.Net.HttpStatusCode.
+        /// </returns>
+        /// <exception cref="NotFoundException">
+        /// </exception>
+        /// <exception cref="InvalidCredentialsException">
+        /// </exception>
+        /// <exception cref="ValidationException">
+        /// </exception>
+        /// <exception cref="TemporarilyUnavailableException">
+        /// </exception>
+        /// <exception cref="RecurlyServerException">
+        /// </exception>
+        public static HttpStatusCode PerformRequest(
+            HttpRequestMethod method, string urlPath, WriteXmlDelegate writeXmlDelegate, ReadXmlDelegate readXmlDelegate)
+        {
+            var request = (HttpWebRequest)WebRequest.Create(ServerUrl(Environment) + urlPath);
+            request.Accept = "application/xml"; // Tells the server to return XML instead of HTML
+            request.ContentType = "application/xml; charset=utf-8"; // The request is an XML document
+            request.SendChunked = false; // Send it all as one request
+            request.UserAgent = UserAgent;
+            request.Headers.Add(HttpRequestHeader.Authorization, AuthorizationHeaderValue);
+            request.Method = method.ToString().ToUpper();
+
+            Debug.WriteLine(string.Format("Recurly: Requesting {0} {1}", request.Method, request.RequestUri));
+
+            if ((method == HttpRequestMethod.Post || method == HttpRequestMethod.Put) && (writeXmlDelegate != null))
+            {
+                // 60 second timeout -- some payment gateways (e.g. PayPal) can take a while to respond
+                request.Timeout = 60000;
+
+                // Write POST/PUT body
+                using (Stream requestStream = request.GetRequestStream()) WritePostParameters(requestStream, writeXmlDelegate);
+            }
+
+            try
+            {
+                using (var response = (HttpWebResponse)request.GetResponse()) return ReadWebResponse(response, readXmlDelegate);
+            }
+            catch (WebException ex)
+            {
+                if (ex.Response != null)
+                {
+                    var response = (HttpWebResponse)ex.Response;
+                    HttpStatusCode statusCode = response.StatusCode;
+                    RecurlyError[] errors;
+
+                    Debug.WriteLine(
+                        string.Format("Recurly Library Received: {0} - {1}", (int)statusCode, statusCode.ToString()));
+
+                    switch (response.StatusCode)
+                    {
+                        case HttpStatusCode.OK:
+                        case HttpStatusCode.Accepted:
+                        case HttpStatusCode.Created:
+                        case HttpStatusCode.NoContent:
+                            return ReadWebResponse(response, readXmlDelegate);
+
+                        case HttpStatusCode.NotFound:
+                            errors = RecurlyError.ReadResponseAndParseErrors(response);
+                            if (errors.Length >= 0)
+                            {
+                                throw new NotFoundException(errors[0].Message, errors);
+                            }
+
+                            throw new NotFoundException("The requested object was not found.", errors);
+
+                        case HttpStatusCode.Unauthorized:
+                        case HttpStatusCode.Forbidden:
+                            errors = RecurlyError.ReadResponseAndParseErrors(response);
+                            throw new InvalidCredentialsException(errors);
+
+                        case HttpStatusCode.PreconditionFailed:
+                            errors = RecurlyError.ReadResponseAndParseErrors(response);
+                            throw new ValidationException(errors);
+
+                        case HttpStatusCode.ServiceUnavailable:
+                            throw new TemporarilyUnavailableException();
+
+                        case HttpStatusCode.InternalServerError:
+                            errors = RecurlyError.ReadResponseAndParseErrors(response);
+                            throw new RecurlyServerException(errors);
+                    }
+
+                    if ((int)statusCode == ValidationException.HttpStatusCode)
+                    {
+                        errors = RecurlyError.ReadResponseAndParseErrors(response);
+                        throw new ValidationException(errors);
+                    }
+                }
+
+                throw;
+            }
+        }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// The server url.
+        /// </summary>
+        /// <param name="environment">
+        /// The environment.
+        /// </param>
+        /// <returns>
+        /// The System.String.
+        /// </returns>
+        /// <exception cref="ApplicationException">
+        /// </exception>
+        internal static string ServerUrl(RecurlySubscriptionProvider.EnvironmentType environment)
+        {
+            switch (environment)
+            {
+                case RecurlySubscriptionProvider.EnvironmentType.Production:
+                    return ProductionServerUrl;
+                case RecurlySubscriptionProvider.EnvironmentType.Development:
+                    return DevelopmentServerUrl;
+                default:
+                    throw new ApplicationException("Unknown Recurly Environment.");
+            }
+        }
+
+        /// <summary>
+        /// The read web response.
+        /// </summary>
+        /// <param name="response">
+        /// The response.
+        /// </param>
+        /// <param name="readXmlDelegate">
+        /// The read xml delegate.
+        /// </param>
+        /// <returns>
+        /// The System.Net.HttpStatusCode.
+        /// </returns>
+        private static HttpStatusCode ReadWebResponse(HttpWebResponse response, ReadXmlDelegate readXmlDelegate)
+        {
+            HttpStatusCode statusCode = response.StatusCode;
+
+            if (readXmlDelegate != null)
+            {
+                using (Stream responseStream = response.GetResponseStream())
+                {
+                    using (var xmlReader = new XmlTextReader(responseStream)) readXmlDelegate(xmlReader);
+                }
+            }
+
+            return statusCode;
+        }
+
+        /// <summary>
+        /// The write post parameters.
+        /// </summary>
+        /// <param name="outputStream">
+        /// The output stream.
+        /// </param>
+        /// <param name="writeXmlDelegate">
+        /// The write xml delegate.
+        /// </param>
+        private static void WritePostParameters(Stream outputStream, WriteXmlDelegate writeXmlDelegate)
+        {
+            using (var xmlWriter = new XmlTextWriter(outputStream, Encoding.UTF8))
+            {
+                xmlWriter.WriteStartDocument();
+                xmlWriter.Formatting = Formatting.Indented;
+
+                writeXmlDelegate(xmlWriter);
+
+                xmlWriter.WriteEndDocument();
+            }
+        }
+
+        #endregion
+    }
+}

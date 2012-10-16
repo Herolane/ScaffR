@@ -1,0 +1,33 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Payments.AuthNet
+{
+    /// <summary>
+    ///   The transaction.
+    /// </summary>
+    public class Transaction
+    {
+        public double Amount;
+
+        public string CurrencyCode;
+
+        public bool DelimData;
+
+        public string PreviousAuthCode;
+
+        public bool Recurring;
+
+        public bool TestMode;
+
+        public string TransactionId;
+
+        public AuthType Type;
+
+        public string Version;
+
+        public Transaction()
+        {
+            this.CurrencyCode = "USD";
+        }
+    }
+}

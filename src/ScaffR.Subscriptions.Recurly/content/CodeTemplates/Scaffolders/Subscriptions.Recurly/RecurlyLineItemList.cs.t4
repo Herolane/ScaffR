@@ -1,0 +1,127 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="RecurlyLineItemList.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Internal class to help get a list of charges on an account.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace <#= Model.Namespace #>.Subscriptions.Recurly
+{
+    using System.Collections.Generic;
+    using System.Net;
+    using System.Xml;
+
+    /// <summary>
+    /// Internal class to help get a list of charges on an account.
+    /// </summary>
+    public class RecurlyLineItemList : List<RecurlyLineItem>
+    {
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecurlyLineItemList"/> class.
+        /// </summary>
+        internal RecurlyLineItemList()
+        {
+        }
+
+        #endregion
+
+        #region Public Methods and Operators
+
+        /// <summary>
+        /// The get charges.
+        /// </summary>
+        /// <param name="accountCode">
+        /// The account code.
+        /// </param>
+        /// <returns>
+        /// The <#= Model.Namespace #>.Subscriptions.Recurly.RecurlyLineItem[].
+        /// </returns>
+        public static RecurlyLineItem[] GetCharges(string accountCode)
+        {
+            var chargeList = new RecurlyLineItemList();
+
+            HttpStatusCode statusCode = RecurlyClient.PerformRequest(
+                RecurlyClient.HttpRequestMethod.Get, RecurlyCharge.ChargesUrl(accountCode), chargeList.ReadXml);
+
+            if (statusCode == HttpStatusCode.NotFound)
+            {
+                return null;
+            }
+
+            return chargeList.ToArray();
+        }
+
+        /// <summary>
+        /// The get credits.
+        /// </summary>
+        /// <param name="accountCode">
+        /// The account code.
+        /// </param>
+        /// <returns>
+        /// The <#= Model.Namespace #>.Subscriptions.Recurly.RecurlyLineItem[].
+        /// </returns>
+        public static RecurlyLineItem[] GetCredits(string accountCode)
+        {
+            var creditList = new RecurlyLineItemList();
+
+            HttpStatusCode statusCode = RecurlyClient.PerformRequest(
+                RecurlyClient.HttpRequestMethod.Get, RecurlyCredit.CreditsUrl(accountCode), creditList.ReadXml);
+
+            if (statusCode == HttpStatusCode.NotFound)
+            {
+                return null;
+            }
+
+            return creditList.ToArray();
+        }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// The read xml.
+        /// </summary>
+        /// <param name="reader">
+        /// The reader.
+        /// </param>
+        internal void ReadXml(XmlTextReader reader)
+        {
+            while (reader.Read())
+            {
+                // End of account element, get out of here
+                if ((reader.Name == "charges" || reader.Name == "credits" || reader.Name == "line_items")
+                    && reader.NodeType == XmlNodeType.EndElement)
+                {
+                    break;
+                }
+
+                if (reader.NodeType == XmlNodeType.Element)
+                {
+                    switch (reader.Name)
+                    {
+                        case "charge":
+                            this.Add(new RecurlyCharge(reader));
+                            break;
+                        case "credit":
+                            this.Add(new RecurlyCredit(reader));
+                            break;
+                        case "line_item":
+
+                            // TODO: Fix this to parse correctly for credits
+                            this.Add(new RecurlyCharge(reader));
+                            break;
+                    }
+                }
+            }
+        }
+
+        #endregion
+    }
+}

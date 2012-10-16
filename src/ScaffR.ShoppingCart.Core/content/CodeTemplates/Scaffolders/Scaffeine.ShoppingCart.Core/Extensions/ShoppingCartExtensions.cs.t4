@@ -1,0 +1,15 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Common.ShoppingCart.Extensions
+{
+    using System.Linq;
+    using Model;
+
+    public static class ShoppingCartExtensions
+    {
+        public static decimal GetShoppingCartTotal(this ShoppingCart cart)
+        {
+            return cart.Items.Sum(x => ShoppingCartItemExtensions.GetShoppingCartLineItemTotalWithTax(x));
+        }
+    }
+}

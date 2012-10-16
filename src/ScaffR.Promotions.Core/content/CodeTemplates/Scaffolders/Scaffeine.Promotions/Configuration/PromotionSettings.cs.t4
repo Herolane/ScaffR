@@ -1,0 +1,29 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Configuration.Promotions
+{
+    using System.Configuration;
+    using Pipeline;
+
+    public partial class PromotionSettings : ConfigurationElement
+    {        
+        [ConfigurationProperty("name")]
+        public string Name 
+        { 
+            get { return (string)this["name"]; } 
+            set { this["name"] = value; }
+        }
+
+        [ConfigurationProperty("benefits")]
+        public PipelineConfigurationElement Benefits
+        {
+            get { return (PipelineConfigurationElement) base["benefits"]; }
+        }
+
+        [ConfigurationProperty("prerequisites")]
+        public PipelineConfigurationElement Prerequisites
+        {
+            get { return (PipelineConfigurationElement) base["prerequisites"]; }
+        }
+    }
+}

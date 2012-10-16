@@ -1,0 +1,59 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ValidationException.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Exception when a validation error prevents an object from being created, updated, or deleted.
+//   See the Errors collection for more information.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace <#= Model.Namespace #>.Subscriptions.Recurly
+{
+    /// <summary>
+    /// Exception when a validation error prevents an object from being created, updated, or deleted.
+    /// See the Errors collection for more information.
+    /// </summary>
+    public class ValidationException : RecurlyException
+    {
+        #region Constants
+
+        /// <summary>
+        /// HTTP Status Code 422 is "Unprocessable Entity"
+        /// </summary>
+        internal const int HttpStatusCode = 422;
+
+        #endregion
+
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValidationException"/> class.
+        /// </summary>
+        /// <param name="errors">
+        /// The errors.
+        /// </param>
+        internal ValidationException(RecurlyError[] errors)
+            : base("The information being saved is not valid.", errors)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValidationException"/> class.
+        /// </summary>
+        /// <param name="message">
+        /// The message.
+        /// </param>
+        /// <param name="errors">
+        /// The errors.
+        /// </param>
+        internal ValidationException(string message, RecurlyError[] errors)
+            : base(message, errors)
+        {
+        }
+
+        #endregion
+    }
+}

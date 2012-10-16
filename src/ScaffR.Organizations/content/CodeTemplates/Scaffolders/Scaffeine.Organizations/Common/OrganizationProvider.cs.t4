@@ -1,0 +1,13 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Common.Organizations
+{
+    using System.Collections.Generic;
+    using System.Configuration.Provider;
+    using Model;
+
+    public abstract class OrganizationProvider : ProviderBase
+    {
+        public abstract IList<User> GetContactsForUser(int userId);
+    }
+}

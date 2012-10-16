@@ -1,0 +1,257 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Subscriptions.Recurly
+{
+    using System;
+    using System.Net;
+    using System.Web;
+    using System.Xml;
+
+    /// <summary>
+    /// The recurly invoice.
+    /// </summary>
+    public class RecurlyInvoice
+    {
+        #region Constants
+
+        /// <summary>
+        /// The url prefix.
+        /// </summary>
+        private const string UrlPrefix = "/invoices/";
+
+        #endregion
+
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecurlyInvoice"/> class.
+        /// </summary>
+        internal RecurlyInvoice()
+        {
+            this.LineItems = new RecurlyLineItemList();
+            this.Payments = new RecurlyTransactionList();
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecurlyInvoice"/> class.
+        /// </summary>
+        /// <param name="reader">
+        /// The reader.
+        /// </param>
+        internal RecurlyInvoice(XmlTextReader reader)
+            : this()
+        {
+            this.ReadXml(reader);
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Gets the account code.
+        /// </summary>
+        public string AccountCode { get; private set; }
+
+        /// <summary>
+        /// Gets the date.
+        /// </summary>
+        public DateTime Date { get; private set; }
+
+        /// <summary>
+        /// Gets the id.
+        /// </summary>
+        public string Id { get; private set; }
+
+        /// <summary>
+        /// Gets the line items.
+        /// </summary>
+        public RecurlyLineItemList LineItems { get; private set; }
+
+        /// <summary>
+        /// Gets the number.
+        /// </summary>
+        public int Number { get; private set; }
+
+        /// <summary>
+        /// Gets the payments.
+        /// </summary>
+        public RecurlyTransactionList Payments { get; private set; }
+
+        #endregion
+
+        #region Public Methods and Operators
+
+        /// <summary>
+        /// Create an Invoice if there are outstanding charges on an account. If there are no outstanding
+        /// charges, null is returned.
+        /// </summary>
+        /// <param name="accountCode">
+        /// Account code
+        /// </param>
+        /// <returns>
+        /// The <#= Model.Namespace #>.Subscriptions.Recurly.RecurlyInvoice.
+        /// </returns>
+        public static RecurlyInvoice Create(string accountCode)
+        {
+            var invoice = new RecurlyInvoice();
+
+            HttpStatusCode statusCode = RecurlyClient.PerformRequest(
+                RecurlyClient.HttpRequestMethod.Post, 
+                "/accounts/" + HttpUtility.UrlEncode(accountCode) + UrlPrefix, 
+                invoice.ReadXml);
+
+            if ((int)statusCode == ValidationException.HttpStatusCode)
+            {
+                return null;
+            }
+
+            return invoice;
+        }
+
+        /// <summary>
+        /// Look up an Invoice.
+        /// </summary>
+        /// <param name="invoiceId">
+        /// Invoice ID
+        /// </param>
+        /// <returns>
+        /// The <#= Model.Namespace #>.Subscriptions.Recurly.RecurlyInvoice.
+        /// </returns>
+        public static RecurlyInvoice Get(string invoiceId)
+        {
+            var invoice = new RecurlyInvoice();
+
+            HttpStatusCode statusCode = RecurlyClient.PerformRequest(
+                RecurlyClient.HttpRequestMethod.Get, UrlPrefix + HttpUtility.UrlEncode(invoiceId), invoice.ReadXml);
+
+            if (statusCode == HttpStatusCode.NotFound)
+            {
+                return null;
+            }
+
+            return invoice;
+        }
+
+        /// <summary>
+        /// The equals.
+        /// </summary>
+        /// <param name="obj">
+        /// The obj.
+        /// </param>
+        /// <returns>
+        /// The System.Boolean.
+        /// </returns>
+        public override bool Equals(object obj)
+        {
+            if (obj is RecurlyInvoice)
+            {
+                return this.Equals((RecurlyInvoice)obj);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// The equals.
+        /// </summary>
+        /// <param name="invoice">
+        /// The invoice.
+        /// </param>
+        /// <returns>
+        /// The System.Boolean.
+        /// </returns>
+        public bool Equals(RecurlyInvoice invoice)
+        {
+            return this.Id == invoice.Id;
+        }
+
+        /// <summary>
+        /// The get hash code.
+        /// </summary>
+        /// <returns>
+        /// The System.Int32.
+        /// </returns>
+        public override int GetHashCode()
+        {
+            return this.Id.GetHashCode();
+        }
+
+        /// <summary>
+        /// The to string.
+        /// </summary>
+        /// <returns>
+        /// The System.String.
+        /// </returns>
+        public override string ToString()
+        {
+            return "Recurly Invoice: " + this.Id;
+        }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// The read xml.
+        /// </summary>
+        /// <param name="reader">
+        /// The reader.
+        /// </param>
+        internal void ReadXml(XmlTextReader reader)
+        {
+            while (reader.Read())
+            {
+                // End of invoice element, get out of here
+                if (reader.Name == "invoice" && reader.NodeType == XmlNodeType.EndElement)
+                {
+                    break;
+                }
+
+                if (reader.NodeType == XmlNodeType.Element)
+                {
+                    switch (reader.Name)
+                    {
+                        case "id":
+                            this.Id = reader.ReadElementContentAsString();
+                            break;
+
+                        case "account_code":
+                            this.AccountCode = reader.ReadElementContentAsString();
+                            break;
+
+                        case "date":
+                            DateTime date;
+                            if (DateTime.TryParse(reader.ReadElementContentAsString(), out date))
+                            {
+                                this.Date = date;
+                            }
+
+                            break;
+
+                        case "invoice_number":
+                            int invNumber;
+                            if (int.TryParse(reader.ReadElementContentAsString(), out invNumber))
+                            {
+                                this.Number = invNumber;
+                            }
+
+                            break;
+
+                        case "line_items":
+                            this.LineItems.ReadXml(reader);
+                            break;
+
+                        case "payments":
+                            this.Payments.ReadXml(reader);
+                            break;
+                    }
+                }
+            }
+        }
+
+        #endregion
+    }
+}

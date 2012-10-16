@@ -1,0 +1,15 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Model
+{
+	public class MessageReceiver : DomainObject
+    {
+        public Message Message { get; set; }
+        public int MessageId { get; set; }
+
+        public User User { get; set; }
+        public int UserId { get; set; }
+
+        public MessageStatus MessageStatus { get; set; }
+    }
+}

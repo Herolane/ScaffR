@@ -1,0 +1,17 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
+
+namespace <#= Model.Namespace #>.Core.Model
+{
+    [DataContract]
+    [DisplayColumn("Username")]
+    public partial class User
+    {
+        public long FacebookId { get; set; }
+		public string FacebookToken { get; set; }
+    }
+}

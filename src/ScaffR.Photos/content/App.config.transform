@@ -1,0 +1,18 @@
+﻿<configuration>
+
+  <$rootnamespace$>
+    <$rootnamespace$.Core>
+      <photos>
+        <PhotoResize>
+          <add name="Tiny" width="14" height="14" />
+          <add name="Small" width="90" height="90" />
+          <add name="Medium" width="200" height="200" />
+          <add name="Large" width="400" height="400" />
+        </PhotoResize>
+        <providers>
+        </providers>
+      </photos>
+    </$rootnamespace$.Core>
+  </$rootnamespace$>
+
+</configuration>

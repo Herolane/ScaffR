@@ -1,0 +1,15 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Subscriptions.Recurly
+{
+    /// <summary>
+    /// The requested object is not defined in Recurly.
+    /// </summary>
+    public class NotFoundException : RecurlyException
+    {
+        internal NotFoundException(string message, RecurlyError[] errors)
+            : base(message, errors)
+        {
+        }
+    }
+}

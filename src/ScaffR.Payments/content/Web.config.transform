@@ -1,0 +1,16 @@
+﻿<configuration>
+  
+  <configSections>
+    <sectionGroup name="$rootnamespace$">
+      <section name="$rootnamespace$.Payments" type="$rootnamespace$.Payments.PaymentsSection, $rootnamespace$.Payments" requirePermission="false"/>
+    </sectionGroup>
+  </configSections>
+  
+  <$rootnamespace$>
+    <$rootnamespace$.Payments>
+      <providers>        
+      </providers>
+    </$rootnamespace$.Payments>      
+  </$rootnamespace$>
+
+</configuration>
