@@ -57,7 +57,7 @@
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Payments\IRequestStrategy.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Payments\HttpGetStrategy.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Payments\IRequestFactory.cs.t4" />
-    <Compile Include="content\CodeTemplates\Scaffolders\ScaffR.Payments\PaymentProvider.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Payments\PaymentProvider.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Payments\PaymentProviderCollection.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Payments\PaymentsManager.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Payments\PaymentsSection.cs.t4" />
@@ -86,12 +86,12 @@
   <ItemGroup>
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Payments\IRequest.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Payments\IResponse.cs.t4" />
-    <Compile Include="content\CodeTemplates\Scaffolders\ScaffR.Payments\HttpPostStrategy.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Payments\HttpPostStrategy.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Payments\PaymentTransaction.cs.t4" />
-    <Compile Include="content\CodeTemplates\Scaffolders\ScaffR.Payments\AuthorizationResponse.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Payments\AuthorizationResponse.cs.t4" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="content\CodeTemplates\Scaffolders\ScaffR.Payments\AuthorizationRequest.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Payments\AuthorizationRequest.cs.t4" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
