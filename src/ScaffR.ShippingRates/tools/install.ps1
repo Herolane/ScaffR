@@ -4,4 +4,4 @@ add-project $shippingRatesProjectName | with-reference "System.Configuration,Sys
 
 get-project | with-reference $shippingRatesProjectName
 
-scaffold Scaffeine.ShippingRates
+scaffold ScaffR.ShippingRates

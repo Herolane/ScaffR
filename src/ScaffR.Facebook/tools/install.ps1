@@ -5,4 +5,4 @@ get-project | with-reference $facebookProjectName
 
 install-package AutoMapper -ProjectName $facebookProjectName
 
-scaffold Scaffeine.Facebook
+scaffold ScaffR.Facebook

@@ -83,7 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="content\CodeTemplates\Scaffolders\Payments.AuthNet\Authentication.cs.t4" />
-    <Compile Include="content\CodeTemplates\Scaffolders\Payments.AuthNet\AuthNetProvider.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Payments.AuthNet\AuthNetProvider.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\Payments.AuthNet\AuthNetResponse.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\Payments.AuthNet\TestMode.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\Payments.AuthNet\AuthType.cs.t4" />

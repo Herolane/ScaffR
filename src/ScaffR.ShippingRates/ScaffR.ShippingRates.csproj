@@ -46,8 +46,8 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.ShippingRates\ShippingRateRequest.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.ShippingRates\ShippingRateResponse.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.ShippingRates\ShippingRateRequest.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.ShippingRates\ShippingRateResponse.cs.t4" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -55,11 +55,11 @@
     <None Include="content\App.config.transform">
       <SubType>Designer</SubType>
     </None>
-    <Compile Include="content\CodeTemplates\Scaffolders\Scaffeine.ShippingRates\ShippingRatesManager.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.ShippingRates\ShippingRatesProvider.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.ShippingRates\ShippingRatesProviderCollection.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.ShippingRates\ShippingRatesSection.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.ShippingRates\Scaffeine.ShippingRates.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.ShippingRates\ShippingRatesManager.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.ShippingRates\ShippingRatesProvider.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.ShippingRates\ShippingRatesProviderCollection.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.ShippingRates\ShippingRatesSection.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.ShippingRates\ScaffR.ShippingRates.ps1" />
     <None Include="content\Web.config.transform">
       <SubType>Designer</SubType>
     </None>
@@ -68,9 +68,7 @@
     <None Include="tools\install.ps1" />
     <None Include="tools\uninstall.ps1" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="lib\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

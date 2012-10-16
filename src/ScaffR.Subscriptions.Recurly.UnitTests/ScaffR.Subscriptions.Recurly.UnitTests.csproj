@@ -46,8 +46,8 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly.UnitTests\Mother.cs.t4" />
-    <Compile Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly.UnitTests\RecurlySubscriptionProvider_Tests\WhenCreatingSubscription.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly.UnitTests\Mother.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Subscriptions.Recurly.UnitTests\RecurlySubscriptionProvider_Tests\WhenCreatingSubscription.cs.t4" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

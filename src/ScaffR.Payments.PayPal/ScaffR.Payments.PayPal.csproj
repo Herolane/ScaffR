@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <Compile Include="content\CodeTemplates\Scaffolders\Payments.PayPal\PayPalPaymentProvider.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\Payments.PayPal\PayPalPaymentProvider.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\Payments.PayPal\Payments.PayPal.ps1" />
     <None Include="content\Web.config.transform">
       <SubType>Designer</SubType>
