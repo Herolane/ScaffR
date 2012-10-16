@@ -1,0 +1,21 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Configuration.Friendships
+{
+    using System.Configuration;
+
+    public partial class FriendshipElement : ConfigurationElement
+    {
+        [ConfigurationProperty("allowOneWayFriendships", DefaultValue = true)]
+        public bool AllowOneWayFriendships
+        {
+            get { return (bool)base["allowOneWayFriendships"]; }
+        }
+
+        [ConfigurationProperty("requireApproval", DefaultValue = true)]
+        public bool RequireApproval
+        {
+            get { return (bool)base["requireApproval"]; }
+        }
+    }
+}

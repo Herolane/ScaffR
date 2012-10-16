@@ -1,0 +1,20 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Configuration
+{
+    using Friendships;
+
+    using System.Configuration;
+
+    public partial class CoreSection
+    {
+        [ConfigurationProperty("friendships", IsRequired = true)]
+        public FriendshipElement Friendship
+        {
+            get
+            {
+                return (FriendshipElement)base["friendships"];
+            }
+        } 
+    }
+}

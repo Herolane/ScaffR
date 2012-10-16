@@ -1,0 +1,11 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Model
+{
+    public class UserActivities : DomainObject
+    {
+        public int UserId { get; set; }
+        public string Activity { get; set; }
+    }
+}
+

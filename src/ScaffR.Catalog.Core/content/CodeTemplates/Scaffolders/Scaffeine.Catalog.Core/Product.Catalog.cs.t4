@@ -1,0 +1,19 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Model
+{
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    public partial class Product
+    {
+        private ICollection<CategoryFeaturedProduct> _featuredCategories;
+
+        public virtual ICollection<CategoryFeaturedProduct> FeaturedCategories
+        {
+            get { return _featuredCategories ?? (_featuredCategories = new Collection<CategoryFeaturedProduct>()); }
+            set { _featuredCategories = value; }
+        }
+    }
+}

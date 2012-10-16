@@ -1,0 +1,11 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Model
+{
+	using System.Collections.Generic;
+	
+	public partial class User
+	{
+	    public virtual ICollection<Friendship> Friendships { get; set; }
+	}
+}

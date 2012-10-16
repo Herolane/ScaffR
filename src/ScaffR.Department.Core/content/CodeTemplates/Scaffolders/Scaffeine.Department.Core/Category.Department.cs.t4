@@ -1,0 +1,10 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Model
+{
+    public partial class Category
+    {
+		public Department Department { get; set; }
+        public int DepartmentId { get; set; }
+    }
+}

@@ -1,0 +1,17 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Model
+{
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    public class ProductAttributeValue : DomainObject
+    {
+        public int HeaderId { get; set; }
+
+        public string Name { get; set; }
+
+        public string Value { get; set; }
+
+        public bool IsRequired { get; set; }
+    }
+}

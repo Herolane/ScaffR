@@ -1,0 +1,17 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Model
+{
+	public partial class Friendship : DomainObject
+    {
+        public virtual User User { get; set; }
+        public int UserId { get; set; }
+
+        public virtual User Friend { get; set; }
+        public int FriendId { get; set; }
+
+        public InvitationStatus InvitationStatus { get; set; }
+        
+        public bool IniciatedByUser { get; set; }
+    }
+}

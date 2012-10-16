@@ -1,0 +1,14 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Model
+{
+	public enum InvitationStatus
+    {
+        Pending = 0,
+        AwaitingApproval = 1,
+        Approved = 2,
+        Rejected = 3,
+        Blocked = 4,
+        Deleted = 5
+    }
+}

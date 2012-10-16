@@ -1,0 +1,32 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Configuration.Friendships
+{
+    public class FriendshipSettings
+    {
+        private readonly FriendshipElement _element;
+
+        public FriendshipSettings(FriendshipElement element)
+        {
+            _element = element;
+        }
+
+        public bool AllowOneWayFriendships
+        {
+            get { return _element.AllowOneWayFriendships; }
+        }
+
+        public bool RequireApproval
+        {
+            get { return _element.RequireApproval; }
+        }
+
+        public static FriendshipSettings Instance
+        {
+            get 
+            {
+                return new FriendshipSettings(CoreSection.GetConfig().Friendship);
+            }
+        }
+    }
+}

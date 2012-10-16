@@ -1,0 +1,11 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Model
+{
+	public enum CreateFriendshipStatus
+    {
+        UnableToCreate = 0,
+        FriendshipCreated = 1,
+        Erro = 2
+    }
+}

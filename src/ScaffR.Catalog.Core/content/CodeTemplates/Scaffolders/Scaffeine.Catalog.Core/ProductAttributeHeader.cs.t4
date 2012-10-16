@@ -1,0 +1,19 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Model
+{
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+
+    public class ProductAttributeHeader : DomainObject
+    {
+        public string Header { get; set; }
+
+        private ICollection<ProductAttributeValue> _attributeValues;
+        public virtual ICollection<ProductAttributeValue> AttributeValues
+        {
+            get { return _attributeValues ?? (_attributeValues = new Collection<ProductAttributeValue>()); }
+            set { _attributeValues = value; }
+        }
+    }
+}

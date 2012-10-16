@@ -1,0 +1,67 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Service
+{
+    using Core.Model;
+    using Core.Configuration;
+    using System;
+	using System.Collections.Generic;
+	using Core.Configuration.Friendships;
+	using System.Linq;
+
+    public partial class FriendshipService
+    {
+        public CreateFriendshipStatus CreateFriendship(int userId, int friendId, bool oneWay)
+        {
+            if (oneWay && !FriendshipSettings.Instance.AllowOneWayFriendships)
+                throw new InvalidOperationException("AllowOneWayFriendships not allowed");
+
+            var status = FriendshipSettings.Instance.RequireApproval
+                             ? InvitationStatus.Pending
+                             : InvitationStatus.Approved;
+            var primaryFriendship = new Friendship
+            {
+                UserId = userId,
+                FriendId = friendId,
+                InvitationStatus = status,
+                IniciatedByUser = true
+            };
+
+            Repository.SaveOrUpdate(primaryFriendship);
+
+            if (!oneWay)
+            {
+                status = FriendshipSettings.Instance.RequireApproval
+                             ? InvitationStatus.AwaitingApproval
+                             : InvitationStatus.Approved;
+                var secondaryFriendship = new Friendship
+                {
+                    UserId = userId,
+                    FriendId = friendId,
+                    InvitationStatus = status,
+                    IniciatedByUser = false
+                };
+                
+                Repository.SaveOrUpdate(secondaryFriendship);
+            }
+
+            UnitOfWork.Commit();
+            return CreateFriendshipStatus.FriendshipCreated;
+        }
+
+        public IEnumerable<Friendship> GetPendingRequests(int userId)
+        {
+            return Find(f => f.FriendId == userId && f.InvitationStatus == InvitationStatus.Pending);
+        }
+
+        public IEnumerable<Friendship> GetFriends(int userId)
+        {
+            return Find(f => f.UserId == userId && f.InvitationStatus == InvitationStatus.Approved);
+        }
+
+		public bool FriendshipExists(int userId1, int userid2)
+        {
+            return Repository.Find(x => x.UserId == userId1 && x.FriendId == userid2).Any();
+        }
+    }
+}

@@ -1,0 +1,19 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Data
+{
+   using System.Linq;
+   using System.Data.Entity;
+   using Core.Model;
+   
+   public partial class FriendshipRepository
+    {
+	    public override IQueryable<Friendship> Query
+        {
+            get
+            {
+                return base.Query.Include(f => f.Friend);
+            }
+        }
+	}
+}
