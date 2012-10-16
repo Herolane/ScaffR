@@ -35,12 +35,6 @@ namespace $rootnamespace$.Models
         public string ConfirmEmail { get; set; }
 
         [Required]
-        [Display(Name = "Username", Order = 5)]
-        [StringLength(15, MinimumLength = 3)]
-        [Textbox(TextboxSize = TextboxSize.Large)]
-        public string Username { get; set; }
-		
-        [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password", Order = 6)]

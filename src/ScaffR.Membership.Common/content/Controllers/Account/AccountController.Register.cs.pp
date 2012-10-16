@@ -1,14 +1,13 @@
 ﻿namespace $rootnamespace$.Controllers.Account
 {
     using System.Web.Mvc;
-
     using Core.Common.Membership;
     using Core.Common.Membership.Events;
-    using Core.Infrastructure.Eventing;
     using Core.Model;
-    using Helpers;
+    using Infrastructure.Eventing;
     using Models;
     using Omu.ValueInjecter;
+    using Extensions;
 
     public partial class AccountController
     {
@@ -32,7 +31,7 @@
 
                 if (createStatus == CreateUserStatus.Success)
                 {
-                    _authenticationService.SetAuthCookie(model.Username, true);
+                    _authenticationService.SetAuthCookie(model.UserName, true);
 
                     MessageBus.Instance.Publish(new UserCreated(user, Url.AbsoluteAction("Logon", "Account")));
 

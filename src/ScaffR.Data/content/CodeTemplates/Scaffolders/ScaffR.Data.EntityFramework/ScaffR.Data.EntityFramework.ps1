@@ -20,3 +20,5 @@ Add-Template $dataProjectName "UnitOfWork" "UnitOfWork" -Force:$Force $TemplateF
 Add-Template $dataProjectName "DatabaseFactory" "DatabaseFactory" -Force:$Force $TemplateFolders
 Add-Template $dataProjectName "DataContext" "DataContext" -Force:$Force $TemplateFolders
 
+Register-NinjectDependency "IDatabaseFactory" "DatabaseFactory"
+Register-NinjectDependency "IUnitOfWork" "UnitOfWork"

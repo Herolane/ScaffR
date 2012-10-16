@@ -16,7 +16,6 @@
     <copyright>ScaffR, 2012</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="ScaffR" />
     </dependencies>
   </metadata>
   <files>    

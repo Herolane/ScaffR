@@ -2,7 +2,6 @@
 @{
     ViewBag.Title = "Register";
 }
-@section container{
     <div class="page-header">
         <h1>Create A New Account
         </h1>
@@ -20,4 +19,3 @@
             </div>                          
         }
     </div>
-}

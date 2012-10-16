@@ -16,8 +16,8 @@
     <copyright>ScaffR, 2012</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="ScaffR.Core" version="1.1.2" />
-      <dependency id="ScaffR.Data.Common" version="1.1.2" />
+      <dependency id="ScaffR.Core"/>
+      <dependency id="ScaffR.Data.Common"/>
     </dependencies>
   </metadata>
   <files>

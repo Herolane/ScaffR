@@ -16,10 +16,8 @@
     <copyright>ScaffR, 2012</copyright>
     <tags></tags>
     <dependencies>
+      <dependency id="ScaffR.MVC"/>
       <dependency id="ScaffR.Membership.Common"/>
-      <dependency id="ScaffR.Membership.Mailers"/>
-      <dependency id="ScaffR.Membership.Services"/>
-      <dependency id="ScaffR.Membership.Core"/>
     </dependencies>
   </metadata>
   <files>

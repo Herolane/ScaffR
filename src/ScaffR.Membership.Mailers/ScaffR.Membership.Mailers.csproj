@@ -51,6 +51,7 @@
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
     <None Include="content\Mailers\Mailer.ForgotPassword.cs.pp" />
+    <None Include="content\Models\ForgotPasswordResetModel.cs.pp" />
     <None Include="content\Views\Mailer\ForgotPassword.cshtml.pp" />
     <None Include="Package.nuspec" />
     <None Include="tools\init.ps1" />

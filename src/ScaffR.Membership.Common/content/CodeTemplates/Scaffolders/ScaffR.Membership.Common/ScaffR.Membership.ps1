@@ -14,6 +14,8 @@ param(
 
 Register-ActionFilter "new AuthorizeAttribute()"
 
-Add-CodeToMethod $baseProject.Name "\App_Start\" "NinjectWebCommon.cs" "NinjectWebCommon" "RegisterServices" "kernel.Bind<IAuthenticationService>().To<AuthenticationService>().InRequestScope();"
+Register-NinjectDependency "IUserService" "UserService"
+Register-NinjectDependency "IUserEmailService" "UserEmailService"
+Register-NinjectDependency "IAuthenticationService" "AuthenticationService"
 
-Add-CodeToMethod (Get-Project).Name "\App_Start\" "FilterConfig.cs" "FilterConfig" "RegisterGlobalFilters" "filters.Add(new Filters.UserContextFilter());"
+Register-ActionFilter "new Filters.UserContextFilter()"

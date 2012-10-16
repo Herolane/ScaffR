@@ -1,7 +1,7 @@
 namespace $rootnamespace$.Filters.UserContextFilters
 {
     using System.Web.Mvc;
-    using Core.Infrastructure.Pipeline;
+    using Infrastructure.Pipeline;
     using Extensions;
 
     public class SetProfileValues : Filter<ActionExecutingContext>

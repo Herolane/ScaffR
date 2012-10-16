@@ -17,7 +17,6 @@
     <tags></tags>
     <dependencies>
       <dependency id="T4Scaffolding" />
-      <dependency id="EntityFramework" version="5.0.0" />
       <dependency id="WebActivator"/>
     </dependencies>
   </metadata>

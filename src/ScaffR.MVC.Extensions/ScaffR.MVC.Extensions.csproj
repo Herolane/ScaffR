@@ -51,6 +51,10 @@
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
     <None Include="content\Extensions\ActionDescriptorExtensions.cs.pp" />
+    <None Include="content\Extensions\UrlExtensions.cs.pp" />
+    <None Include="content\Models\Attributes\PasswordAttribute.cs.pp" />
+    <None Include="content\Models\Attributes\TextboxAttribute.cs.pp" />
+    <None Include="content\Models\Attributes\TextboxSize.cs.pp" />
     <None Include="content\Web.config.transform">
       <SubType>Designer</SubType>
     </None>

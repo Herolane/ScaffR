@@ -1,9 +1,7 @@
 ﻿namespace $rootnamespace$.Filters.UserContextFilters
 {
-    using System;
     using System.Web.Mvc;
-    using System.Web.Routing;
-    using Core.Infrastructure.Pipeline;
+    using Infrastructure.Pipeline;
     using Extensions;
 
     public class ChangePasswordRequired : Filter<ActionExecutingContext>

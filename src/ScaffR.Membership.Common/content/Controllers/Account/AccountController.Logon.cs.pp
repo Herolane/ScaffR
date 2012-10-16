@@ -3,10 +3,10 @@
     using System.Web.Mvc;
     using Core.Common.Membership;
     using Core.Common.Membership.Events;
-    using Core.Infrastructure.Eventing;
+    using Infrastructure.Eventing;
     using Core.Model;
-    using Extensions;
     using Models;
+    using Extensions;
 
     public partial class AccountController
     {

@@ -11,6 +11,11 @@ namespace $rootnamespace$.Bootstrappers
     using Ninject;
     using Ninject.Web.Common;
 
+	using Core.Interfaces.Service;
+    using Core.Interfaces.Data;
+    using Service;
+    using Data;
+
     public partial class Bootstrapper
     {
         private static readonly Ninject.Web.Common.Bootstrapper bootstrapper = new Ninject.Web.Common.Bootstrapper();

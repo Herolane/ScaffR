@@ -15,11 +15,13 @@
     </releaseNotes>
     <copyright>ScaffR, 2012</copyright>
     <tags></tags>
-    <dependencies>      
-      <dependency id="Scaffeine.Membership.Services" />
-      <dependency id="ScaffR.Infrastructure.Pipeline" />
+    <dependencies>
+      <dependency id="ValueInjecter" />
       <dependency id="ScaffR.MVC.Extensions" />
-      <dependency id="ScaffR.MvcMailer"/>
+      <dependency id="ScaffR.Security" />
+      <dependency id="ScaffR.Infrastructure.Pipeline" />
+      <dependency id="ScaffR.Membership.Mailers"/>
+      <dependency id="ScaffR.Membership.Services" />
     </dependencies>
   </metadata>
   <files>

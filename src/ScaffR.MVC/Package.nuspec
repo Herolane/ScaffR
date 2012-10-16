@@ -17,15 +17,14 @@
     <tags></tags>
     <dependencies>
       <dependency id="ScaffR.MVC.Normalize"/>
-      <dependency id="ScaffR.MVC.Extensions"/>
       <dependency id="ScaffR.Cassette"/>
       <dependency id="ScaffR.Bootstrap"/>
-      <dependency id="ScaffR.JQuery"/>
       <dependency id="ScaffR.KnockoutJS"/>
-      <dependency id="ScaffR.Data.EntityFramework"/>
       <dependency id="ScaffR.Ninject"/>
+      <dependency id="ScaffR.Data.EntityFramework"/>
       <dependency id="ScaffR.SiteInfo"/>
       <dependency id="ScaffR.WebApi"/>
+      <dependency id="ScaffR.Mail.Gmail"/>
     </dependencies>
   </metadata>
   <files>

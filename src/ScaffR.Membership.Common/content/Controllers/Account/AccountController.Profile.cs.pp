@@ -4,11 +4,9 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
-
-    using AutoMapper;
     using Core.Model;
-    using Extensions;
     using Models;
+    using Extensions;
     using Omu.ValueInjecter;
 
     public partial class AccountController
@@ -57,8 +55,6 @@
         [HttpGet]
         public ActionResult Emails()
         {
-            Mapper.CreateMap<UserEmail, EmailModel>();
-
             var user = this.GetCurrentUser();
 
             List<UserEmail> model = _userEmailService.Find(x => x.UserId == user.Id).ToList();

@@ -17,6 +17,7 @@
     <tags></tags>
     <dependencies>
       <dependency id="ScaffR.Data.Common" />
+      <dependency id="EntityFramework" version="5.0.0" />
     </dependencies>
   </metadata>
   <files>

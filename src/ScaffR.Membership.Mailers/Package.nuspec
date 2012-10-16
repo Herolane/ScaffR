@@ -16,7 +16,7 @@
     <copyright>ScaffR, 2012</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="ScaffR"/>
+      <dependency id="ScaffR.MvcMailer"/>
     </dependencies>
   </metadata>
   <files>

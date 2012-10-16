@@ -1,8 +1,8 @@
-﻿namespace $rootnamespace$.Helpers
+﻿namespace $rootnamespace$.Extensions
 {
     using System.Web.Mvc;
 
-    public static partial class UrlHelpers
+    public static partial class UrlExtensions
     {
         public static string AbsoluteAction(this UrlHelper url, string actionName, string controllerName, object routeValues = null)
         {

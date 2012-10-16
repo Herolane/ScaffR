@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Log On";
 }
-@section container{
+
     <div class="page-header">
         <h1>Already Have An Account? <small class="pull-right">
             @Html.ActionLink("Register", "Register")
@@ -23,4 +23,3 @@
             
         }
     </div>
-}

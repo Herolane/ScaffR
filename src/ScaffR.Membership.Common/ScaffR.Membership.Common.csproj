@@ -53,13 +53,13 @@
     <None Include="content\Controllers\Account\AccountController.Profile.cs.pp" />
     <None Include="content\Controllers\Account\AccountController.Register.cs.pp" />
     <None Include="content\Controllers\Account\AccountController.Settings.cs.pp" />
+    <None Include="content\Extensions\ControllerExtensions.cs.pp" />
     <None Include="content\Filters\UserContextFilter.cs.pp" />
     <None Include="content\Filters\UserContextFilters\ChangePasswordRequired.cs.pp" />
     <None Include="content\Filters\UserContextFilters\SetProfileValues.cs.pp" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="content\Models\ChangePasswordModel.cs.pp" />
     <None Include="content\Models\ForgotPasswordModel.cs.pp" />
-    <None Include="content\Models\ForgotPasswordResetModel.cs.pp" />
     <None Include="content\Models\LogOnModel.cs.pp" />
     <None Include="content\Models\ProfileModel.cs.pp" />
     <None Include="content\Models\SettingsModel.cs.pp" />
@@ -77,19 +77,17 @@
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Membership.Common\ScaffR.Membership.ps1" />
     <None Include="content\Controllers\Account\AccountController.cs.pp" />
     <None Include="content\Models\RegisterModel.cs.pp" />
-    <None Include="content\Sitemaps\Account.sitemap" />
-    <None Include="content\Sitemaps\Modules.sitemap.transform" />
     <None Include="content\Web.config.transform">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Package.nuspec" />
+    <None Include="Package.nuspec">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />
     <None Include="tools\uninstall.ps1" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="content\Extensions\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="NuGet.exe" />
   </ItemGroup>

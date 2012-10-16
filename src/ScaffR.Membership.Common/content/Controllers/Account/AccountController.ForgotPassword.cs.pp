@@ -1,14 +1,12 @@
-using System;
-using System.Linq;
-using Mvc.Mailer;
-using $rootnamespace$.Mailers;
-using $rootnamespace$.Helpers;
-
 namespace $rootnamespace$.Controllers.Account
 {
+    using System;
+    using System.Linq;
+    using Mailers;
     using System.Web.Mvc;
-
     using Models;
+    using Extensions;
+    using Mvc.Mailer;
 
     public partial class AccountController
     {

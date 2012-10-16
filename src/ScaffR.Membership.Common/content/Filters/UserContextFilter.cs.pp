@@ -1,6 +1,6 @@
 namespace $rootnamespace$.Filters
 {
-    using Core.Infrastructure.Pipeline;
+    using Infrastructure.Pipeline;
     using System.Web.Mvc;
     using UserContextFilters;
 

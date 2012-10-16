@@ -6,6 +6,7 @@ namespace $rootnamespace$.Controllers
     public partial class HomeController : BaseController
     {
        [MvcSiteMapNode(Title = "Home")]  
+	   [AllowAnonymous]
        public ActionResult Index()
        {
            return View();
