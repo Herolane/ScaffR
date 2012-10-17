@@ -41,7 +41,7 @@ Usage
 2. Download the latest code from [Scaffeine](https://www.github.com/wcpro/scaffeine) and do the same.
 3. Add a nuget source to c:\development\localnuget
 4. Create an empty MVC 4 application
-5. From nuget console window, type <pre>install-package Scaffeine</pre>
+5. From nuget console window, type <pre>install-package ScaffR.MVC</pre>
 
 Get Involved
 ------
