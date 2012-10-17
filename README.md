@@ -1,5 +1,5 @@
-ScaffR
-=========
+![Screenshot](https://raw.github.com/wcpro/ScaffR/master/creative/scaffr-logo-small.gif)<br/>
+
 
 ScaffR is a collection of modular source code packages packages like blogs, membership, 
 commerce, etc that let you quickly compose production-ready, white-label source code solutions.  This is different than projects like
