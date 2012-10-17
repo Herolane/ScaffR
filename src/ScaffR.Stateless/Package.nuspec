@@ -16,8 +16,7 @@
     <copyright>ScaffR, 2012</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="ScaffR" version="1.1.2" />
-      <dependency id="T4Scaffolding" version="1.0.6" />
+      <dependency id="ScaffR" />
     </dependencies>
   </metadata>
   <files>

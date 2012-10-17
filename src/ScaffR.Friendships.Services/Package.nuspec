@@ -16,9 +16,7 @@
     <copyright>ScaffR, 2012</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="ScaffR.Backend"/>
-      <dependency id="ScaffR.Users.Service"/>
-      <dependency id="Scaffeine.Friendships.Core"/>
+      <dependency id="ScaffR.Friendships.Core"/>
     </dependencies>
   </metadata>
   <files>

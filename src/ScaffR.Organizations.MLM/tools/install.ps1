@@ -1,3 +1,3 @@
 ﻿param($installPath, $toolsPath, $package, $project)
 
-scaffold Scaffeine.Organizations.MLM
+scaffold ScaffR.Organizations.MLM

@@ -50,22 +50,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Friendships.Services\Data\FriendshipRepository.Custom.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Friendships.Services\Interfaces\IFriendshipService.Custom.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Friendships.Services\FriendshipsDataSeeder.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Friendships.Services\Scaffeine.Friendships.Services.ps1" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Friendships.Services\Services\FriendshipService.Custom.cs.t4" />
-    <None Include="content\Web.config.transform">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Friendships.Services\Data\FriendshipRepository.Custom.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Friendships.Services\Interfaces\IFriendshipService.Custom.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Friendships.Services\FriendshipsDataSeeder.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Friendships.Services\ScaffR.Friendships.Services.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Friendships.Services\Services\FriendshipService.Custom.cs.t4" />
     <None Include="Package.nuspec" />
     <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />
     <None Include="tools\uninstall.ps1" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="lib\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="NuGet.exe" />
   </ItemGroup>

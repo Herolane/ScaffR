@@ -50,9 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Department.Core\Category.Department.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Department.Core\Department.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Department.Core\Scaffeine.Department.Core.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Department.Core\Category.Department.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Department.Core\Department.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Department.Core\ScaffR.Department.Core.ps1" />
     <None Include="Package.nuspec" />
     <None Include="tools\install.ps1" />
   </ItemGroup>

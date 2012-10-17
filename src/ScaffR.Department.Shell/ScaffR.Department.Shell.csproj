@@ -62,7 +62,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="content\CodeTemplates\Scaffolders\Scaffeine.Department.Shell\deleteme.txt" />
+    <Content Include="content\CodeTemplates\Scaffolders\ScaffR.Department.Shell\deleteme.txt" />
     <Content Include="content\Scripts\Custom\Department\department.js" />
     <Content Include="NuGet.exe" />
   </ItemGroup>

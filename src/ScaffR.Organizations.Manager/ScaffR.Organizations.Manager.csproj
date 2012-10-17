@@ -51,7 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\Sitemaps\Modules.sitemap.transform" />
     <None Include="content\Views\Organization\Index.cshtml.pp" />
     <None Include="content\Views\Organization\_ActivityFeed.cshtml.pp" />
     <None Include="content\Views\Organization\_UserActions.cshtml.pp" />
@@ -62,7 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="content\CodeTemplates\Scaffolders\" />
-    <Folder Include="lib\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="content\Content\images\tree.PNG" />

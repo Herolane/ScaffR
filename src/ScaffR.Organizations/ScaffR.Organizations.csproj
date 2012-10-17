@@ -46,17 +46,17 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Organizations\Configuration\CoreSection.Organizations.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Organizations\Configuration\OrganizationSettings.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Organizations\Configuration\CoreSection.Organizations.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Organizations\Configuration\OrganizationSettings.cs.t4" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Organizations\Common\OrganizationProvider.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Organizations\Configuration\OrganizationProviderCollection.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Organizations\Common\OrganizationManager.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Organizations\Common\OrganizationProvider.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Organizations\Configuration\OrganizationProviderCollection.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Organizations\Common\OrganizationManager.cs.t4" />
     <None Include="content\App.config.transform" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Organizations\Scaffeine.Organizations.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Organizations\ScaffR.Organizations.ps1" />
     <None Include="content\Web.config.transform">
       <SubType>Designer</SubType>
     </None>

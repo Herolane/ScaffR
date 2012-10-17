@@ -50,8 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Products.Core\Product.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Products.Core\Scaffeine.Products.Core.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Products.Core\Product.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Products.Core\ScaffR.Products.Core.ps1" />
     <None Include="Package.nuspec" />
     <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />

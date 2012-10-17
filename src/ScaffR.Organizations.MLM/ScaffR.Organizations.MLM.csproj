@@ -50,8 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.MLM\MLMProvider.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.MLM\Scaffeine.Organizations.MLM.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Organizations.MLM\MLMProvider.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Organizations.MLM\ScaffR.Organizations.MLM.ps1" />
     <None Include="content\App.config.transform">
       <SubType>Designer</SubType>
     </None>

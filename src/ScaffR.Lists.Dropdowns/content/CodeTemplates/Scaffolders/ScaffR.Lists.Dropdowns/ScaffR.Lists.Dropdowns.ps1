@@ -6,4 +6,4 @@ param(
 	[switch]$Force = $false
 )
 
-Add-CodeToMethod (Get-Project).Name "\App_Start\" "FilterConfig.cs" "FilterConfig" "RegisterGlobalFilters" "filters.Add(new Filters.FillDropDowns());"
+Register-ActionFilter "new Filters.FillDropDowns()"

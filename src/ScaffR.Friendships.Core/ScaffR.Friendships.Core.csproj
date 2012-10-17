@@ -46,18 +46,18 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Friendships.Core\CoreSection.Friendships.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Friendships.Core\CreateFriendshipStatus.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Friendships.Core\FriendshipElement.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Friendships.Core\FriendshipSettings.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Friendships.Core\User.Friendship.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Friendships.Core\InvitationStatus.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Friendships.Core\Friendship.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Friendships.Core\CoreSection.Friendships.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Friendships.Core\CreateFriendshipStatus.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Friendships.Core\FriendshipElement.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Friendships.Core\FriendshipSettings.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Friendships.Core\User.Friendship.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Friendships.Core\InvitationStatus.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Friendships.Core\Friendship.cs.t4" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Friendships.Core\Scaffeine.Friendships.Core.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Friendships.Core\ScaffR.Friendships.Core.ps1" />
     <None Include="content\App.config.transform" />
     <None Include="content\Web.config.transform" />
     <None Include="Package.nuspec" />

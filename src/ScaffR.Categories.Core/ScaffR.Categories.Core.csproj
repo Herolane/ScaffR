@@ -46,12 +46,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Categories.Core\Category.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Categories.Core\Category.cs.t4" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Categories.Core\Scaffeine.Categories.Core.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Categories.Core\ScaffR.Categories.Core.ps1" />
     <None Include="Package.nuspec" />
     <None Include="tools\install.ps1" />
   </ItemGroup>
