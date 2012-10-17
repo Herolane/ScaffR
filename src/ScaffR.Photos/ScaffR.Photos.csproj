@@ -46,19 +46,19 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Photos\Configuration\PhotoConfigurationElement.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Photos\Common\ImageHelper.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Photos\Common\Photo.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Photos\Common\PhotoList.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Photos\Common\PhotoRequest.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Photos\Common\PhotoThumbnail.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Photos\Common\PhotoManager.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Photos\Common\PhotoProvider.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Photos\Configuration\PhotoProviderCollection.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Photos\Common\PhotoResize.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Photos\Configuration\PhotoResizeCollection.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Photos\Configuration\PhotoResizeElement.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Photos\Configuration\CoreSection.Photos.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Photos\Configuration\PhotoConfigurationElement.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Photos\Common\ImageHelper.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Photos\Common\Photo.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Photos\Common\PhotoList.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Photos\Common\PhotoRequest.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Photos\Common\PhotoThumbnail.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Photos\Common\PhotoManager.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Photos\Common\PhotoProvider.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Photos\Configuration\PhotoProviderCollection.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Photos\Common\PhotoResize.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Photos\Configuration\PhotoResizeCollection.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Photos\Configuration\PhotoResizeElement.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Photos\Configuration\CoreSection.Photos.cs.t4" />
     <None Include="content\App.config.transform">
       <SubType>Designer</SubType>
     </None>
@@ -69,7 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Photos\Scaffeine.Photos.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Photos\ScaffR.Photos.ps1" />
     <None Include="Package.nuspec" />
     <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />

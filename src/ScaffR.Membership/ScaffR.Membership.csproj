@@ -50,6 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Membership\ScaffR.Membership.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Membership\ViewStart.cshtml.t4" />
+    <None Include="content\Views\Shared\Bootstrap\MembershipStarterTemplate.cshtml.pp" />
+    <None Include="content\Views\Shared\_LogOnPartial.cshtml.pp" />
     <None Include="Package.nuspec">
       <SubType>Designer</SubType>
     </None>
@@ -57,9 +61,7 @@
     <None Include="tools\install.ps1" />
     <None Include="tools\uninstall.ps1" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="content\CodeTemplates\Scaffolders\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="NuGet.exe" />
   </ItemGroup>

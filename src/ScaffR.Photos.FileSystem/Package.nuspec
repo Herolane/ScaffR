@@ -16,7 +16,7 @@
     <copyright>ScaffR, 2012</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="Scaffeine.Photos"  />
+      <dependency id="ScaffR.Photos"  />
     </dependencies>
   </metadata>
   <files>    

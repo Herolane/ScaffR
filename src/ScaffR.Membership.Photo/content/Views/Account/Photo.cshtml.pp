@@ -3,7 +3,6 @@
 @{
     ViewBag.Title = "Photo";
     Layout = "~/Views/Shared/_Folder.cshtml";
-    ViewBag.SitemapProvider = "Account";
 }
 
 <div class="page-header">

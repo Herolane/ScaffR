@@ -1,11 +1,11 @@
-namespace $rootnamespace$.Helpers
+namespace $rootnamespace$.Extensions
 {
     using System;
     using System.Web.Mvc;
     using Core.Common.Photos;
     using Core.Model;
 
-    public static partial class UrlHelpers
+    public static partial class UrlExtensions
     {
         public static string ProfilePicture(this UrlHelper url, string photoId, string resize, Gender gender)
         {            

@@ -46,15 +46,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Profiles.Photo\Scaffeine.Profiles.Photo.ps1" />
     <None Include="content\Controllers\Account\AccountController.Photo.cs.pp" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Profiles.Photo\User.Photo.cs.t4" />
-    <None Include="content\Helpers\UrlHelpers.ProfilePicture.cs.pp" />
+    <None Include="content\Extensions\UrlExtensions.ProfilePicture.cs.pp" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\Sitemaps\Account.sitemap.transform" />
     <None Include="content\Views\Account\Photo.cshtml.pp" />
     <None Include="content\Views\Shared\DisplayTemplates\Photo.cshtml.pp" />
     <None Include="Package.nuspec">
@@ -64,9 +61,7 @@
     <None Include="tools\install.ps1" />
     <None Include="tools\uninstall.ps1" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="lib\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="content\Content\Images\Tiny\male.jpg" />
     <Content Include="content\Content\Images\Medium\male.jpg" />

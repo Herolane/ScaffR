@@ -1,5 +1,0 @@
-﻿<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-3.0" xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-3.0 MvcSiteMapSchema.xsd" enableLocalization="true">
-  <mvcSiteMapNode title="Profile" controller="Account" action="Profile" imageUrl="icon-user" key="Profile">
-    <mvcSiteMapNode title="Portrait" controller="Account" action="Photo" imageUrl="icon-picture" />
-  </mvcSiteMapNode>
-</mvcSiteMap>

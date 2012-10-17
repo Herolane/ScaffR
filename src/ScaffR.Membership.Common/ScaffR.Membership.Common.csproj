@@ -74,7 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Membership.Common\ScaffR.Membership.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Membership.Common\ScaffR.Membership.Common.ps1" />
     <None Include="content\Controllers\Account\AccountController.cs.pp" />
     <None Include="content\Models\RegisterModel.cs.pp" />
     <None Include="content\Web.config.transform">
