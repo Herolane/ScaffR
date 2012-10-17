@@ -1,4 +1,4 @@
-namespace $rootnamespace$.Controllers
+namespace $rootnamespace$.Controllers.Home
 {
     using System.Web.Mvc;
     using MvcSiteMapProvider;

@@ -19,6 +19,7 @@
       <dependency id="ScaffR.MVC"/>
       <dependency id="ScaffR.Membership.Common"/>
       <dependency id="ScaffR.Membership.Photo"/>
+      <dependency id="ScaffR.Dashboard.Common"/>
     </dependencies>
   </metadata>
   <files>

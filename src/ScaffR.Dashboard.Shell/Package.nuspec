@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>ScaffR.Dashboard.Shell</id>
+    <id>ScaffR.Dashboard.Common</id>
     <version>1.1.4</version>
     <authors>Rod Johnson</authors>
     <owners>ScaffR</owners>
@@ -16,7 +16,6 @@
     <copyright>ScaffR, 2012</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="Scaffeine.Membership.Shell"  />
     </dependencies>
   </metadata>
   <files>

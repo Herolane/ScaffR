@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Folder.cshtml";
     ViewBag.SitemapProvider = "Account";
 
-    Bundles.Reference("content/custom/hide-breadcrumb.less", "custom");
+    //Bundles.Reference("content/custom/hide-breadcrumb.less", "custom");
 }
 
 <div class="page-header">

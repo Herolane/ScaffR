@@ -1,9 +1,0 @@
-﻿<configuration>
-  <system.web>
-    <siteMap defaultProvider="Public" enabled="true">
-      <providers>
-        <add name="Modules" type="MvcSiteMapProvider.DefaultSiteMapProvider, MvcSiteMapProvider" siteMapFile="~/Sitemaps/Modules.Sitemap" securityTrimmingEnabled="false" cacheDuration="5" enableLocalization="true" scanAssembliesForSiteMapNodes="true" includeAssembliesForScan="" excludeAssembliesForScan="" attributesToIgnore="visibility" nodeKeyGenerator="MvcSiteMapProvider.DefaultNodeKeyGenerator, MvcSiteMapProvider" controllerTypeResolver="MvcSiteMapProvider.DefaultControllerTypeResolver, MvcSiteMapProvider" actionMethodParameterResolver="MvcSiteMapProvider.DefaultActionMethodParameterResolver, MvcSiteMapProvider" aclModule="MvcSiteMapProvider.DefaultAclModule, MvcSiteMapProvider" siteMapNodeUrlResolver="MvcSiteMapProvider.DefaultSiteMapNodeUrlResolver, MvcSiteMapProvider" siteMapNodeVisibilityProvider="MvcSiteMapProvider.DefaultSiteMapNodeVisibilityProvider, MvcSiteMapProvider" siteMapProviderEventHandler="MvcSiteMapProvider.DefaultSiteMapProviderEventHandler, MvcSiteMapProvider" />
-      </providers>
-    </siteMap>
-  </system.web>
-</configuration>

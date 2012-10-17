@@ -1,6 +1,6 @@
 @{
 	ViewBag.Title = "Dashboard";    
-    Bundles.Reference("content/custom/hide-breadcrumb.less", "custom");
+	Layout = "~/Views/Shared/_Folder.cshtml";
 }
 
 <div class="row-fluid">
@@ -18,10 +18,10 @@
     </ul>
     <div class="tab-content">
         <div class="tab-pane active" id="todo">
-            @Html.Partial("_TodoPartial")
+            See if we need ToDo package
         </div>
         <div class="tab-pane" id="calendar">
-            @Html.Partial("_Calendar")
+            See if we need Calendar package
         </div>
     </div>
 </div>

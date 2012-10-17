@@ -51,15 +51,9 @@
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
     <None Include="content\Controllers\DashboardController.cs.pp" />
-    <None Include="content\Sitemaps\Modules.sitemap">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="content\Sitemaps\System.sitemap.transform" />
     <None Include="content\Views\Dashboard\Index.cshtml.pp" />
-    <None Include="content\Views\Dashboard\_ViewStart.cshtml.pp" />
-    <None Include="content\Web.config.transform">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="content\Views\Shared\_Folder.cshtml.pp" />
+    <None Include="content\Views\Shared\_UserWidget.cshtml.pp" />
     <None Include="Package.nuspec" />
     <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />
@@ -67,7 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="content\CodeTemplates\Scaffolders\" />
-    <Folder Include="lib\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="NuGet.exe" />
