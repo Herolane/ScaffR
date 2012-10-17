@@ -10,6 +10,7 @@ if ($namespace.LastIndexOf('.') -gt 0){
 }
 
 Import-Module (Join-Path $toolsPath "ProjectHelpers/ProjectHelpers.psm1")
+Import-Module (Join-Path $toolsPath "ScaffoldingHelpers/ScaffoldingHelpers.psm1")
 Import-Module (Join-Path $toolsPath "XmlHelpers/XmlHelpers.psm1")
 
 

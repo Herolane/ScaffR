@@ -58,6 +58,7 @@
     <None Include="Package.nuspec">
       <SubType>Designer</SubType>
     </None>
+    <None Include="tools\ScaffoldingHelpers\ScaffoldingHelpers.psm1" />
     <None Include="tools\ProjectHelpers\ProjectHelpers.psm1" />
     <None Include="tools\XmlHelpers\XmlHelpers.psm1" />
     <None Include="tools\install.ps1" />
