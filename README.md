@@ -14,7 +14,7 @@ We believe that source code is too complicated to reuse.  Our purpose is to make
 
 Technology
 -----
-The Scaffeine architecture uses the following frameworks
+The ScaffR architecture uses the following frameworks
 
 * ASP.NET MVC
 * ScaffR
