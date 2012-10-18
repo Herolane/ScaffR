@@ -1,9 +1,9 @@
-﻿Scaffeine.Inbox.Core (1.1.4)
+﻿ScaffR.Inbox.Core (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Inbox.Core</pre>
+<pre>install-package ScaffR.Inbox.Core</pre>
 Dependencies (2)
 =====
 
@@ -14,7 +14,3 @@ ScaffR Packages
 
 Other Packages
 ------
-
-Reverse Dependencies
------
-* [Scaffeine.Inbox.Services](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.Inbox.Services)

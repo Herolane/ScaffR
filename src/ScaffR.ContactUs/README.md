@@ -1,9 +1,9 @@
-﻿Scaffeine.ContactUs (1.1.4)
+﻿ScaffR.ContactUs (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.ContactUs</pre>
+<pre>install-package ScaffR.ContactUs</pre>
 Dependencies (2)
 =====
 
@@ -14,7 +14,3 @@ ScaffR Packages
 Other Packages
 ------
 * T4Scaffolding()
-
-Reverse Dependencies
------
-* [Scaffeine](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine)

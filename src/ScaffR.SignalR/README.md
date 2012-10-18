@@ -10,3 +10,7 @@ Dependencies (1)
 Other Packages
 ------
 * SignalR.Server()
+
+Reverse Dependencies
+-----
+* [ScaffR.Notifications](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Notifications)

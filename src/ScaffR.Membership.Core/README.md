@@ -1,18 +1,15 @@
-﻿Scaffeine.Membership.Core (1.1.4)
+﻿ScaffR.Membership.Core (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Membership.Core</pre>
+<pre>install-package ScaffR.Membership.Core</pre>
 Dependencies (2)
 =====
 
-Scaffeine Packages
-------
-* [Scaffeine.Eventing](https://github.com/wcpro/Scaffeine/tree/master/src/Scaffeine.Eventing)
-
 ScaffR Packages
 ------
+* [ScaffR.Infrastructure.Eventing](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Infrastructure.Eventing)
 * [ScaffR.Users.Core](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Users.Core)
 
 Other Packages
@@ -20,4 +17,4 @@ Other Packages
 
 Reverse Dependencies
 -----
-* [Scaffeine.Membership.Services](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.Membership.Services)
+* [ScaffR.Membership.Services](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Membership.Services)

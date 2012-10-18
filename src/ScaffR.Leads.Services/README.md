@@ -20,4 +20,4 @@ Other Packages
 
 Reverse Dependencies
 -----
-* [Scaffeine.Leads.Manager](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.Leads.Manager)
+* [ScaffR.Leads.Manager](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Leads.Manager)

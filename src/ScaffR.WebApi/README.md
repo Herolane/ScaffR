@@ -1,9 +1,9 @@
-﻿ScaffR.MVC.WebApi (1.1.4)
+﻿ScaffR.WebApi.Client (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package ScaffR.MVC.WebApi</pre>
+<pre>install-package ScaffR.WebApi.Client</pre>
 Dependencies (1)
 =====
 

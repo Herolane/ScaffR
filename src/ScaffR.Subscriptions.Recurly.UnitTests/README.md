@@ -1,9 +1,9 @@
-﻿Scaffeine.Subscriptions.Recurly.UnitTests (1.1.4)
+﻿ScaffR.Subscriptions.Recurly.UnitTests (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Subscriptions.Recurly.UnitTests</pre>
+<pre>install-package ScaffR.Subscriptions.Recurly.UnitTests</pre>
 Dependencies (3)
 =====
 

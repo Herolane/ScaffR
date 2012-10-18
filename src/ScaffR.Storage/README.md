@@ -1,9 +1,9 @@
-﻿Scaffeine.Storage (1.1.4)
+﻿ScaffR.Storage (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Storage</pre>
+<pre>install-package ScaffR.Storage</pre>
 Dependencies (2)
 =====
 

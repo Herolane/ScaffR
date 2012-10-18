@@ -1,9 +1,9 @@
-﻿Scaffeine.Fulfillment.Manager (1.1.4)
+﻿ScaffR.Fulfillment.Manager (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Fulfillment.Manager</pre>
+<pre>install-package ScaffR.Fulfillment.Manager</pre>
 Dependencies (2)
 =====
 

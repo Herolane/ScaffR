@@ -4,19 +4,22 @@ ScaffR wrapper for Bootstrap, FontAwesome, and Cassette (Less)
 Usage
 ======
 <pre>install-package ScaffR.Bootstrap</pre>
-Dependencies (4)
+Dependencies (6)
 =====
 
 ScaffR Packages
 ------
 * [ScaffR](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR)
+* [ScaffR.Bootstrap.Layouts](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Bootstrap.Layouts)
+* [ScaffR.Bootstrap.LESS](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Bootstrap.LESS)
+* [ScaffR.Bootstrap.Templates](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Bootstrap.Templates)
+* [ScaffR.Bootstrap.JavaScript](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Bootstrap.JavaScript)
+* [ScaffR.Bootstrap.Sitemap](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Bootstrap.Sitemap)
 
 Other Packages
 ------
-* Cassette.AspNet(2.0.0)
-* Cassette.Less(2.0.0)
-* T4Scaffolding(1.0.6)
 
 Reverse Dependencies
 -----
+* [ScaffR.MVC](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.MVC)
 * [ScaffR.Sitemap](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Sitemap)

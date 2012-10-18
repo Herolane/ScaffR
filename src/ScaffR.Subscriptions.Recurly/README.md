@@ -1,9 +1,9 @@
-﻿Scaffeine.Subscriptions.Recurly (1.1.4)
+﻿ScaffR.Subscriptions.Recurly (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Subscriptions.Recurly</pre>
+<pre>install-package ScaffR.Subscriptions.Recurly</pre>
 Dependencies (3)
 =====
 
@@ -18,7 +18,3 @@ ScaffR Packages
 Other Packages
 ------
 * T4Scaffolding()
-
-Reverse Dependencies
------
-* [Scaffeine.Subscriptions.Recurly.UnitTests](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.Subscriptions.Recurly.UnitTests)

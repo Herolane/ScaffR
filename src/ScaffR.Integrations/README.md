@@ -1,9 +1,9 @@
-﻿Scaffeine.Integrations (1.1.4)
+﻿ScaffR.Integrations (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Integrations</pre>
+<pre>install-package ScaffR.Integrations</pre>
 Dependencies (2)
 =====
 
@@ -14,7 +14,3 @@ ScaffR Packages
 Other Packages
 ------
 * T4Scaffolding()
-
-Reverse Dependencies
------
-* [Scaffeine.Facebook](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.Facebook)

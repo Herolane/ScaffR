@@ -1,9 +1,9 @@
-﻿Scaffeine.Leads.Core (1.1.4)
+﻿ScaffR.Leads.Core (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Leads.Core</pre>
+<pre>install-package ScaffR.Leads.Core</pre>
 Dependencies (3)
 =====
 
@@ -18,7 +18,3 @@ ScaffR Packages
 
 Other Packages
 ------
-
-Reverse Dependencies
------
-* [Scaffeine.Leads.Services](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.Leads.Services)

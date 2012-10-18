@@ -1,9 +1,9 @@
-﻿Scaffeine.Shipping.USPS (1.1.4)
+﻿ScaffR.Shipping.USPS (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Shipping.USPS</pre>
+<pre>install-package ScaffR.Shipping.USPS</pre>
 Dependencies (2)
 =====
 

@@ -1,9 +1,9 @@
-﻿Scaffeine.Organizations (1.1.4)
+﻿ScaffR.Organizations (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Organizations</pre>
+<pre>install-package ScaffR.Organizations</pre>
 Dependencies (1)
 =====
 
@@ -16,5 +16,5 @@ Other Packages
 
 Reverse Dependencies
 -----
-* [Scaffeine.Organizations.Manager](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.Organizations.Manager)
-* [Scaffeine.Organizations.MLM](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.Organizations.MLM)
+* [ScaffR.Organizations.Manager](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Organizations.Manager)
+* [ScaffR.Organizations.MLM](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Organizations.MLM)

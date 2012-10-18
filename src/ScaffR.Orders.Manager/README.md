@@ -1,9 +1,9 @@
-﻿Scaffeine.Orders.Manager (1.1.4)
+﻿ScaffR.Orders.Manager (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Orders.Manager</pre>
+<pre>install-package ScaffR.Orders.Manager</pre>
 Dependencies (2)
 =====
 

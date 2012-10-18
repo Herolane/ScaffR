@@ -1,9 +1,9 @@
-﻿Scaffeine.TodoLists (1.1.4)
+﻿ScaffR.TodoLists (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.TodoLists</pre>
+<pre>install-package ScaffR.TodoLists</pre>
 Dependencies (2)
 =====
 
@@ -14,7 +14,3 @@ ScaffR Packages
 Other Packages
 ------
 * T4Scaffolding()
-
-Reverse Dependencies
------
-* [Scaffeine.Dashboard](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.Dashboard)

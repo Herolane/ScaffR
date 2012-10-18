@@ -1,9 +1,9 @@
-﻿Scaffeine.Shipping (1.1.4)
+﻿ScaffR.Shipping (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Shipping</pre>
+<pre>install-package ScaffR.Shipping</pre>
 Dependencies (1)
 =====
 
@@ -13,8 +13,3 @@ ScaffR Packages
 
 Other Packages
 ------
-
-Reverse Dependencies
------
-* [Scaffeine.Shipping.Manager](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.Shipping.Manager)
-* [Scaffeine.Shipping.Shipwire](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.Shipping.Shipwire)

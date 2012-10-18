@@ -1,9 +1,9 @@
-﻿Scaffeine.Friendships.Core (1.1.4)
+﻿ScaffR.Friendships.Core (1.1.4)
 ======
 Provides the domain objects and configuraiton that represent either 2-way or 1-way (following) friendships.
 Usage
 ======
-<pre>install-package Scaffeine.Friendships.Core</pre>
+<pre>install-package ScaffR.Friendships.Core</pre>
 Dependencies (2)
 =====
 
@@ -17,4 +17,4 @@ Other Packages
 
 Reverse Dependencies
 -----
-* [Scaffeine.Friendships.Services](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.Friendships.Services)
+* [ScaffR.Friendships.Services](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Friendships.Services)

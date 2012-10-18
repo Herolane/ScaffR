@@ -1,9 +1,9 @@
-﻿Scaffeine.Payments.PayPal (1.1.4)
+﻿ScaffR.Payments.PayPal (1.1.4)
 ======
 PayPal payments provider
 Usage
 ======
-<pre>install-package Scaffeine.Payments.PayPal</pre>
+<pre>install-package ScaffR.Payments.PayPal</pre>
 Dependencies (2)
 =====
 

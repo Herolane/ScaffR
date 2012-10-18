@@ -1,9 +1,9 @@
-﻿Scaffeine.Orders.Provider (1.1.4)
+﻿ScaffR.Orders.Provider (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Orders.Provider</pre>
+<pre>install-package ScaffR.Orders.Provider</pre>
 Dependencies (2)
 =====
 

@@ -1,9 +1,9 @@
-﻿Scaffeine.Photos.Test (1.1.4)
+﻿ScaffR.Photos.Test (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Photos.Test</pre>
+<pre>install-package ScaffR.Photos.Test</pre>
 Dependencies (3)
 =====
 

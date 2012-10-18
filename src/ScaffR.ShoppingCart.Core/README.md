@@ -1,9 +1,9 @@
-﻿Scaffeine.ShoppingCart.Core (1.1.4)
+﻿ScaffR.ShoppingCart.Core (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.ShoppingCart.Core</pre>
+<pre>install-package ScaffR.ShoppingCart.Core</pre>
 Dependencies (2)
 =====
 

@@ -1,9 +1,9 @@
-﻿Scaffeine.Products.Inventory.Core (1.1.4)
+﻿ScaffR.Products.Inventory.Core (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Products.Inventory.Core</pre>
+<pre>install-package ScaffR.Products.Inventory.Core</pre>
 Dependencies (1)
 =====
 

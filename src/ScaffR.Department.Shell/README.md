@@ -1,16 +1,15 @@
-﻿Scaffeine.Department.Shell (1.1.4)
+﻿ScaffR.Department.Shell (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Department.Shell</pre>
-Dependencies (2)
+<pre>install-package ScaffR.Department.Shell</pre>
+Dependencies (1)
 =====
 
-Scaffeine Packages
+ScaffR Packages
 ------
-* [Scaffeine.Department.Core](https://github.com/wcpro/Scaffeine/tree/master/src/Scaffeine.Department.Core)
-* [Scaffeine.Shell](https://github.com/wcpro/Scaffeine/tree/master/src/Scaffeine.Shell)
+* [ScaffR.Department.Core](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Department.Core)
 
 Other Packages
 ------

@@ -17,4 +17,6 @@ Other Packages
 
 Reverse Dependencies
 -----
+* [ScaffR.Inbox.Services](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Inbox.Services)
+* [ScaffR.Membership.Services](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Membership.Services)
 * [ScaffR.Security](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Security)

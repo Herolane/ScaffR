@@ -14,3 +14,7 @@ ScaffR Packages
 
 Other Packages
 ------
+
+Reverse Dependencies
+-----
+* [ScaffR.Models.Common](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Models.Common)

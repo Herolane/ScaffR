@@ -4,17 +4,17 @@ ScaffR wrapper for Ninject
 Usage
 ======
 <pre>install-package ScaffR.Ninject</pre>
-Dependencies (2)
+Dependencies (1)
 =====
 
 ScaffR Packages
 ------
-* [ScaffR.Core](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Core)
+* [ScaffR.Infrastructure.DI](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Infrastructure.DI)
 
 Other Packages
 ------
-* Ninject.MVC3()
 
 Reverse Dependencies
 -----
+* [ScaffR.MVC](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.MVC)
 * [ScaffR.MVC.Shell](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.MVC.Shell)

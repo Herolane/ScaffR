@@ -1,9 +1,9 @@
-﻿Scaffeine.Categories.Shell (1.1.4)
+﻿ScaffR.Categories.Shell (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Categories.Shell</pre>
+<pre>install-package ScaffR.Categories.Shell</pre>
 Dependencies (2)
 =====
 

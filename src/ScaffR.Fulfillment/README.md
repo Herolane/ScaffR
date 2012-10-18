@@ -1,9 +1,9 @@
-﻿Scaffeine.Fulfillment (1.1.4)
+﻿ScaffR.Fulfillment (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Fulfillment</pre>
+<pre>install-package ScaffR.Fulfillment</pre>
 Dependencies (1)
 =====
 
@@ -13,7 +13,3 @@ ScaffR Packages
 
 Other Packages
 ------
-
-Reverse Dependencies
------
-* [Scaffeine.Fulfillment.Manager](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.Fulfillment.Manager)

@@ -1,9 +1,9 @@
-﻿Scaffeine.Payments.AuthNet (1.1.4)
+﻿ScaffR.Payments.AuthNet (1.1.4)
 ======
 Authorize.net payment provider
 Usage
 ======
-<pre>install-package Scaffeine.Payments.AuthNet</pre>
+<pre>install-package ScaffR.Payments.AuthNet</pre>
 Dependencies (2)
 =====
 

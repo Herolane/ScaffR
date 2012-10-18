@@ -1,9 +1,9 @@
-﻿Scaffeine.Customers.Core (1.1.4)
+﻿ScaffR.Customers.Core (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Customers.Core</pre>
+<pre>install-package ScaffR.Customers.Core</pre>
 Dependencies (1)
 =====
 
@@ -13,10 +13,3 @@ ScaffR Packages
 
 Other Packages
 ------
-
-Reverse Dependencies
------
-* [Scaffeine.Customers.Manager](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.Customers.Manager)
-* [Scaffeine.Leads.Core](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.Leads.Core)
-* [Scaffeine.Orders.Core](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.Orders.Core)
-* [Scaffeine.ShoppingCart.Core](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.ShoppingCart.Core)

@@ -1,9 +1,9 @@
-﻿Scaffeine.Photos.Database (1.1.4)
+﻿ScaffR.Photos.Database (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Photos.Database</pre>
+<pre>install-package ScaffR.Photos.Database</pre>
 Dependencies (1)
 =====
 

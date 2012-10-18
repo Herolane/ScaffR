@@ -1,9 +1,9 @@
-﻿Scaffeine.Inbox.Services (1.1.4)
+﻿ScaffR.Inbox.Services (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Inbox.Services</pre>
+<pre>install-package ScaffR.Inbox.Services</pre>
 Dependencies (3)
 =====
 

@@ -14,3 +14,7 @@ ScaffR Packages
 Other Packages
 ------
 * T4Scaffolding(1.0.6)
+
+Reverse Dependencies
+-----
+* [ScaffR.Subscriptions.Recurly.UnitTests](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Subscriptions.Recurly.UnitTests)

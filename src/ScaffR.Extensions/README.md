@@ -16,5 +16,7 @@ Other Packages
 
 Reverse Dependencies
 -----
+* [ScaffR.Bootstrap.Sitemap](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Bootstrap.Sitemap)
 * [ScaffR.Lists.Dropdowns](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Lists.Dropdowns)
+* [ScaffR.MVC.Normalize](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.MVC.Normalize)
 * [ScaffR.MVC.Shell](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.MVC.Shell)

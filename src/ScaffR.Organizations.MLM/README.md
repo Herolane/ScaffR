@@ -1,16 +1,15 @@
-﻿Scaffeine.Organizations.MLM (1.1.4)
+﻿ScaffR.Organizations.MLM (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Organizations.MLM</pre>
-Dependencies (2)
+<pre>install-package ScaffR.Organizations.MLM</pre>
+Dependencies (1)
 =====
 
-Scaffeine Packages
+ScaffR Packages
 ------
-* [Scaffeine.Organizations](https://github.com/wcpro/Scaffeine/tree/master/src/Scaffeine.Organizations)
+* [ScaffR.Organizations](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Organizations)
 
 Other Packages
 ------
-* T4Scaffolding()

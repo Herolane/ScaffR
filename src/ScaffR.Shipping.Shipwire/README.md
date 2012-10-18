@@ -1,9 +1,9 @@
-﻿Scaffeine.Shipping.Shipwire (1.1.4)
+﻿ScaffR.Shipping.Shipwire (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Shipping.Shipwire</pre>
+<pre>install-package ScaffR.Shipping.Shipwire</pre>
 Dependencies (2)
 =====
 

@@ -1,9 +1,9 @@
-﻿Scaffeine.Notifications (1.1.4)
+﻿ScaffR.Notifications (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Notifications</pre>
+<pre>install-package ScaffR.Notifications</pre>
 Dependencies (3)
 =====
 

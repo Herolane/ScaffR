@@ -1,9 +1,9 @@
-﻿Scaffeine.Categories.Services (1.1.4)
+﻿ScaffR.Categories.Services (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Categories.Services</pre>
+<pre>install-package ScaffR.Categories.Services</pre>
 Dependencies (2)
 =====
 
@@ -17,7 +17,3 @@ ScaffR Packages
 
 Other Packages
 ------
-
-Reverse Dependencies
------
-* [Scaffeine.Categories.Shell](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.Categories.Shell)

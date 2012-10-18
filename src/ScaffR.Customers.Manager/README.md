@@ -1,9 +1,9 @@
-﻿Scaffeine.Customers.Manager (1.1.4)
+﻿ScaffR.Customers.Manager (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Customers.Manager</pre>
+<pre>install-package ScaffR.Customers.Manager</pre>
 Dependencies (3)
 =====
 

@@ -1,9 +1,9 @@
-﻿Scaffeine.Promotions.Shell (1.1.4)
+﻿ScaffR.Promotions.Shell (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Promotions.Shell</pre>
+<pre>install-package ScaffR.Promotions.Shell</pre>
 Dependencies (1)
 =====
 

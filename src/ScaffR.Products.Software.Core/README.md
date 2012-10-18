@@ -1,9 +1,9 @@
-﻿Scaffeine.Products.Software.Core (1.1.4)
+﻿ScaffR.Products.Software.Core (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Products.Software.Core</pre>
+<pre>install-package ScaffR.Products.Software.Core</pre>
 Dependencies (1)
 =====
 

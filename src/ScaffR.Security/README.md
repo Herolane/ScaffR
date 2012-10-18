@@ -17,4 +17,6 @@ Other Packages
 
 Reverse Dependencies
 -----
+* [ScaffR.Membership.Common](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Membership.Common)
+* [Scaffeine.Membership.Suite](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.Membership.Suite)
 * [ScaffR.MVC.Shell](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.MVC.Shell)

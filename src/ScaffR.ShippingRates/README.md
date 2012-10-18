@@ -1,9 +1,9 @@
-﻿Scaffeine.ShippingRates (1.1.4)
+﻿ScaffR.ShippingRates (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.ShippingRates</pre>
+<pre>install-package ScaffR.ShippingRates</pre>
 Dependencies (1)
 =====
 
@@ -13,7 +13,3 @@ ScaffR Packages
 
 Other Packages
 ------
-
-Reverse Dependencies
------
-* [Scaffeine.ShippingRates.Shipwire](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.ShippingRates.Shipwire)

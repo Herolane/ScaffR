@@ -1,9 +1,9 @@
-﻿Scaffeine.Subscriptions.AuthNet (1.1.4)
+﻿ScaffR.Subscriptions.AuthNet (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Subscriptions.AuthNet</pre>
+<pre>install-package ScaffR.Subscriptions.AuthNet</pre>
 Dependencies (2)
 =====
 

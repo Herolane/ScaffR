@@ -1,9 +1,9 @@
-﻿Scaffeine.Photos.AmazonS3 (1.1.4)
+﻿ScaffR.Photos.AmazonS3 (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Photos.AmazonS3</pre>
+<pre>install-package ScaffR.Photos.AmazonS3</pre>
 Dependencies (2)
 =====
 

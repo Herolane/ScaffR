@@ -1,9 +1,9 @@
-﻿Scaffeine.Leads.Manager (1.1.4)
+﻿ScaffR.Leads.Manager (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Leads.Manager</pre>
+<pre>install-package ScaffR.Leads.Manager</pre>
 Dependencies (4)
 =====
 

@@ -1,10 +1,10 @@
-﻿Scaffeine.Calendar (1.1.4)
+﻿ScaffR.Calendar (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Calendar</pre>
-Dependencies (2)
+<pre>install-package ScaffR.Calendar</pre>
+Dependencies (1)
 =====
 
 ScaffR Packages
@@ -13,8 +13,3 @@ ScaffR Packages
 
 Other Packages
 ------
-* T4Scaffolding()
-
-Reverse Dependencies
------
-* [Scaffeine.Dashboard](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.Dashboard)

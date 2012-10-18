@@ -1,9 +1,9 @@
-﻿Scaffeine.Shipping.Manager (1.1.4)
+﻿ScaffR.Shipping.Manager (1.1.4)
 ======
 Shipping Module for Scaffeine.
 Usage
 ======
-<pre>install-package Scaffeine.Shipping.Manager</pre>
+<pre>install-package ScaffR.Shipping.Manager</pre>
 Dependencies (2)
 =====
 

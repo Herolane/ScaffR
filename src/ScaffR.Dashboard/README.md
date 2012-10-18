@@ -1,9 +1,9 @@
-﻿Scaffeine.Dashboard (1.1.4)
+﻿ScaffR.Dashboard (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Dashboard</pre>
+<pre>install-package ScaffR.Dashboard</pre>
 Dependencies (3)
 =====
 
@@ -15,8 +15,3 @@ Scaffeine Packages
 
 Other Packages
 ------
-
-Reverse Dependencies
------
-* [Scaffeine](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine)
-* [Scaffeine.Shipping.Manager](https://github.com/wcpro/scaffeine/tree/master/src/Scaffeine.Shipping.Manager)

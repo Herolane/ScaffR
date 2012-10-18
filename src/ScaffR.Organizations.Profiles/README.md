@@ -1,9 +1,9 @@
-﻿Scaffeine.Organizations.Profiles (1.1.4)
+﻿ScaffR.Organizations.Profiles (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Organizations.Profiles</pre>
+<pre>install-package ScaffR.Organizations.Profiles</pre>
 Dependencies (2)
 =====
 

@@ -24,4 +24,4 @@ Other Packages
 
 Reverse Dependencies
 -----
-* [ScaffR.MVC](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.MVC)
+* [ScaffR.Models.Common](https://github.com/wcpro/ScaffR/tree/master/src/ScaffR.Models.Common)

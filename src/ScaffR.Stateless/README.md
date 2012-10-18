@@ -4,7 +4,7 @@ ScaffR wrapper for Stateless
 Usage
 ======
 <pre>install-package ScaffR.Stateless</pre>
-Dependencies (2)
+Dependencies (1)
 =====
 
 ScaffR Packages
@@ -13,4 +13,3 @@ ScaffR Packages
 
 Other Packages
 ------
-* T4Scaffolding(1.0.6)

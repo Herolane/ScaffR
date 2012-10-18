@@ -1,10 +1,10 @@
-﻿Scaffeine.Subscriptions.Manager (1.1.4)
+﻿ScaffR.Subscriptions.Manager (1.1.4)
 ======
 Description required.
 Usage
 ======
-<pre>install-package Scaffeine.Subscriptions.Manager</pre>
-Dependencies (2)
+<pre>install-package ScaffR.Subscriptions.Manager</pre>
+Dependencies (1)
 =====
 
 ScaffR Packages
@@ -13,4 +13,3 @@ ScaffR Packages
 
 Other Packages
 ------
-* T4Scaffolding()

@@ -1,9 +1,9 @@
-﻿Scaffeine.Facebook (1.1.4)
+﻿ScaffR.Facebook (1.1.4)
 ======
 Core library for developing testing tools using T4 Scaffolding.
 Usage
 ======
-<pre>install-package Scaffeine.Facebook</pre>
+<pre>install-package ScaffR.Facebook</pre>
 Dependencies (3)
 =====
 
