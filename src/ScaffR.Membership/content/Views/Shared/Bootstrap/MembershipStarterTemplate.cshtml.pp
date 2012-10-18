@@ -11,9 +11,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="#">@Site.Instance.WebsiteName</a>
+            <a class="brand" href="@Url.Content("/")">@Site.Instance.WebsiteName</a>
             <div class="nav-collapse collapse">
-                @Html.MvcSiteMap("MvcSiteMapProvider").Nav()
+                @(Request.IsAuthenticated ? Html.MvcSiteMap("System").Nav(false) : Html.MvcSiteMap("Public").Nav(false))
             </div>
 			<div class="pull-rigth">
 				@Html.Partial("_LogOnPartial")

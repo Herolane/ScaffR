@@ -1,12 +1,8 @@
 ﻿param($installPath, $toolsPath, $package, $project)
 
-scaffold scaffr.backend.for Department
+Scaffold ScaffR.Backend.For Department
 
-scaffold scaffr.frontend.for Department
-
-scaffold scaffr.backend.for Category
-
-scaffold scaffr.frontend.for Category
+Scaffold ScaffR.Backend.For Category
 
 add-migration "Department Added" -projectName $dataProjectName
 

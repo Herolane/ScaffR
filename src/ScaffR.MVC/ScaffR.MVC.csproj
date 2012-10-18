@@ -46,6 +46,8 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Controller.For\Controller.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Controller.For\ScaffR.Controller.For.ps1" />
     <None Include="Properties\AssemblyInfo.cs" />
     <None Include="BuildPublishPackage.cmd" />
     <None Include="Package.nuspec">
@@ -56,7 +58,6 @@
     <None Include="tools\uninstall.ps1" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="content\CodeTemplates\Scaffolders\deleteme.txt" />
     <Content Include="NuGet.exe" />
   </ItemGroup>
   <ItemGroup />

@@ -16,8 +16,8 @@
     <copyright>ScaffR, 2012</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="ScaffR.Data.Common" />
       <dependency id="EntityFramework" version="5.0.0" />
+      <dependency id="ScaffR.Data.Common" />
     </dependencies>
   </metadata>
   <files>

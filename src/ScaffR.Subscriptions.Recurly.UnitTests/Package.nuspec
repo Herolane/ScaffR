@@ -18,7 +18,7 @@
     <dependencies>
       <dependency id="ScaffR.QA"  />
       <dependency id="Scaffeine.Subscriptions.Recurly"  />
-      <dependency id="T4Scaffolding" />
+      <dependency id="T4Scaffolding.Core" />
     </dependencies>
   </metadata>
   <files>

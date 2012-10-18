@@ -46,7 +46,6 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data.EntityFramework\Migrations\Configuration.cs.t4" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -56,7 +55,6 @@
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data.EntityFramework\DataContext.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data.EntityFramework\IDatabaseFactory.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data.EntityFramework\IDataContext.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data.EntityFramework\Migrations\ScaffR.Data.Migration.ps1" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data.EntityFramework\ScaffR.Data.EntityFramework.ps1" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Data.EntityFramework\UnitOfWork.cs.t4" />
     <None Include="content\App.config.transform">

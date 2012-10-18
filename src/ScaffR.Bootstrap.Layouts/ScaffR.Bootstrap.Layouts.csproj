@@ -51,12 +51,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
+    <None Include="content\Sitemaps\Public.sitemap" />
     <None Include="content\Views\Home\Index.cshtml" />
     <None Include="content\Views\Shared\Bootstrap\BasicMarketing.cshtml.pp" />
     <None Include="content\Views\Shared\Bootstrap\BootstrapShared.cshtml.pp" />
     <None Include="content\Views\Shared\Bootstrap\FluidLayout.cshtml.pp" />
     <None Include="content\Views\Shared\Bootstrap\StarterTemplate.cshtml.pp" />
     <None Include="content\Views\_ViewStart.cshtml" />
+    <None Include="content\Web.config.transform">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Package.nuspec">
       <SubType>Designer</SubType>
     </None>

@@ -18,7 +18,7 @@
     <dependencies>
       <dependency id="ScaffR"/>
       <dependency id="Scaffeine.Integrations"/>
-      <dependency id="T4Scaffolding" />
+      <dependency id="T4Scaffolding.Core" />
     </dependencies>
   </metadata>
   <files>

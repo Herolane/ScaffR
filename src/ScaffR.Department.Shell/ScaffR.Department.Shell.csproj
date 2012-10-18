@@ -47,17 +47,18 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="content\Areas\Api\Controllers\DepartmentsController.Custom.cs.pp" />
+    <None Include="content\Areas\Api\Controllers\DepartmentsController.cs.pp" />
+    <None Include="content\Areas\Api\Controllers\CategoriesController.cs.pp" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
     <None Include="content\Content\custom\department.less" />
     <None Include="content\Controllers\Department\DepartmentController.cs.pp" />
-    <None Include="content\Sitemaps\Modules.sitemap.transform">
+    <None Include="content\Views\Department\Categories.cshtml.pp" />
+    <None Include="Package.nuspec">
       <SubType>Designer</SubType>
     </None>
-    <None Include="content\Views\Department\Categories.cshtml.pp" />
-    <None Include="Package.nuspec" />
     <None Include="tools\install.ps1" />
   </ItemGroup>
   <ItemGroup />

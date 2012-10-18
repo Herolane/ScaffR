@@ -11,9 +11,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="#">@Site.Instance.WebsiteName</a>
+            <a class="brand" href="@Url.Content("/")">@Site.Instance.WebsiteName</a>
             <div class="nav-collapse collapse">
-                @Html.MvcSiteMap("MvcSiteMapProvider").Nav()
+                @Html.MvcSiteMap("Public").Nav()
             </div>
         </div>
     </div>

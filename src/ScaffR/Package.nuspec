@@ -16,7 +16,7 @@
     <copyright>World-Class Programmers 2012</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="T4Scaffolding" />
+      <dependency id="T4Scaffolding.Core" />
       <dependency id="WebActivator"/>
     </dependencies>
   </metadata>

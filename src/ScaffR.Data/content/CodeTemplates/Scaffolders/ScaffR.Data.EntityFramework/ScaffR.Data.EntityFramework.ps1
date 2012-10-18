@@ -12,9 +12,6 @@ Add-Template $coreProjectName $outputPath "IDatabaseFactory" -Force:$Force $Temp
 $outputPath = "Interfaces\Data\IDataContext"
 Add-Template $coreProjectName $outputPath "IDataContext" -Force:$Force $TemplateFolders
 
-#$outputPath = "Migrations\Configuration"
-#Add-Template $dataProjectName $outputPath "Configuration" -Force:$Force $TemplateFolders
-
 Add-Template $dataProjectName "BaseRepository" "BaseRepository" -Force:$Force $TemplateFolders
 Add-Template $dataProjectName "UnitOfWork" "UnitOfWork" -Force:$Force $TemplateFolders
 Add-Template $dataProjectName "DatabaseFactory" "DatabaseFactory" -Force:$Force $TemplateFolders
