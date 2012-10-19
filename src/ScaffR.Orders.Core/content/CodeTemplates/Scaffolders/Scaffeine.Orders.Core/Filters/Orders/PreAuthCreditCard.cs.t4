@@ -10,7 +10,7 @@ namespace <#= Model.Namespace #>.Core.Common.Ordering.Filters.Orders
         public override bool Process(ref OrderContext data)
         {
             var total = data.Order.GetOrderTotal();
-            var card = data.Order.Customer.BillingInformation;
+            //var card = data.Order.Customer.BillingInformation;
             var customer = data.Order.Customer;
 
             // if authorized, true, else, false

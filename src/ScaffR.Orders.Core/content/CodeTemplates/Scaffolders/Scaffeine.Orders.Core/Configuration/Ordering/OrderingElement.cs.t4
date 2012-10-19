@@ -3,7 +3,7 @@
 namespace <#= Model.Namespace #>.Core.Configuration.Ordering
 {
     using System.Configuration;
-    using Pipeline;
+    using Infrastructure.Configuration.Pipeline;
 
     public class OrderingElement : ConfigurationElement
     {

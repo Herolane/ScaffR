@@ -16,8 +16,8 @@
     <copyright>ScaffR, 2012</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="Scaffeine.Customers.Core" />
-      <dependency id="Scaffeine.Products.Core" />
+      <dependency id="ScaffR.Customers.Core" />
+      <dependency id="ScaffR.Products.Core" />
       <dependency id="ScaffR.Infrastructure.Pipeline" />
     </dependencies>
   </metadata>

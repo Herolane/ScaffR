@@ -4,6 +4,7 @@ namespace <#= Model.Namespace #>.Core.Common.Ordering
 {
     using Configuration;
     using Infrastructure.Pipeline;
+    using Infrastructure.Interfaces.Pipeline;
 
     public class PreOrderProcessor : ICoreProcessor<OrderContext>
     {

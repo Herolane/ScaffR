@@ -1,4 +1,5 @@
 ﻿@using $rootnamespace$.Core.Model
+@using $rootnamespace$.Extensions
 @model string
 
 

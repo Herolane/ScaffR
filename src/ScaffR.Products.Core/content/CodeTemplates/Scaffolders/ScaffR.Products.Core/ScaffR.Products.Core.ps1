@@ -13,3 +13,9 @@ foreach ($tml in $templates){
 	$outputPath = "Model\$tml"
 	Add-Domain $outputPath $tml -Force:$Force $TemplateFolders
 }
+
+Scaffold ScaffR.Backend.For Product
+
+add-migration "Products Added" -projectName $dataProjectName
+
+update-database -projectName $dataProjectName

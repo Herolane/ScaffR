@@ -9,7 +9,7 @@ namespace <#= Model.Namespace #>.Core.Common.Ordering.Filters.Orders
         public override bool Process(ref OrderContext data)
         {
             var session = data.Order.OrderSession;
-            var info = data.Order.Customer.BillingInformation;
+            //var info = data.Order.Customer.BillingInformation;
 
             return true;
         }

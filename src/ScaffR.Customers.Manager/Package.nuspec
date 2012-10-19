@@ -16,9 +16,7 @@
     <copyright>ScaffR, 2012</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="ScaffR" />
-      <dependency id="Scaffeine.Customers.Core" />
-      <dependency id="Scaffeine.Dashboard.Shell" />
+      <dependency id="ScaffR.Customers.Core" />
     </dependencies>
   </metadata>
   <files>

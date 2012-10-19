@@ -1,3 +1,3 @@
 ﻿param($installPath, $toolsPath, $package, $project)
 
-scaffold scaffeine.customers.core
+scaffold scaffr.customers.core

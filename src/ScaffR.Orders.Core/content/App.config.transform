@@ -17,9 +17,9 @@
           </filters>
         </orderLinePipeline>
         <postOrderPipeline processor="$rootnamespace$.Core.Common.Ordering.PostOrderProcessor, $rootnamespace$.Core">
-          <prerequisites>
+          <!--<prerequisites>
             <add name="OrderItemsShipped" type="$rootnamespace$.Core.Common.Ordering.Filters.Orders.OrderItemsShippedFilter, $rootnamespace$.Core" />
-          </prerequisites>
+          </prerequisites>-->
           <filters>
             <add name="SettleAuthorization" type="$rootnamespace$.Core.Common.Ordering.Filters.Orders.SettleAuthorization, $rootnamespace$.Core" />
             <add name="UpdateFraudCheck" type="$rootnamespace$.Core.Common.Ordering.Filters.Orders.UpdateFraudCheck, $rootnamespace$.Core" />

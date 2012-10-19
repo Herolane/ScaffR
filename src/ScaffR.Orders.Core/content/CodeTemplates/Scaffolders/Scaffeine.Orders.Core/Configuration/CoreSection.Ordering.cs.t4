@@ -3,9 +3,7 @@
 namespace <#= Model.Namespace #>.Core.Configuration
 {
     using System.Configuration;
-    using Environment;
     using Ordering;
-    using Pipeline;
 
     public partial class CoreSection
     {
