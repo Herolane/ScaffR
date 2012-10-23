@@ -1,0 +1,23 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Data
+{
+    using System.Data.Entity;
+    using System.Linq;
+    using Core.Model;
+    using System.Collections.Generic;
+
+	public partial class ProductRepository
+    {
+		public IEnumerable<Category> GetCategoriesForProduct(int productId)
+		{
+		    var categoryProductSet = DataContext.DbSet<CategoryFeaturedProduct>();
+		    var categories = categoryProductSet.Include(cp => cp.Category)
+                                               .Where(cp => cp.ProductId == productId && !cp.EndTime.HasValue)
+                                               .ToList()
+                                               .Select(cp => cp.Category);
+
+		    return categories;
+		}
+    }
+}

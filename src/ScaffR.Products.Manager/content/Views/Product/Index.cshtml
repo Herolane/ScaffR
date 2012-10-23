@@ -1,0 +1,147 @@
+﻿@{
+    ViewBag.Title = "Manage Products";
+    Layout = "~/Views/Shared/_Folder.cshtml";
+    Bundles.Reference("scripts/custom/product");
+}
+<div class="clearfix">
+    <a href="#" role="button" class="btn btn-inverse pull-left" data-bind="click: newProduct">Create Product</a>
+
+    <div class="pagination pull-right">
+
+        <ul>
+            <li data-bind="css: {disabled:CurrentPage()==1}">
+                <a href="#" data-bind="click: PrevPage">Prev</a>
+            </li>
+        </ul>
+
+        <ul data-bind="foreach: AllPages">
+            <li data-bind="css: {active:$data.pageNumber==$root.CurrentPage()}">
+                <a href="#" data-bind="text: $data.pageNumber, click: function(){$root.GoToPage($data.pageNumber);}"></a>
+            </li>
+        </ul>
+
+        <ul>
+            <li data-bind="css: {disabled:CurrentPage()==PagesCount()}">
+                <a href="#" data-bind="click: NextPage">Next</a>
+            </li>
+        </ul>
+
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Subtitle</th>
+                <th>SalesPrice</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: Entities">
+            <tr>
+                <td data-bind="text: Title"></td>
+                <td data-bind="text: SubTitle"></td>
+                <td data-bind="text: SalesPrice"></td>
+                <td>
+                    <div class="btn-group">
+                        <a class="btn dropdown-toggle btn-mini btn-primary" data-toggle="dropdown" href="#">Actions <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a data-bind="click: $root.editCategories"><i class="icon-edit"></i>Categories</a></li>
+                            <li><a data-bind="click: $root.editProduct"><i class="icon-edit"></i>Edit</a></li>
+                            <li><a data-bind="click: $root.deleteProduct"><i class="icon-trash"></i>Delete</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<form class="form-horizontal" id="product-form" data-bind="submit: saveProduct">
+    <div class="modal hide fade" id="product-dialog" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="edit-dialog-label">Product</h3>
+        </div>
+        <div class="modal-body">
+            <div class="row-fluid" data-bind="with: current">
+                <div class="span12">
+                    <fieldset>
+                        <legend></legend>
+                        <div class="control-group">
+                            <label class="control-label">Title</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" placeholder="Enter Title" data-bind="value: Title" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">SubTitle</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" placeholder="Enter SubTitle" data-bind="value: SubTitle" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">MainDescription</label>
+                            <div class="controls">
+                                <textarea class="input-xlarge" data-bind="value: MainDescription"></textarea>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">SalesPrice</label>
+                            <div class="controls">
+                                <input type="text" class="input-small" placeholder="Enter SalesPrice" data-bind="value: SalesPrice" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">CostPrice</label>
+                            <div class="controls">
+                                <input type="text" class="input-small" placeholder="Enter CostPrice" data-bind="value: CostPrice" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">ManufacturerNumber</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" placeholder="Enter ManufacturerNumber" data-bind="value: ManufacturerNumber" />
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button class="btn btn-primary">Save</button>
+        </div>
+    </div>
+</form>
+
+<div class="modal hide fade" id="categories-dialog" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3>Product - Categories</h3>
+    </div>
+    <div class="modal-body">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="control-group">
+                    <div class="controls">
+                        <input id="autoComplete" type="text" class="input-large" />
+                        <a href="#" class="btn btn-small btn-primary" data-bind="click: $root.addCategory">Add Category</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span12" data-bind="with: current">
+                <ul data-bind="foreach: Categories">
+                    <li data-bind="text: Name"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button class="btn btn-primary">Save</button>
+    </div>
+</div>

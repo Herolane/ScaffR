@@ -1,0 +1,15 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Service
+{
+    using System.Collections.Generic;
+    using Core.Model;
+    
+    public partial class ProductService
+    {
+        public IEnumerable<Category> GetCategoriesForProduct(int productId)
+        {
+            return Repository.GetCategoriesForProduct(productId);
+        }
+    }
+}

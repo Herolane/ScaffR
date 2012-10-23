@@ -65,7 +65,8 @@ namespace $rootnamespace$.Areas.Api.Controllers
             return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
         }
 
-        public virtual IEnumerable<T> Page(int page, int pageSize)
+        [HttpGet]
+		public virtual IEnumerable<T> Page(int page, int pageSize)
         {
             var p = Service.Page(page, pageSize);
             return p.Entities.ToList();
