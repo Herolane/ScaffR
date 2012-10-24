@@ -15,8 +15,8 @@
     </releaseNotes>
     <copyright>ScaffR, 2012</copyright>
     <tags></tags>
-    <dependencies>
-      <dependency id="ScaffR"/>
+    <dependencies>      
+      <dependency id="ScaffR.Users.Core"/>
     </dependencies>
   </metadata>
   <files>

@@ -5,10 +5,9 @@ namespace <#= Model.Namespace #>.Core.Common.Paging
     using System;
     using System.Collections.Generic;
 
-    using <#= Model.Namespace #>.Core.Interfaces.Paging;
-    using <#= Model.Namespace #>.Core.Model;
+    using Core.Interfaces.Paging;
+    using Core.Model;
 
-    [Serializable]
     public partial class Page<T> : IPage<T> where T : DomainObject
     {
         public int CurrentPage { get; set; }
