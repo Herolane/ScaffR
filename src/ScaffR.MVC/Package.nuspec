@@ -19,7 +19,7 @@
       <dependency id="ScaffR.MVC.Normalize"/>
       <dependency id="ScaffR.Cassette"/>
       <dependency id="ScaffR.Bootstrap"/>
-      <dependency id="ScaffR.KnockoutJS"/>
+      <dependency id="ScaffR.AngularJS"/>
       <dependency id="ScaffR.Ninject"/>
       <dependency id="ScaffR.Data.EntityFramework"/>
       <dependency id="ScaffR.SiteInfo"/>
