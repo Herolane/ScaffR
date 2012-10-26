@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6E4F0AAC-3915-4098-8132-EEDD6A308131}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ScaffR.JQuery.UI</RootNamespace>
+    <AssemblyName>ScaffR.JQuery.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BuildPublishPackage.cmd" />
+    <None Include="Package.nuspec" />
+    <None Include="tools\init.ps1" />
+    <None Include="tools\install.ps1" />
+    <None Include="tools\uninstall.ps1" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="content\css\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="content\css\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="content\css\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="content\css\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="content\css\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="content\css\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="content\css\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="content\css\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="content\css\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="content\css\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="content\css\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="content\css\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="content\css\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="content\css\base\jquery.ui.accordion.css" />
+    <Content Include="content\css\base\jquery.ui.all.css" />
+    <Content Include="content\css\base\jquery.ui.autocomplete.css" />
+    <Content Include="content\css\base\jquery.ui.base.css" />
+    <Content Include="content\css\base\jquery.ui.button.css" />
+    <Content Include="content\css\base\jquery.ui.core.css" />
+    <Content Include="content\css\base\jquery.ui.datepicker.css" />
+    <Content Include="content\css\base\jquery.ui.dialog.css" />
+    <Content Include="content\css\base\jquery.ui.progressbar.css" />
+    <Content Include="content\css\base\jquery.ui.resizable.css" />
+    <Content Include="content\css\base\jquery.ui.selectable.css" />
+    <Content Include="content\css\base\jquery.ui.slider.css" />
+    <Content Include="content\css\base\jquery.ui.tabs.css" />
+    <Content Include="content\css\base\jquery.ui.theme.css" />
+    <Content Include="content\Scripts\lib\jquery-ui\bundle.txt" />
+    <Content Include="content\Scripts\lib\jquery-ui\jquery-ui-1.8.24.js" />
+    <Content Include="NuGet.exe" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>-->
+  <Target Name="AfterBuild">
+    <!-- Load up the information from the assembly -->
+    <GetAssemblyIdentity AssemblyFiles="$(OutputPath)$(AssemblyName).dll">
+      <Output TaskParameter="Assemblies" ItemName="OutputAssemblyInfo" />
+    </GetAssemblyIdentity>
+    <Message Text="Info: %(OutputAssemblyInfo.Version)" />
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="BuildPublishPackage.cmd %(OutputAssemblyInfo.Version)" Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " />
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="BuildPublishPackage.cmd %(OutputAssemblyInfo.Version) Publish" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " />
+  </Target>
+</Project>

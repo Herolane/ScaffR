@@ -55,19 +55,16 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="content\Scripts\Custom\dummy.txt" />
-    <Content Include="content\Scripts\Framework\json2.js" />
-    <Content Include="content\Scripts\Framework\jquery-1.8.2.js" />
-    <Content Include="content\Scripts\Framework\jquery-ui-1.8.24.js" />
-    <Content Include="content\Scripts\Framework\jquery.ui.timepicker.js" />
-    <Content Include="content\Scripts\Framework\jquery.validate.js" />
-    <Content Include="content\Scripts\Framework\jquery.validate.unobtrusive.js" />
-    <Content Include="content\Scripts\Global\global.bootstrap.js" />
-    <Content Include="content\Scripts\Global\global.input.js" />
-    <Content Include="content\Scripts\Global\global.js" />
-    <Content Include="content\Scripts\Global\global.knockout.js" />
-    <Content Include="content\Scripts\Global\global.modal.js" />
-    <Content Include="content\Scripts\Global\global.notifications.js" />
-    <Content Include="content\Scripts\Global\global.validation.js" />
+    <Content Include="content\Scripts\lib\jquery\bundle.txt" />
+    <Content Include="content\Scripts\lib\jquery\json2.js" />
+    <Content Include="content\Scripts\lib\jquery\jquery-1.8.2.js" />
+    <Content Include="content\Scripts\lib\jquery\jquery.ui.timepicker.js" />
+    <Content Include="content\Scripts\lib\jquery\jquery.validate.js" />
+    <Content Include="content\Scripts\lib\jquery\jquery.validate.unobtrusive.js" />
+    <Content Include="content\Scripts\global.input.js" />
+    <Content Include="content\Scripts\global.js" />
+    <Content Include="content\Scripts\global.modal.js" />
+    <Content Include="content\Scripts\global.validation.js" />
     <Content Include="NuGet.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -54,7 +54,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="content\Scripts\Framework\bootstrap.js" />
+    <Content Include="content\Scripts\global.bootstrap.js" />
+    <Content Include="content\Scripts\lib\bootstrap\bootstrap.js" />
+    <Content Include="content\Scripts\lib\bootstrap\bundle.txt" />
     <Content Include="NuGet.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

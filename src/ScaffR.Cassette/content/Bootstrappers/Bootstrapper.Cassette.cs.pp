@@ -1,5 +1,6 @@
 ﻿namespace $rootnamespace$.Bootstrappers
 {
+    using System.IO;
     using Cassette;
     using Cassette.Scripts;
     using Cassette.Stylesheets;
@@ -8,12 +9,18 @@
 	{
         public void Configure(BundleCollection configurable)
         {
-            configurable.AddPerSubDirectory<StylesheetBundle>("Content/Framework");
-			configurable.AddPerIndividualFile<StylesheetBundle>("Content/Custom");
-            
-			configurable.AddPerSubDirectory<ScriptBundle>("Scripts/Framework");
-            configurable.AddPerSubDirectory<ScriptBundle>("Scripts/Global");
-            configurable.AddPerIndividualFile<ScriptBundle>("Scripts/Custom");
+            configurable.AddPerSubDirectory<StylesheetBundle>("content", new FileSearch()
+            {
+                SearchOption = SearchOption.TopDirectoryOnly
+            });
+
+            configurable.AddPerSubDirectory<ScriptBundle>("Scripts", new FileSearch()
+            {
+                SearchOption = SearchOption.TopDirectoryOnly
+            });
+
+            configurable.AddPerSubDirectory<ScriptBundle>("Scripts/custom");
+            configurable.AddPerSubDirectory<ScriptBundle>("Scripts/lib");
         }
 	}
 }

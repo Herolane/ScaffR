@@ -1,0 +1,6 @@
+﻿angular-ui.js
+*
+
+[references]
+~/scripts/lib/jquery-ui
+~/scripts/lib/angular

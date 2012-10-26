@@ -19,6 +19,8 @@
       <dependency id="ScaffR"/>
       <dependency id="Cassette.AspNet"/>
       <dependency id="Cassette.Less"/>
+      <dependency id="ScaffR.Less"/>
+      <dependency id="ScaffR.Javascript"/>
     </dependencies>
   </metadata>
   <files>

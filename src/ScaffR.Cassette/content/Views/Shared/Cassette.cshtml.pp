@@ -1,7 +1,7 @@
 ﻿@{
-    Bundles.Reference("content/framework");
-    Bundles.Reference("scripts/framework");
-	Bundles.Reference("scripts/global");
+    Bundles.Reference("content/less");
+    Bundles.Reference("scripts/lib");
+    Bundles.Reference("scripts");
 }
 
 <!doctype html>
@@ -16,11 +16,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
     @Bundles.RenderStylesheets()
-	@Bundles.RenderStylesheets("custom")
+    @Bundles.RenderScripts("head")
 </head>
 <body>
     @RenderBody()
+
     @Bundles.RenderScripts()
-	@Bundles.RenderScripts("custom")
 </body>
 </html>
