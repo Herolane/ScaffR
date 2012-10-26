@@ -15,7 +15,7 @@ site.less
 	var x = new DirectoryInfo(Host.ResolvePath(""));
 	if (x != null){
 		foreach(var dir in x.GetDirectories()){
-			WriteLine(string.Format("~/scripts/lib/{0}", dir.Name));
+			WriteLine(string.Format("~/content/less/{0}", dir.Name));
 		}
 	}	
 #>
