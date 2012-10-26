@@ -50,7 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
+    <None Include="content\Content\Less\bundle.tt.pp">
+      <LastGenOutput>bundle.tt.txt</LastGenOutput>
+    </None>
+    <None Include="content\Content\Less\global\global.less" />
     <None Include="content\Content\Less\site.less" />
+    <None Include="content\Content\Less\variables.less" />
     <None Include="Package.nuspec" />
     <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />
@@ -60,9 +65,10 @@
     <Folder Include="content\CodeTemplates\Scaffolders\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="content\Content\Less\bundle.txt" />
-    <Content Include="content\Content\Less\global\bundle.txt" />
     <Content Include="NuGet.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -9,17 +9,14 @@
 	{
         public void Configure(BundleCollection configurable)
         {
-            configurable.AddPerSubDirectory<StylesheetBundle>("content", new FileSearch()
-            {
-                SearchOption = SearchOption.TopDirectoryOnly
-            });
-
             configurable.AddPerSubDirectory<ScriptBundle>("Scripts", new FileSearch()
             {
                 SearchOption = SearchOption.TopDirectoryOnly
             });
 
+            configurable.AddPerSubDirectory<StylesheetBundle>("content/less");
             configurable.AddPerSubDirectory<ScriptBundle>("Scripts/custom");
+
             configurable.AddPerSubDirectory<ScriptBundle>("Scripts/lib");
         }
 	}
