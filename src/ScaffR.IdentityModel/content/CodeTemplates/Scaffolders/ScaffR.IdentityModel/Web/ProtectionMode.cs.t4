@@ -1,0 +1,8 @@
+﻿namespace Netchex.IdentityModel.Web
+{
+    public enum ProtectionMode
+    {
+        DPAPI, 
+        MachineKey
+    }
+}

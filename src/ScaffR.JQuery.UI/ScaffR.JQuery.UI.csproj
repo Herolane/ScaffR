@@ -86,6 +86,7 @@
     <Content Include="content\css\base\jquery.ui.theme.css" />
     <Content Include="content\Scripts\lib\jquery-ui\bundle.txt" />
     <Content Include="content\Scripts\lib\jquery-ui\jquery-ui-1.8.24.js" />
+    <Content Include="content\Scripts\lib\jquery-ui\jquery.ui.timepicker.js" />
     <Content Include="NuGet.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,6 +7,7 @@
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            Bootstrapper.Routes();
         }
 	}
 }

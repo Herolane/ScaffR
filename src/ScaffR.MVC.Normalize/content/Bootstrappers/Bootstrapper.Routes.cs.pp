@@ -1,6 +1,4 @@
-﻿[assembly: WebActivator.PreApplicationStartMethod(typeof($rootnamespace$.Bootstrappers.Bootstrapper), "Routes")]
-
-namespace $rootnamespace$.Bootstrappers
+﻿namespace $rootnamespace$.Bootstrappers
 {
     using System.Web.Http;
     using System.Web.Mvc;

@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7A3B9A7E-ECDC-449C-AF17-EAA260FD62DE}</ProjectGuid>
+    <ProjectGuid>{2BDEA833-2EE0-4C8F-B4BD-07D2585C32F3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ScaffR.jQuery</RootNamespace>
-    <AssemblyName>ScaffR.jQuery</AssemblyName>
+    <RootNamespace>ScaffR.IdentityModel</RootNamespace>
+    <AssemblyName>ScaffR.IdentityModel</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -51,19 +51,14 @@
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
     <None Include="Package.nuspec" />
+    <None Include="tools\init.ps1" />
+    <None Include="tools\install.ps1" />
+    <None Include="tools\uninstall.ps1" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="content\Scripts\Custom\dummy.txt" />
-    <Content Include="content\Scripts\lib\jquery\bundle.txt" />
-    <Content Include="content\Scripts\lib\jquery\json2.js" />
-    <Content Include="content\Scripts\lib\jquery\jquery-1.8.2.js" />
-    <Content Include="content\Scripts\lib\jquery\jquery.validate.js" />
-    <Content Include="content\Scripts\lib\jquery\jquery.validate.unobtrusive.js" />
-    <Content Include="content\Scripts\global.input.js" />
-    <Content Include="content\Scripts\global.js" />
-    <Content Include="content\Scripts\global.modal.js" />
-    <Content Include="content\Scripts\global.validation.js" />
+    <Folder Include="content\CodeTemplates\Scaffolders\" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="NuGet.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
