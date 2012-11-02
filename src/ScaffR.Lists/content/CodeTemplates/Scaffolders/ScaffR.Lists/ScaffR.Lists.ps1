@@ -7,7 +7,7 @@ param(
 )
 
  $templates = 
- 	@("Lists.Countries","Lists.UnitedStates","Lists.Months","Lists.CreditCards")
+ 	@("Lists.Countries","Lists.UnitedStates","Lists.Months","Lists.CreditCards","Lists.Salutations")
 
 foreach ($tml in $templates){
 	$outputPath = "Common\Lists\$tml"

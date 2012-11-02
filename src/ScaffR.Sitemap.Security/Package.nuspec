@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>ScaffR.Bootstrap.Sitemap</id>
+    <id>ScaffR.Sitemap.Security</id>
     <version>1.1.4</version>
     <authors>Rod Johnson</authors>
     <owners>ScaffR</owners>
@@ -16,12 +16,12 @@
     <copyright>ScaffR, 2012</copyright>
     <tags></tags>
     <dependencies>
-      <dependency id="ScaffR.Extensions"/>
       <dependency id="ScaffR.Sitemap"/>
+      <dependency id="ScaffR.Security"/>
     </dependencies>
   </metadata>
   <files>
-
+    <file src="tools\**" target="tools" />
     <file src="content\**" target="content" />
   </files>
 </package>

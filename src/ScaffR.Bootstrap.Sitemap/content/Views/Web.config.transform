@@ -3,9 +3,7 @@
   <system.web.webPages.razor>
     <pages pageBaseType="System.Web.Mvc.WebViewPage">
       <namespaces>
-        <add namespace="$rootnamespace$.Core.Common.Site" />
         <add namespace="$rootnamespace$.Extensions.Sitemap" />
-        <add namespace="MvcSiteMapProvider.Web.Html" />
       </namespaces>
     </pages>
   </system.web.webPages.razor>

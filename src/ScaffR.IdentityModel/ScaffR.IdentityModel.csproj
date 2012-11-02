@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2BDEA833-2EE0-4C8F-B4BD-07D2585C32F3}</ProjectGuid>
+    <ProjectGuid>{05DBFDA4-9DCC-4852-8015-86B968F86D96}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ScaffR.IdentityModel</RootNamespace>
@@ -46,6 +46,126 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\AuthenticationInstantClaim.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Authorization\ClaimPermission.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Authorization\ClaimPermissionAttribute.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Authorization\ClaimsAuthorization.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Authorization\DefaultPolicy.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Authorization\MVC\ClaimsAuthorizeAttribute.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Authorization\Todo\ApiAuthorizeAttribute.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Authorization\Todo\GlobalAuthorization.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Authorization\Todo\HttpAuthorizationContext.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Authorization\Todo\HttpClaimsAuthorizationManager.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Authorization\Todo\HttpConfigurationExtensions.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Authorization\Todo\IAuthorizationManager.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Authorization\Todo\PerControllerAuthorization.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Authorization\WebApi\ClaimsAuthorizeAttribute.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Base64Url.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Clients\AccessControlService\IdentityProviderDiscoveryClient.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Clients\AccessControlService\IdentityProviderInformation.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Clients\AccessControlService\JsonNotifyRequestSecurityTokenResponse.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Clients\AccessTokenResponse.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Clients\OAuth2Client.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Clients\WrapClient.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Constants\Algorithms.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Constants\DateTimeFormats.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Constants\Internal.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Constants\JwtConstants.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Constants\OAuth2Constants.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Constants\SwtConstants.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Constants\TokenTypes.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Constants\WSSecurity10Constants.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Constants\WSTrust13Constants.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\CryptoRandom.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Diagnostics\Area.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Diagnostics\Tracing.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Extensions\ConsoleExtensions.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Extensions\DateTimeExtensions.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Extensions\HttpRequestMessageExtensions.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Extensions\RequestSecurityTokenResponseExtensions.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Extensions\RSACryptoServiceProvider.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Extensions\SecurityTokens.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Extensions\X509CertificateEndpointIdentity.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Extensions\XmlExtensions\XDocumentExtensions.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Extensions\XmlExtensions\XElementExtensions.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Extensions\XmlExtensions\XmlConverter.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Extensions\XmlExtensions\XmlDocumentExtensions.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Extensions\XmlExtensions\XmlElementExtensions.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Extensions\XmlExtensions\XmlReaderExtensions.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\CorsAccessRequest.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\CorsAccessResponse.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\CorsConfiguration.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\CorsConfigurationAllowProperties.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\CorsConfigurationEntry.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\CorsConfigurationExtensions.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\CorsConstants.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\CorsEngine.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\CorsExtensions.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\CorsFluentSettings.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\CorsResourceSettings.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\IHttpRequestWrapper.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\IHttpResponseWrapper.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\IIS\CorsHttpModule.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\IIS\HttpContextRequest.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\IIS\HttpContextResponse.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\IIS\UrlBasedCorsConfiguration.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\Mvc\MvcCorsConfiguration.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\Mvc\MvcCorsHttpModule.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\Mvc\MvcRequest.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\WebApi\CorsMessageHandler.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\WebApi\WebApiCorsConfiguration.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\WebApi\WebApiHttpRequest.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\Cors\WebApi\WebApiHttpResponse.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Http\RequireHttpsHandler.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\ObfuscatingComparer.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Principal.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\ScaffR.IdentityModel.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\GenericUserNameSecurityTokenHandler.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\HmacSigningCredentials.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\Http\AuthenticationConfiguration.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\Http\AuthenticationHandler.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\Http\AuthenticationOptionMapping.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\Http\AuthenticationOptions.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\Http\BasicAuthenticationHeaderValue.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\Http\BasicAuthenticationSecurityTokenHandler.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\Http\ClaimsTransformationHandler.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\Http\ClientCertificateHandler.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\Http\ClientCertificateIssuerNameRegistry.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\Http\ClientCertificateMode.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\Http\HttpAuthentication.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\Http\HttpSaml2SecurityTokenHandler.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\Http\HttpSamlSecurityTokenHandler.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\Http\HttpsIssuerNameRegistry.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\Http\HttpsSecurityTokenHandler.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\Http\SessionTokenConfiguration.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\JsonWebToken.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\JsonWebTokenHandler.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\JwtHeader.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\MetadataBasedIssuerNameRegistry.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\SimpleSecurityToken.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\SimpleSecurityTokenHandler.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\SimpleWebToken.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\SimpleWebTokenHandler.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\TestIssuerNameRegistry.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\WebTokenIssuerNameRegistry.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\WebTokenIssuerTokenResolver.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Tokens\WebTokenSecurityKeyClause.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Web\ClaimsAuthenticationHttpModule.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Web\ProtectedCookie.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Web\ProtectionMode.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\Web\ServiceAwareWSFederationAuthenticationModule.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\WSTrust\CertificateWSTrustBindings.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\WSTrust\IssuedTokenWSTrustBinding.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\WSTrust\KerberosWSTrustBinding.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\WSTrust\KeyGenerator.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\WSTrust\UserNameWSTrustBinding.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\WSTrust\WindowsWSTrustBinding.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\WSTrust\WSTrustBindingBase.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\WSTrust\WSTrustClient.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\X509Certificates\X509.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\X509Certificates\X509CertificatesFinder.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\X509Certificates\X509CertificatesLocation.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.IdentityModel\X509Certificates\X509CertificatesName.cs.t4" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -55,9 +175,7 @@
     <None Include="tools\install.ps1" />
     <None Include="tools\uninstall.ps1" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="content\CodeTemplates\Scaffolders\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="NuGet.exe" />
   </ItemGroup>

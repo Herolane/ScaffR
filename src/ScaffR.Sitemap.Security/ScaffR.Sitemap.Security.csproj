@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E89EC831-52EE-47D9-A5F8-5F02166E1280}</ProjectGuid>
+    <ProjectGuid>{EA7F9736-7366-45D4-9227-705C6CBE1AC7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ScaffR.Lists</RootNamespace>
-    <AssemblyName>ScaffR.Lists</AssemblyName>
+    <RootNamespace>ScaffR.Sitemap.Security</RootNamespace>
+    <AssemblyName>ScaffR.Sitemap.Security</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -46,20 +46,21 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Lists\Lists.Countries.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Lists\Lists.UnitedStates.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Lists\Lists.CreditCards.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Lists\Lists.Months.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Lists\Lists.Salutations.cs.t4" />
+    <None Include="content\Security\WIFVisibilityModule.cs.pp" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Lists\ScaffR.Lists.ps1" />
-    <None Include="Package.nuspec" />
+    <None Include="Package.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />
+    <None Include="tools\uninstall.ps1" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="content\CodeTemplates\Scaffolders\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="NuGet.exe" />
   </ItemGroup>
