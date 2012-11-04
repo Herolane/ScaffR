@@ -1,4 +1,6 @@
-﻿namespace Netchex.IdentityModel.Tokens
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.IdentityModel.Tokens
 {
     using System;
     using System.IdentityModel.Metadata;

@@ -1,9 +1,11 @@
-﻿/*
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+/*
  * Copyright (c) Dominick Baier.  All rights reserved.
  * see license.txt
  */
 
-namespace Netchex.IdentityModel.Clients.AccessControlService
+namespace <#= Model.Namespace #>.IdentityModel.Clients.AccessControlService
 {
     using System;
     using System.Collections.Generic;

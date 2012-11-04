@@ -1,9 +1,11 @@
-﻿/*
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+/*
  * Copyright (c) Dominick Baier.  All rights reserved.
  * see license.txt
  */
 
-namespace Netchex.IdentityModel.Extensions
+namespace <#= Model.Namespace #>.IdentityModel.Extensions
 {
     using System;
     using System.Diagnostics.Contracts;

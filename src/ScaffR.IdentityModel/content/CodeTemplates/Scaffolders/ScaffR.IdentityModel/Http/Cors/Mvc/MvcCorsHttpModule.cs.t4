@@ -1,9 +1,11 @@
-﻿/*
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+/*
  * Copyright (c) Dominick Baier & Brock Allen.  All rights reserved.
  * see license.txt
  */
 
-namespace Netchex.IdentityModel.Http.Cors.Mvc
+namespace <#= Model.Namespace #>.IdentityModel.Http.Cors.Mvc
 {
     using System;
     using System.Web;

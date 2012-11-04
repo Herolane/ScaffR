@@ -1,4 +1,6 @@
-﻿namespace Netchex.IdentityModel.Tokens.Http
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.IdentityModel.Tokens.Http
 {
     using System;
     using System.IdentityModel.Tokens;

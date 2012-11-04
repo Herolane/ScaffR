@@ -1,4 +1,6 @@
-﻿namespace Netchex.IdentityModel.Web
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.IdentityModel.Web
 {
     public enum ProtectionMode
     {

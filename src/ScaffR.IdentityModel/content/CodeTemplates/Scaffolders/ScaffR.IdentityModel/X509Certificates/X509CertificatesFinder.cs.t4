@@ -1,4 +1,6 @@
-﻿namespace Netchex.IdentityModel.X509Certificates
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.IdentityModel.X509Certificates
 {
     using System.Collections.Generic;
     using System.Linq;

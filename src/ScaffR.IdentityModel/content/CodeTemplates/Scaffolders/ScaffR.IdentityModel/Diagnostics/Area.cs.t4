@@ -1,4 +1,6 @@
-﻿namespace Netchex.IdentityModel.Diagnostics
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.IdentityModel.Diagnostics
 {
     internal static class Area
     {

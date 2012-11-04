@@ -58,6 +58,8 @@
     <None Include="content\Models\Attributes\DropDownAttribute.cs.pp" />
     <None Include="content\Filters\FillDropDowns.cs.pp" />
     <None Include="content\Extensions\SelectListExtensions.cs.pp" />
+    <None Include="content\Models\Attributes\CascadingDropDownAttribute.cs.pp" />
+    <None Include="content\Controllers\DropdownController.cs.pp" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +73,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="content\Scripts\global.cascadingDropdown.js" />
     <Content Include="NuGet.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

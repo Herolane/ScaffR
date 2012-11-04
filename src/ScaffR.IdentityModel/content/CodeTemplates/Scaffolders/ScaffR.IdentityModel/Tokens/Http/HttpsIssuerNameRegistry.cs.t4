@@ -1,4 +1,6 @@
-﻿/*
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+/*
  * Copyright (c) Dominick Baier.  All rights reserved.
  * 
  * This code is licensed under the Microsoft Permissive License (Ms-PL)
@@ -7,7 +9,7 @@
  * 
  */
 
-namespace Netchex.IdentityModel.Tokens.Http
+namespace <#= Model.Namespace #>.IdentityModel.Tokens.Http
 {
     using System;
     using System.IdentityModel.Tokens;

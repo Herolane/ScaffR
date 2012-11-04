@@ -1,4 +1,6 @@
-﻿namespace Netchex.IdentityModel.Authorization.WebApi
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.IdentityModel.Authorization.WebApi
 {
     using System.Web.Http;
     using System.Web.Http.Controllers;

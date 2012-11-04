@@ -9,8 +9,8 @@ namespace $rootnamespace$.Models.Attributes
     public class DropDownAttribute : UIHintAttribute, IDropDownAttribute
     {
         private readonly Type _serviceType;
-        private readonly string _methodName;
-        private readonly object[] _arguments;
+        protected readonly string _methodName;
+        protected readonly object[] _arguments;
 
         public DropDownAttribute(string methodName, params object[] arguments)
             : this(methodName, "DropDown", typeof(Dropdowns.Dropdowns), arguments)
