@@ -1,4 +1,5 @@
-﻿@{
+﻿@using $rootnamespace$.Core.Common.Site
+@{
     ViewBag.Title = "Layout";
     Layout = "~/Views/Shared/Bootstrap/BootstrapShared.cshtml";
 }

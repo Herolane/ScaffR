@@ -18,6 +18,7 @@
     <dependencies>
       <dependency id="ScaffR.Sitemap"/>
       <dependency id="ScaffR.Security"/>
+      <dependency id="ScaffR.IdentityModel"/>
     </dependencies>
   </metadata>
   <files>

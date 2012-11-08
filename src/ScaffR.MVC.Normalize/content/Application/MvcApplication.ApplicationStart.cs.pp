@@ -1,6 +1,7 @@
 ﻿namespace $rootnamespace$.Application
 {
     using System.Web.Mvc;
+	using Bootstrappers;
 
     public partial class MvcApplication
 	{

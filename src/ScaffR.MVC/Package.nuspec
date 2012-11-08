@@ -20,11 +20,13 @@
       <dependency id="ScaffR.Cassette"/>
       <dependency id="ScaffR.Bootstrap"/>
       <dependency id="ScaffR.AngularJS"/>
-      <dependency id="ScaffR.Ninject"/>
-      <dependency id="ScaffR.Data.EntityFramework"/>
+      <dependency id="ScaffR.Backend"/>
+      <dependency id="ScaffR.MVC.DataAnnotations"/>
       <dependency id="ScaffR.SiteInfo"/>
       <dependency id="ScaffR.WebApi"/>
       <dependency id="ScaffR.Mail.Gmail"/>
+      <dependency id="ScaffR.Data.EntityFramework"/>
+      <dependency id="ScaffR.Ninject"/>
     </dependencies>
   </metadata>
   <files>

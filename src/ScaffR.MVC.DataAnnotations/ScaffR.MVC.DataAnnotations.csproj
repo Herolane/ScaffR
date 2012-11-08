@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B297B5F5-2199-4B60-A728-3FBCEE300F51}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ScaffR.MVC.DataAnnotations</RootNamespace>
+    <AssemblyName>ScaffR.MVC.DataAnnotations</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="content\Bootstrappers\Bootstrapper.Validators.cs.pp" />
+    <None Include="content\Models\Adapters\CreditCardAttributeAdapter.cs.pp" />
+    <None Include="content\Models\Adapters\CuitAttributeAdapter.cs.pp" />
+    <None Include="content\Models\Adapters\DateAttributeAdapter.cs.pp" />
+    <None Include="content\Models\Adapters\DigitsAttributeAdapter.cs.pp" />
+    <None Include="content\Models\Adapters\EmailAttributeAdapter.cs.pp" />
+    <None Include="content\Models\Adapters\EqualToAttributeAdapter.cs.pp" />
+    <None Include="content\Models\Adapters\FileExtensionsAttributeAdapter.cs.pp" />
+    <None Include="content\Models\Adapters\MaxAttributeAdapter.cs.pp" />
+    <None Include="content\Models\Adapters\MinAttributeAdapter.cs.pp" />
+    <None Include="content\Models\Adapters\NumericAttributeAdapter.cs.pp" />
+    <None Include="content\Models\Adapters\UrlAttributeAdapter.cs.pp" />
+    <None Include="content\Models\Adapters\YearAttributeAdapter.cs.pp" />
+    <None Include="content\Models\Attributes\CreditCardAttribute.cs.pp" />
+    <None Include="content\Models\Attributes\CuitAttribute.cs.pp" />
+    <None Include="content\Models\Attributes\DateAttribute.cs.pp" />
+    <None Include="content\Models\Attributes\DigitsAttribute.cs.pp" />
+    <None Include="content\Models\Attributes\EmailAttribute.cs.pp" />
+    <None Include="content\Models\Attributes\EqualToAttribute.cs.pp" />
+    <None Include="content\Models\Attributes\Expressions.cs.pp" />
+    <None Include="content\Models\Attributes\FileExtensionsAttribute.cs.pp" />
+    <None Include="content\Models\Attributes\IntegerAttribute.cs.pp" />
+    <None Include="content\Models\Attributes\MaxAttribute.cs.pp" />
+    <None Include="content\Models\Attributes\MinAttribute.cs.pp" />
+    <None Include="content\Models\Attributes\NumericAttribute.cs.pp" />
+    <None Include="content\Models\Attributes\PasswordAttribute.cs.pp" />
+    <None Include="content\Models\Attributes\TextboxAttribute.cs.pp" />
+    <None Include="content\Models\Attributes\TextboxSize.cs.pp" />
+    <None Include="content\Models\Attributes\UrlAttribute.cs.pp" />
+    <None Include="content\Models\Attributes\UrlOptions.cs.pp" />
+    <None Include="content\Models\Attributes\YearAttribute.cs.pp" />
+    <None Include="content\Models\Resources\ClientValidationResources.Designer.cs.pp" />
+    <None Include="content\Models\Resources\ValidatorResources.Designer.cs.pp" />
+    <None Include="content\Models\Rules\ModelClientValidationCreditCardRule.cs.pp" />
+    <None Include="content\Models\Rules\ModelClientValidationCuitRule.cs.pp" />
+    <None Include="content\Models\Rules\ModelClientValidationDateRule.cs.pp" />
+    <None Include="content\Models\Rules\ModelClientValidationDigitsRule.cs.pp" />
+    <None Include="content\Models\Rules\ModelClientValidationEmailRule.cs.pp" />
+    <None Include="content\Models\Rules\ModelClientValidationFileExtensionsRule.cs.pp" />
+    <None Include="content\Models\Rules\ModelClientValidationIntegerRule.cs.pp" />
+    <None Include="content\Models\Rules\ModelClientValidationMaxRule.cs.pp" />
+    <None Include="content\Models\Rules\ModelClientValidationMinRule.cs.pp" />
+    <None Include="content\Models\Rules\ModelClientValidationNumericRule.cs.pp" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BuildPublishPackage.cmd" />
+    <None Include="Package.nuspec" />
+    <None Include="tools\init.ps1" />
+    <None Include="tools\install.ps1" />
+    <None Include="tools\uninstall.ps1" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="NuGet.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="content\Models\Resources\ClientValidationResources.resx.pp" />
+    <None Include="content\Models\Resources\ValidatorResources.resx.pp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>-->
+  <Target Name="AfterBuild">
+    <!-- Load up the information from the assembly -->
+    <GetAssemblyIdentity AssemblyFiles="$(OutputPath)$(AssemblyName).dll">
+      <Output TaskParameter="Assemblies" ItemName="OutputAssemblyInfo" />
+    </GetAssemblyIdentity>
+    <Message Text="Info: %(OutputAssemblyInfo.Version)" />
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="BuildPublishPackage.cmd %(OutputAssemblyInfo.Version)" Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " />
+    <Exec WorkingDirectory="$(MSBuildProjectDirectory)" Command="BuildPublishPackage.cmd %(OutputAssemblyInfo.Version) Publish" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " />
+  </Target>
+</Project>
