@@ -50,8 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\Extensions\ActionDescriptorExtensions.cs.pp" />
-    <None Include="content\Extensions\UrlExtensions.cs.pp" />
     <None Include="content\Models\Attributes\PasswordAttribute.cs.pp" />
     <None Include="content\Models\Attributes\TextboxAttribute.cs.pp" />
     <None Include="content\Models\Attributes\TextboxSize.cs.pp" />
@@ -64,9 +62,7 @@
     <None Include="tools\MvcHelpers\MvcHelpers.psm1" />
     <None Include="tools\uninstall.ps1" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="content\CodeTemplates\Scaffolders\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="NuGet.exe" />
   </ItemGroup>

@@ -47,6 +47,8 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="content\Bootstrappers\Bootstrapper.Validators.cs.pp" />
+    <None Include="content\Extensions\ActionDescriptorExtensions.cs.pp" />
+    <None Include="content\Extensions\UrlExtensions.cs.pp" />
     <None Include="content\Models\Adapters\CreditCardAttributeAdapter.cs.pp" />
     <None Include="content\Models\Adapters\CuitAttributeAdapter.cs.pp" />
     <None Include="content\Models\Adapters\DateAttributeAdapter.cs.pp" />
@@ -93,6 +95,26 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
+    <None Include="content\Views\Shared\EditorTemplates\Boolean.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\Color.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\CreditCard.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\Date.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\DateTime-Local.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\DateTime.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\Digits.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\DropDown.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\EmailAddress.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\EnumDropDown.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\Month.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\Number.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\Password.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\PhoneNumber.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\Search.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\String.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\Time.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\Url.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\Week.cshtml.pp" />
+    <None Include="content\Views\Shared\EditorTemplates\Year.cshtml.pp" />
     <None Include="Package.nuspec" />
     <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />

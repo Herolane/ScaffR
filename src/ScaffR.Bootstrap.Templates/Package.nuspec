@@ -17,6 +17,7 @@
     <tags></tags>
     <dependencies>
       <dependency id="ScaffR.Bootstrap.Sitemap"/>
+      <dependency id="ScaffR.MVC.DataAnnotations"/>
     </dependencies>
   </metadata>
   <files>

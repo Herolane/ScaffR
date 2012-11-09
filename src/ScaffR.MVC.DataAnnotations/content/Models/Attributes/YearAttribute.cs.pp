@@ -1,12 +1,11 @@
 namespace $rootnamespace$.Models.Attributes
 {
     using System;
-    using System.ComponentModel.DataAnnotations;
     using System.Text.RegularExpressions;
     using Resources;
 
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
-    public class YearAttribute : DataTypeAttribute
+    public class YearAttribute : TextboxAttribute
     {
         private static Regex _regex = new Regex(@"^[0-9]{4}$");
 

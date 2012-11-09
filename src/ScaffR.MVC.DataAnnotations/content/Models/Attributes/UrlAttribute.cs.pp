@@ -6,7 +6,7 @@
     using Resources;
 
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
-    public class UrlAttribute : DataTypeAttribute
+    public class UrlAttribute : TextboxAttribute
     {
         private readonly UrlOptions _urlOptions = UrlOptions.RequireProtocol; //Default to require protocol
 
@@ -38,13 +38,6 @@
                 default:
                     throw new ArgumentOutOfRangeException("urlOptions");
             }
-        }
-
-        [Obsolete("Obsolete, use UrlAttribute(UrlOptions)")]
-        public UrlAttribute(bool requireProtocol)
-            : this(requireProtocol ? UrlOptions.RequireProtocol : UrlOptions.OptionalProtocol)
-        {
-
         }
 
         public override string FormatErrorMessage(string name)

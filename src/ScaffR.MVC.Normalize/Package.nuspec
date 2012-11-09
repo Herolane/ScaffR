@@ -18,7 +18,7 @@
     <dependencies>
       <dependency id="ScaffR"/>
       <dependency id="ScaffR.Extensions"/>
-      <dependency id="ScaffR.MVC.Extensions"/>
+      <dependency id="ScaffR.MVC.DataAnnotations"/>
     </dependencies>
   </metadata>
   <files>

@@ -1,18 +1,25 @@
 namespace $rootnamespace$.Models.Attributes
 {
-    using System;
     using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
 
-    public class TextboxAttribute : UIHintAttribute, IMetadataAware
+    public class TextboxAttribute : DataTypeAttribute, IMetadataAware
     {
         private TextboxSize _textboxSize = TextboxSize.XLarge;
         private string _placeholderText = string.Empty;
         private string _mask;
 
-        public TextboxAttribute() :base("String")
+        protected TextboxAttribute(string dataType)
+            : base(dataType)
         {
-            
+        }
+
+        protected  TextboxAttribute(): this("string")
+        {   
+        }
+
+        protected TextboxAttribute(DataType baseDataType) : base(baseDataType)
+        {
         }
 
         public TextboxSize TextboxSize

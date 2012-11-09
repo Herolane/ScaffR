@@ -1,12 +1,11 @@
 ﻿namespace $rootnamespace$.Models.Attributes
 {
     using System;
-    using System.ComponentModel.DataAnnotations;
     using System.Linq;
     using Resources;
 
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
-    public class CreditCardAttribute : DataTypeAttribute
+    public class CreditCardAttribute : TextboxAttribute
     {
         public CreditCardAttribute()
             : base("creditcard")

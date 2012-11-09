@@ -17,7 +17,7 @@
     <tags></tags>
     <dependencies>
       <dependency id="ValueInjecter" />
-      <dependency id="ScaffR.MVC.Extensions" />
+      <dependency id="ScaffR.MVC.DataAnnotations" />
       <dependency id="ScaffR.Security" />
       <dependency id="ScaffR.Infrastructure.Pipeline" />
       <dependency id="ScaffR.Membership.Mailers"/>

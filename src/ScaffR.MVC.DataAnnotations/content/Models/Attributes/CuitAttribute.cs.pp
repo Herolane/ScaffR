@@ -1,13 +1,12 @@
 ﻿namespace $rootnamespace$.Models.Attributes
 {
     using System;
-    using System.ComponentModel.DataAnnotations;
     using System.Text.RegularExpressions;
     using Resources;
 
     [Obsolete("Migrate to using RegularExpressionAttribute instead, like [RegularExpression(Expressions.Cuit)]")]
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
-    public class CuitAttribute : DataTypeAttribute
+    public class CuitAttribute : TextboxAttribute
     {
         private static Regex _regex = new Regex(@"^[0-9]{2}-?[0-9]{8}-?[0-9]$");
 

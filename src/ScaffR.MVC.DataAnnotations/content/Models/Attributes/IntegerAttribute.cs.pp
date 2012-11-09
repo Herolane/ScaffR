@@ -1,11 +1,10 @@
 ﻿namespace $rootnamespace$.Models.Attributes
 {
     using System;
-    using System.ComponentModel.DataAnnotations;
     using Resources;
 
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
-    public class IntegerAttribute : DataTypeAttribute
+    public class IntegerAttribute : TextboxAttribute
     {
         public IntegerAttribute()
             : base("integer")
