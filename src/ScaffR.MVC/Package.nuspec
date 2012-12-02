@@ -20,6 +20,7 @@
       <dependency id="ScaffR.Cassette"/>
       <dependency id="ScaffR.Bootstrap"/>
       <dependency id="ScaffR.AngularJS"/>
+      <dependency id="ScaffR.Lists.Dropdowns"/>
       <dependency id="ScaffR.Backend"/>
       <dependency id="ScaffR.MVC.DataAnnotations"/>
       <dependency id="ScaffR.SiteInfo"/>

@@ -74,7 +74,9 @@
     <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="content\Extensions\UrlExtensions.Photos.cs.pp" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="NuGet.exe" />
   </ItemGroup>

@@ -17,6 +17,7 @@
     <tags></tags>
     <dependencies>      
       <dependency id="ScaffR.Users.Core"/>
+      <dependency id="ScaffR.IdentityModel"/>
     </dependencies>
   </metadata>
   <files>

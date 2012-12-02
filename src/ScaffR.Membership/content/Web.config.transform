@@ -1,0 +1,22 @@
+<configuration>
+  <system.web>
+    <pages>
+      <namespaces>
+        <add namespace="MvcSiteMapProvider.Web.Html" />
+      </namespaces>
+    </pages>
+    <siteMap defaultProvider="Modules" enabled="true">
+      <providers>
+        <add name="System"              
+             siteMapNodeVisibilityProvider="$rootnamespace$.Security.WIFVisibilityModule, $rootnamespace$"/>
+        <add name="Account" 
+             type="MvcSiteMapProvider.DefaultSiteMapProvider, MvcSiteMapProvider" 
+             siteMapFile="~/Sitemaps/Account.Sitemap" 
+             securityTrimmingEnabled="false" 
+             cacheDuration="1" 
+             attributesToIgnore="visibility" 
+             siteMapNodeVisibilityProvider="MvcSiteMapProvider.DefaultSiteMapNodeVisibilityProvider, MvcSiteMapProvider" />
+      </providers>
+    </siteMap>
+  </system.web>
+</configuration>

@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
+    <None Include="content\Sitemaps\Account.sitemap.transform" />
     <None Include="content\Views\Account\Photo.cshtml.pp" />
     <None Include="content\Views\Shared\DisplayTemplates\Photo.cshtml.pp" />
     <None Include="Package.nuspec">

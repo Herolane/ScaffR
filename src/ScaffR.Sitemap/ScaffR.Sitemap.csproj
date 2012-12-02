@@ -50,6 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
+    <None Include="content\Sitemaps\Modules.sitemap" />
+    <None Include="content\Sitemaps\Public.sitemap" />
+    <None Include="content\Sitemaps\System.sitemap" />
     <None Include="content\Views\web.config.transform" />
     <None Include="content\Web.config.transform">
       <SubType>Designer</SubType>

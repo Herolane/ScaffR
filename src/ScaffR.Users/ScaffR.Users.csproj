@@ -54,6 +54,7 @@
     <None Include="content\Controllers\Users\UsersController.Details.cs.pp" />
     <None Include="content\Controllers\Users\UsersController.Manage.cs.pp" />
     <None Include="content\Models\Users\UserViewModel.cs.pp" />
+    <None Include="content\Sitemaps\System.sitemap.transform" />
     <None Include="content\Views\Users\Details.cshtml.pp" />
     <None Include="content\Views\Users\Manager.cshtml.pp" />
     <None Include="content\Views\Users\_AdminUserLayout.cshtml.pp" />

@@ -52,9 +52,13 @@
     <None Include="BuildPublishPackage.cmd" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Membership\ScaffR.Membership.ps1" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Membership\ViewStart.cs.t4" />
-    <None Include="content\Controllers\Home\HomeController.Start.cs.pp" />
+    <None Include="content\Controllers\Home\HomeController.Manage.cs.pp" />
+    <None Include="content\Sitemaps\Account.sitemap" />
     <None Include="content\Views\Shared\Bootstrap\MembershipStarterTemplate.cshtml.pp" />
     <None Include="content\Views\Shared\_LogOnPartial.cshtml.pp" />
+    <None Include="content\Web.config.transform">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Package.nuspec">
       <SubType>Designer</SubType>
     </None>
