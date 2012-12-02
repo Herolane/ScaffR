@@ -55,6 +55,7 @@
     </None>
     <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />
+    <None Include="tools\MVCHelpers\MVCHelpers.psm1" />
     <None Include="tools\uninstall.ps1" />
   </ItemGroup>
   <ItemGroup>

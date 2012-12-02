@@ -9,6 +9,7 @@ namespace $rootnamespace$.Bootstrappers
         public static void ActionFilters()
         {
             GlobalFilters.Filters.Add(new HandleErrorAttribute());
+			GlobalFilters.Filters.Add(new AuthorizeAttribute());
         }
     }
 }

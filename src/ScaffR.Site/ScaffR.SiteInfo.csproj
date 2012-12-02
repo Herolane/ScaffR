@@ -52,6 +52,7 @@
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Site\CoreSection.Site.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Site\Configuration\SiteElement.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Site\Common\Site.cs.t4" />
+    <None Include="content\Extensions\Html\HtmlExtensions.Site.cs.pp" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,5 @@
 ﻿[T4Scaffolding.Scaffolder()][CmdletBinding()]
-param(        
+param(
     [string]$Project,
 	[string]$CodeLanguage,
 	[string[]]$TemplateFolders,
@@ -20,7 +20,7 @@ function Recurse($path){
     $name = $i.name.replace('.cs.t4', '')
 	$path = $i.path.replace($templatefolder, '').replace('.cs.t4', '')
 
-	addtemplate $name $path $name $path $folder.path
+	AddTemplate $name $path $name $path $folder.path
   }
 
   foreach ($i in $folder.subfolders) {
@@ -30,5 +30,5 @@ function Recurse($path){
 
 foreach ($fld in $TemplateFolders){
 	$templatefolder = $fld + "\"
-	recurse $fld
+	Recurse $fld
 }

@@ -9,16 +9,16 @@ namespace $rootnamespace$.Models.Attributes
         private string _placeholderText = string.Empty;
         private string _mask;
 
-        protected TextboxAttribute(string dataType)
+        public TextboxAttribute(string dataType)
             : base(dataType)
         {
         }
 
-        protected  TextboxAttribute(): this("string")
+        public TextboxAttribute(): this("string")
         {   
         }
 
-        protected TextboxAttribute(DataType baseDataType) : base(baseDataType)
+        public TextboxAttribute(DataType baseDataType) : base(baseDataType)
         {
         }
 

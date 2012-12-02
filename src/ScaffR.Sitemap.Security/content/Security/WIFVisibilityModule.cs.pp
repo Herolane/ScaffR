@@ -2,15 +2,14 @@ namespace $rootnamespace$.Security
 {
     using System;
     using System.Collections.Generic;
-    using System.IdentityModel.Services;
     using System.Linq;
     using System.Reflection;
     using System.Web;
     using System.Web.Mvc;
-    using IdentityModel.Authorization;
-    using IdentityModel.Authorization.MVC;
     using MvcSiteMapProvider;
     using MvcSiteMapProvider.Extensibility;
+    using IdentityModel.Authorization;
+    using IdentityModel.Authorization.MVC;
 
     public class WIFVisibilityModule : ISiteMapNodeVisibilityProvider
     {
@@ -28,7 +27,7 @@ namespace $rootnamespace$.Security
             foreach (var method in methods)
             {
                 var principalSecurity =
-                    method.GetCustomAttributes<ClaimsPrincipalPermissionAttribute>().FirstOrDefault();
+                    method.GetCustomAttributes<ClaimsAuthorizeAttribute>().FirstOrDefault();
 
                 var getAttr = method.GetCustomAttribute<HttpGetAttribute>();
 
@@ -51,11 +50,12 @@ namespace $rootnamespace$.Security
 
         public bool IsVisible(SiteMapNode node, HttpContext context, IDictionary<string, object> sourceMetadata)
         {
+            bool isVisible = true;
             var mvcNode = node as MvcSiteMapNode;
-            if (mvcNode != null)
+            if (mvcNode != null && mvcNode.Action.Length > 0)
             {
                 var theMethod = GetRequestedAction(mvcNode);
-                
+
                 if (theMethod != null)
                 {
                     var principalSecurity =
@@ -66,11 +66,32 @@ namespace $rootnamespace$.Security
                         var resource = principalSecurity._resources;
                         var operation = principalSecurity._action;
 
-                        return ClaimsAuthorization.CheckAccess(operation, resource);
+                        isVisible = ClaimsAuthorization.CheckAccess(operation, resource);
                     }
                 }
             }
-            return true;
+
+            if (isVisible)
+            {
+                var htmlHelperFull = sourceMetadata["HtmlHelper"].ToString();
+                var htmlHelper = htmlHelperFull.SubstringAfterLast('.').ToLower().Replace("extensions", "");
+
+                if (mvcNode != null && mvcNode["visibility"] != null)
+                {
+                    string[] visibilityAttrs = mvcNode["visibility"].Split(',');
+                    foreach (var attrib in visibilityAttrs)
+                    {
+                        var clean = attrib.TrimEnd().TrimStart().ToLower();
+                        if (clean == htmlHelper)
+                        {
+                            return false;
+                        }
+                    }
+
+                }
+            }
+
+            return isVisible;
         }
     }
 }

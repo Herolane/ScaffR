@@ -1,7 +1,7 @@
 ﻿@using $rootnamespace$.Core.Common.Site
 @{
     ViewBag.Title = "Layout";
-    Layout = "~/Views/Shared/Bootstrap/BootstrapShared.cshtml";
+    Layout = "~/Views/Shared/Cassette.cshtml";
 }
 
 <div class="navbar navbar-inverse navbar-fixed-top">

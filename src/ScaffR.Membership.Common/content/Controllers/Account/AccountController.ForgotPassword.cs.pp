@@ -13,7 +13,7 @@ namespace $rootnamespace$.Controllers.Account
         [AllowAnonymous]
         public ActionResult ForgotPassword()
         {
-            return Logon();
+            return View();
         }
 
         [AllowAnonymous, HttpPost]

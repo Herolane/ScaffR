@@ -50,9 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\Content\Less\bundle.tt.pp">
-      <LastGenOutput>bundle.tt.txt</LastGenOutput>
-    </None>
+    <None Include="content\Content\Less\elements\elements.less" />
     <None Include="content\Content\Less\global\global.less" />
     <None Include="content\Content\Less\site.less" />
     <None Include="content\Content\Less\variables.less" />

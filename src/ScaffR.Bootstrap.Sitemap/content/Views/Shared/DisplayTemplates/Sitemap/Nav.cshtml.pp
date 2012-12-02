@@ -1,4 +1,7 @@
 ﻿@model $rootnamespace$.Models.Sitemap.NavHelperModel
+@{
+    var ctx = ViewContext.RouteData;
+}
 
 <ul class="nav">
     @foreach (var node in Model.Nodes)
@@ -21,7 +24,7 @@
         }
         else
         {
-        <li class="@Html.AddClass("active", (node.IsCurrentNode || node.IsInCurrentPath) && !node.IsRootNode)"><a href="@Url.Action(node.Action, node.Controller)">
+        <li class="@Html.AddClass("active", (node.IsCurrentNode || node.IsInCurrentPath || (ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString().Equals(node.Action, StringComparison.CurrentCultureIgnoreCase ) && ViewContext.Controller.ValueProvider.GetValue("controller").RawValue.ToString().Equals(node.Controller, StringComparison.InvariantCultureIgnoreCase))) && !node.IsRootNode)"><a href="@Url.Action(node.Action, node.Controller)">
             <i class="@node.ImageUrl icon-white"></i>@node.Title</a></li>    
         }
 

@@ -1,4 +1,11 @@
-﻿@foreach (var prop in ViewData.ModelMetadata.Properties.Where(pm => pm.ShowForDisplay && !ViewData.TemplateInfo.Visited(pm)))
+﻿@{
+    Func<ModelMetadata, bool> isPropertyBool = (meta) =>
+    {
+        return meta.ModelType == typeof(bool) || meta.ModelType == typeof(bool?);
+    };
+}
+
+@foreach (var prop in ViewData.ModelMetadata.Properties.Where(pm => pm.ShowForDisplay && !ViewData.TemplateInfo.Visited(pm)))
 {
     if (prop.HideSurroundingHtml)
     {
@@ -6,15 +13,33 @@
     }
     else
     {
+        
     <div class="control-group">
 
-        <label class="control-label">
-            @prop.GetDisplayName()
-        </label>
-        <div class="controls">
-            @Html.Editor(prop.PropertyName)
-            @Html.ValidationMessage(prop.PropertyName, new{@class = "help-inline"})
-        </div>
+        @if (isPropertyBool(prop))
+        {
+            <div class="controls">
+                <label class="checkbox">
+                    @Html.Editor(prop.PropertyName)
+                    @prop.GetDisplayName()
+                </label>
+            </div>
+
+        }
+        else
+        {
+            <label class="control-label">
+                @prop.GetDisplayName()
+                @if(prop.IsRequired)
+                {
+                    <span class="required">*</span>
+                }
+            </label>
+            <div class="controls">
+                @Html.Editor(prop.PropertyName)
+                @Html.ValidationMessage(prop.PropertyName, new { @class = "help-inline" })
+            </div>
+        }
 
     </div>                 
     }

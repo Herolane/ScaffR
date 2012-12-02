@@ -18,6 +18,7 @@
     <dependencies>
       <dependency id="EntityFramework" version="5.0.0" />
       <dependency id="ScaffR.Data.Common" />
+      <dependency id="ScaffR.Ninject" />
     </dependencies>
   </metadata>
   <files>

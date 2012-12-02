@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.Title = "Layout";
-    Layout = "~/Views/Shared/Bootstrap/BootstrapShared.cshtml";
+    Layout = "~/Views/Shared/Cassette.cshtml";
 }
 
 

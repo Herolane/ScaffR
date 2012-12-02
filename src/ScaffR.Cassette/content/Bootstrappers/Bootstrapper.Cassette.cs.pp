@@ -15,8 +15,6 @@
             });
 
             configurable.AddPerSubDirectory<StylesheetBundle>("content/less");
-            configurable.AddPerSubDirectory<ScriptBundle>("Scripts/custom");
-
             configurable.AddPerSubDirectory<ScriptBundle>("Scripts/lib");
         }
 	}
