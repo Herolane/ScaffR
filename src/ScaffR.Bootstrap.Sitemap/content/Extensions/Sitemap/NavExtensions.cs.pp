@@ -1,13 +1,13 @@
-﻿namespace $rootnamespace$.Extensions.Sitemap
+namespace $rootnamespace$.Extensions.Sitemap
 {
     using System;
     using System.Collections.Generic;
     using System.Web;
     using System.Web.Mvc;
     using System.Web.Mvc.Html;
+    using Models.Sitemap;
     using MvcSiteMapProvider;
     using MvcSiteMapProvider.Web.Html;
-    using Models.Sitemap;
 
     /// <summary>
     /// MvcSiteMapHtmlHelper extension methods
@@ -341,10 +341,10 @@
         /// <param name="maxDepth">The max depth.</param>
         /// <param name="drillDownToCurrent">Should the model exceed the maxDepth to reach the current node</param>
         /// <returns>The model.</returns>
-        private static NavHelperModel BuildModel(MvcSiteMapHtmlHelper helper, SiteMapNode startingNode, bool startingNodeInChildLevel, bool showStartingNode, int maxDepth, bool drillDownToCurrent)
+        private static SitemapHelperModel BuildModel(MvcSiteMapHtmlHelper helper, SiteMapNode startingNode, bool startingNodeInChildLevel, bool showStartingNode, int maxDepth, bool drillDownToCurrent)
         {
             // Build model
-            var model = new NavHelperModel();
+            var model = new SitemapHelperModel();
             var node = startingNode;
 
             // Check if a starting node has been given
@@ -416,7 +416,7 @@
         /// <param name="showStartingNode">Show starting node if set to <c>true</c>.</param>
         /// <param name="maxDepth">The max depth.</param>
         /// <returns>The model.</returns>
-        private static NavHelperModel BuildModel(MvcSiteMapHtmlHelper helper, SiteMapNode startingNode, bool startingNodeInChildLevel, bool showStartingNode, int maxDepth)
+        private static SitemapHelperModel BuildModel(MvcSiteMapHtmlHelper helper, SiteMapNode startingNode, bool startingNodeInChildLevel, bool showStartingNode, int maxDepth)
         {
             return BuildModel(helper, startingNode, startingNodeInChildLevel, showStartingNode, maxDepth, false);
         }

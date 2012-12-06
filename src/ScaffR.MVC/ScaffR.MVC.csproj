@@ -48,6 +48,7 @@
   <ItemGroup>
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Controller.For\Controller.cs.t4" />
     <None Include="content\CodeTemplates\Scaffolders\ScaffR.Controller.For\ScaffR.Controller.For.ps1" />
+    <None Include="content\Views\Shared\_Alert.cshtml.pp" />
     <None Include="Properties\AssemblyInfo.cs" />
     <None Include="BuildPublishPackage.cmd" />
     <None Include="Package.nuspec">
@@ -61,7 +62,10 @@
   <ItemGroup>
     <Content Include="NuGet.exe" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="content\Filters\OnlyAnonymous.cs.pp" />
+    <None Include="content\Filters\ShowAlerts.cs.pp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

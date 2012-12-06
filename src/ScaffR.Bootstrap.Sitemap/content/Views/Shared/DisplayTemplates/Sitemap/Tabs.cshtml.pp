@@ -1,4 +1,4 @@
-﻿@model $rootnamespace$.Models.Sitemap.TabsHelperModel
+@model $rootnamespace$.Models.Sitemap.SitemapHelperModel
 <ul class="nav nav-tabs">
     @foreach (var node in Model)
     {

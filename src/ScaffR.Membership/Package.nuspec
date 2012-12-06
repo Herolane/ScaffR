@@ -17,6 +17,8 @@
     <tags></tags>
     <dependencies>
       <dependency id="ScaffR.MVC"/>
+      <dependency id="ScaffR.IdentityModel"/>
+      <dependency id="ScaffR.Sitemap.Security"/>
       <dependency id="ScaffR.Membership.Common"/>
       <dependency id="ScaffR.Membership.Photo"/>
       <dependency id="ScaffR.Site"/>

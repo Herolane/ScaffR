@@ -46,10 +46,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <None Include="content\Filters\ShowBreadcrumb.cs.pp" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
+    <None Include="content\Models\Sitemap\SitemapHelperModel.cs.pp" />
     <None Include="content\Sitemaps\Modules.sitemap" />
     <None Include="content\Sitemaps\Public.sitemap" />
     <None Include="content\Sitemaps\System.sitemap" />

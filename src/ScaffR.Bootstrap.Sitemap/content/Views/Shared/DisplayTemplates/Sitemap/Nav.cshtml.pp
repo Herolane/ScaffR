@@ -1,4 +1,5 @@
-﻿@model $rootnamespace$.Models.Sitemap.NavHelperModel
+@model $rootnamespace$.Models.Sitemap.SitemapHelperModel
+
 @{
     var ctx = ViewContext.RouteData;
 }
@@ -9,8 +10,7 @@
         if (node.Children.Count > 0)
         {
         <li class="@Html.AddClass("active", node.IsCurrentNode || node.IsInCurrentPath) dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1"><i class="@node.ImageUrl icon-white">
-            </i>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
                 @node.Title
                 <b class="caret"></b></a>
             <ul class="dropdown-menu">

@@ -58,7 +58,9 @@
     <None Include="content\Views\Users\Details.cshtml.pp" />
     <None Include="content\Views\Users\Manager.cshtml.pp" />
     <None Include="content\Views\Users\_AdminUserLayout.cshtml.pp" />
-    <None Include="Package.nuspec" />
+    <None Include="Package.nuspec">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />
     <None Include="tools\uninstall.ps1" />

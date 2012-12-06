@@ -1,5 +1,5 @@
 ﻿@{
-    Bundles.Reference("content/less");
+    Bundles.Reference("content/less/site.less");
     Bundles.Reference("scripts/lib");
     Bundles.Reference("scripts");
 }
@@ -20,7 +20,6 @@
 </head>
 <body>
     @RenderBody()
-
     @Bundles.RenderScripts()
 </body>
 </html>

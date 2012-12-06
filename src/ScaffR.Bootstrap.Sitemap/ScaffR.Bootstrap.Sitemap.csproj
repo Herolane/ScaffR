@@ -46,27 +46,22 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <None Include="content\Content\Less\Global\menu.less" />
     <None Include="content\Extensions\Sitemap\BreadcrumbExtensions.cs.pp" />
+    <None Include="content\Extensions\Sitemap\MainMenuExtensions.cs.pp" />
     <None Include="content\Extensions\Sitemap\NavExtensions.cs.pp" />
     <None Include="content\Extensions\Sitemap\PillsExtensions.cs.pp" />
     <None Include="content\Extensions\Sitemap\TabsExtensions.cs.pp" />
-    <None Include="content\Models\Sitemap\BreadcrumbHelperModel.cs.pp" />
-    <None Include="content\Models\Sitemap\NavHelperModel.cs.pp" />
-    <None Include="content\Models\Sitemap\PillsHelperModel.cs.pp" />
-    <None Include="content\Models\Sitemap\TabsHelperModel.cs.pp" />
-    <None Include="content\Extensions\Sitemap\BootstrapHelpers.cs.pp" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
     <None Include="content\Views\Shared\DisplayTemplates\Sitemap\Breadcrumb.cshtml.pp" />
+    <None Include="content\Views\Shared\DisplayTemplates\Sitemap\MainMenu.cshtml.pp" />
     <None Include="content\Views\Shared\DisplayTemplates\Sitemap\Nav.cshtml.pp" />
     <None Include="content\Views\Shared\DisplayTemplates\Sitemap\Pills.cshtml.pp" />
     <None Include="content\Views\Shared\DisplayTemplates\Sitemap\Tabs.cshtml.pp" />
     <None Include="content\Views\Web.config.transform">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="content\Web.config.transform">
       <SubType>Designer</SubType>
     </None>
     <None Include="Package.nuspec" />

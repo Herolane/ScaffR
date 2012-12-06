@@ -1,4 +1,4 @@
-﻿@model $rootnamespace$.Models.Sitemap.BreadcrumbHelperModel
+@model $rootnamespace$.Models.Sitemap.SitemapHelperModel
 
 <div class="breadcrumb">
     @foreach (var node in Model) { 

@@ -1,7 +1,7 @@
 ﻿<configuration>
   <system.web>
     <authentication mode="Forms">
-      <forms loginUrl="/Account/Logon" timeout="2880" defaultUrl="/Home/Start" />
+      <forms loginUrl="/Account/Logon" timeout="2880" defaultUrl="/Dashboard" />
     </authentication>
   </system.web>
 </configuration>

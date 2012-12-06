@@ -9,7 +9,7 @@ namespace $rootnamespace$.Models
         [Required]
         [Display(Name = "User Name", Order = 1)]
         [Textbox(TextboxSize = TextboxSize.Large)]
-        public string UserName { get; set; }
+        public string Username { get; set; }
 		
 		[Required]
         [Display(Name = "First Name", Order = 1)]

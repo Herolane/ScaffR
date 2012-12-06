@@ -1,12 +1,12 @@
-﻿namespace $rootnamespace$.Extensions.Sitemap
+namespace $rootnamespace$.Extensions.Sitemap
 {
     using System.Collections.Generic;
     using System.Web;
     using System.Web.Mvc;
     using System.Web.Mvc.Html;
+    using Models.Sitemap;
     using MvcSiteMapProvider;
     using MvcSiteMapProvider.Web.Html;
-    using Models.Sitemap;
 
     /// <summary>
     /// MvcBreadcrumbHtmlHelper extension methods
@@ -48,10 +48,10 @@
         /// <param name="helper">The helper.</param>
         /// <param name="startingNode">The starting node.</param>
         /// <returns>The model.</returns>
-        private static BreadcrumbHelperModel BuildModel(MvcSiteMapHtmlHelper helper, SiteMapNode startingNode)
+        private static SitemapHelperModel BuildModel(MvcSiteMapHtmlHelper helper, SiteMapNode startingNode)
         {
             // Build model
-            var model = new BreadcrumbHelperModel();
+            var model = new SitemapHelperModel();
             var node = startingNode;
             while (node != null)
             {

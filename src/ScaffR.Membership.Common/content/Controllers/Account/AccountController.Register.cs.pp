@@ -31,11 +31,11 @@
 
                 if (createStatus == CreateUserStatus.Success)
                 {
-                    _authenticationService.SetAuthCookie(model.UserName, true);
+                    _authenticationService.SetAuthCookie(model.Username, true);
 
                     MessageBus.Instance.Publish(new UserCreated(user, Url.AbsoluteAction("Logon", "Account")));
 
-                    return RedirectToAction("Welcome", "Account");
+                    return RedirectToAction("Index", "Dashboard");
                 }
 
                 ModelState.AddModelError(string.Empty, ErrorCodeToString(createStatus));
