@@ -52,6 +52,7 @@
     <None Include="content\Extensions\Sitemap\NavExtensions.cs.pp" />
     <None Include="content\Extensions\Sitemap\PillsExtensions.cs.pp" />
     <None Include="content\Extensions\Sitemap\TabsExtensions.cs.pp" />
+    <None Include="content\Extensions\Sitemap\BootstrapHelpers.cs.pp" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
