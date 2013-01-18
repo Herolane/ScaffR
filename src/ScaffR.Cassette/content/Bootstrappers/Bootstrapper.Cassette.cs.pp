@@ -14,7 +14,7 @@
                 SearchOption = SearchOption.TopDirectoryOnly
             });
 
-            configurable.AddPerSubDirectory<StylesheetBundle>("content/less");
+            configurable.Add<StylesheetBundle>("content/less/site.less");
             configurable.AddPerSubDirectory<ScriptBundle>("Scripts/lib");
         }
 	}
