@@ -5,10 +5,12 @@ namespace MvcApplication10.Controllers.Home
 
     public partial class HomeController : Controller
     {
-       [AllowAnonymous] 
-       public ActionResult Index()
-       {
-           return View(new DropdownViewModel());
-       }
+        [AllowAnonymous]
+        public ActionResult Index()
+        {
+            return View(new DropdownViewModel());
+        }
+
+
     }
 }
