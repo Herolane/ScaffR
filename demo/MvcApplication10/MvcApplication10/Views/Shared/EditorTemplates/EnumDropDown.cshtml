@@ -1,0 +1,55 @@
+@using System.Collections
+@using Netchex.Extensions
+@using Netchex.Framework.Dropdowns.Extensions
+@model object
+
+@{
+    var isMultiselect = (bool)ViewData.ModelMetadata.AdditionalValues["IsMultiselect"];
+    IList<SelectListItem> allItems = new List<SelectListItem>();
+    IList<SelectListItem> myItems = new List<SelectListItem>();
+    IList<SelectListItem> notIncluded = new List<SelectListItem>();
+    if (isMultiselect)
+    {
+        var enumType = ViewData.ModelMetadata.AdditionalValues["EnumType"] as Type;
+        var enumModel = (IList)Model;
+
+        // build the select list items
+        foreach (int i in Enum.GetValues(enumType))
+        {
+            allItems.Add(new SelectListItem()
+            {
+                Text = Enum.GetName(enumType, i),
+                Value = i.ToString()
+            });
+        }
+
+        myItems = allItems.Where(x => enumModel.Contains(int.Parse(x.Value))).ToList();
+        notIncluded = allItems.Where(x => !enumModel.Contains(int.Parse(x.Value))).ToList();
+    }    
+}
+
+
+@if (isMultiselect)
+{
+    <div data-multiselect-container="true">
+        <select multiple="multiple" data-multiselect="not-included" style="width: 120px">
+            @foreach (var item in notIncluded)
+            {
+                <option value="@item.Value">@item.Text</option>
+            }
+        </select>
+        <button data-multiselect-button="add" type="button">Add</button>
+        <button data-multiselect-button="remove" type="button">Remove</button>
+        <select name="@ViewData.TemplateInfo.HtmlFieldPrefix" multiple="multiple" data-multiselect="included" style="width: 120px">
+            @foreach (var item in myItems)
+            {
+                <option value="@item.Value">@item.Text</option>
+            }
+        </select>
+    </div>
+}
+else
+{
+    @Html.DropDownListFor(m => m, Html.GetAutomatedList(m => m).SetSelected((int)Model))
+}
+

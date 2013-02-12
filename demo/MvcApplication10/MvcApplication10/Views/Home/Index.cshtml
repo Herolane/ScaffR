@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@model MvcApplication10.Models.Home.DropdownViewModel
+
+<h2>Index</h2>
+
+@Html.EditorForModel()
+
+@Html.EditorFor(x=>x.MultiSelect)
