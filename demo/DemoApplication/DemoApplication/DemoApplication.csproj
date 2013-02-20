@@ -40,6 +40,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="ScaffR.Extensions">
+      <HintPath>..\packages\ScaffR.Extensions.1.1.4\lib\ScaffR.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -102,17 +105,63 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
+    <Compile Include="Application\MvcApplication.ApplicationStart.cs" />
+    <Compile Include="Application\MvcApplication.SessionStart.cs" />
+    <Compile Include="Bootstrappers\Bootstrapper.ActionFilters.cs" />
+    <Compile Include="Bootstrappers\Bootstrapper.Routes.cs" />
+    <Compile Include="Bootstrappers\Bootstrapper.Validators.cs" />
+    <Compile Include="Extensions\ActionDescriptorExtensions.cs" />
+    <Compile Include="Extensions\UrlExtensions.cs" />
+    <Compile Include="Models\Adapters\CreditCardAttributeAdapter.cs" />
+    <Compile Include="Models\Adapters\CuitAttributeAdapter.cs" />
+    <Compile Include="Models\Adapters\DateAttributeAdapter.cs" />
+    <Compile Include="Models\Adapters\DigitsAttributeAdapter.cs" />
+    <Compile Include="Models\Adapters\EmailAttributeAdapter.cs" />
+    <Compile Include="Models\Adapters\EqualToAttributeAdapter.cs" />
+    <Compile Include="Models\Adapters\FileExtensionsAttributeAdapter.cs" />
+    <Compile Include="Models\Adapters\MaxAttributeAdapter.cs" />
+    <Compile Include="Models\Adapters\MinAttributeAdapter.cs" />
+    <Compile Include="Models\Adapters\NumericAttributeAdapter.cs" />
+    <Compile Include="Models\Adapters\UrlAttributeAdapter.cs" />
+    <Compile Include="Models\Adapters\YearAttributeAdapter.cs" />
+    <Compile Include="Models\Attributes\CreditCardAttribute.cs" />
+    <Compile Include="Models\Attributes\CuitAttribute.cs" />
+    <Compile Include="Models\Attributes\DateAttribute.cs" />
+    <Compile Include="Models\Attributes\DigitsAttribute.cs" />
+    <Compile Include="Models\Attributes\EmailAttribute.cs" />
+    <Compile Include="Models\Attributes\EqualToAttribute.cs" />
+    <Compile Include="Models\Attributes\Expressions.cs" />
+    <Compile Include="Models\Attributes\FileExtensionsAttribute.cs" />
+    <Compile Include="Models\Attributes\IntegerAttribute.cs" />
+    <Compile Include="Models\Attributes\MaxAttribute.cs" />
+    <Compile Include="Models\Attributes\MinAttribute.cs" />
+    <Compile Include="Models\Attributes\NumericAttribute.cs" />
+    <Compile Include="Models\Attributes\PasswordAttribute.cs" />
+    <Compile Include="Models\Attributes\TextboxAttribute.cs" />
+    <Compile Include="Models\Attributes\TextboxSize.cs" />
+    <Compile Include="Models\Attributes\UrlAttribute.cs" />
+    <Compile Include="Models\Attributes\UrlOptions.cs" />
+    <Compile Include="Models\Attributes\YearAttribute.cs" />
+    <Compile Include="Models\Resources\ClientValidationResources.Designer.cs" />
+    <Compile Include="Models\Resources\ValidatorResources.Designer.cs" />
+    <Compile Include="Models\Rules\ModelClientValidationCreditCardRule.cs" />
+    <Compile Include="Models\Rules\ModelClientValidationCuitRule.cs" />
+    <Compile Include="Models\Rules\ModelClientValidationDateRule.cs" />
+    <Compile Include="Models\Rules\ModelClientValidationDigitsRule.cs" />
+    <Compile Include="Models\Rules\ModelClientValidationEmailRule.cs" />
+    <Compile Include="Models\Rules\ModelClientValidationFileExtensionsRule.cs" />
+    <Compile Include="Models\Rules\ModelClientValidationIntegerRule.cs" />
+    <Compile Include="Models\Rules\ModelClientValidationMaxRule.cs" />
+    <Compile Include="Models\Rules\ModelClientValidationMinRule.cs" />
+    <Compile Include="Models\Rules\ModelClientValidationNumericRule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -126,10 +175,79 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\Year.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\Week.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\Url.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\Time.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\Search.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\PhoneNumber.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\Password.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\Number.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\Month.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\EnumDropDown.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\DropDown.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\Digits.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\DateTime-Local.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\CreditCard.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\Color.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Models\Resources\ClientValidationResources.resx" />
+    <EmbeddedResource Include="Models\Resources\ValidatorResources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CodeTemplates\Scaffolders\ScaffR.MVC.Normalize\ScaffR.MVC.Normalize.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CodeTemplates\Scaffolders\ScaffR.MVC.Normalize\Global.cs.t4" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
