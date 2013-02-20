@@ -1,0 +1,4 @@
+ 
+
+[references]
+~/scripts/lib/jquery-ui
