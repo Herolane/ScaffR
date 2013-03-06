@@ -8,6 +8,10 @@ orchard or wordpress in that our focus is on the source code itself... making it
 Whether you are making a Console Application or a MVC Website, our tools make it possible to never write the same code
 twice!
 
+To view the code that is generated with ScaffR, pelase visit this link
+https://github.com/wcpro/ScaffR-Generated
+
+
 Philosophy
 -----
 We believe that source code is too complicated to reuse.  Our purpose is to make software easy to reuse, customize, and share.
@@ -29,7 +33,7 @@ The ScaffR architecture uses the following frameworks
 
 Prerequisites
 ------
-Currently Scaffeine has the following dependencies
+Currently ScaffR has the following dependencies
 
 * .NET 4.5
 * Visual Studio 2012 Professional or higher
