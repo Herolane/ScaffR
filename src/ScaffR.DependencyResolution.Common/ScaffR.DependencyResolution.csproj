@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0818088F-49D7-41C5-8C00-0DF53E3BD645}</ProjectGuid>
+    <ProjectGuid>{6D512383-85B8-4A20-AE07-0DAE24260875}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ScaffR.MVC.Normalize</RootNamespace>
-    <AssemblyName>ScaffR.MVC.Normalize</AssemblyName>
+    <RootNamespace>ScaffR.DependencyResolution.Common</RootNamespace>
+    <AssemblyName>ScaffR.DependencyResolution.Common</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -46,23 +46,24 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="content\Bootstrappers\Bootstrapper.ActionFilters.cs.pp" />
-    <None Include="content\Bootstrappers\Bootstrapper.Routes.cs.pp" />
-    <None Include="content\Application\MvcApplication.ApplicationStart.cs.pp" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.DependencyResolution\AppStartup.Ninject.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.DependencyResolution\NinjectControllerFactory.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.DependencyResolution\NinjectResolver.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.DependencyResolution\NinjectScope.cs.t4" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\Application\MvcApplication.SessionStart.cs.pp" />
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.MVC.Normalize\ScaffR.MVC.Normalize.ps1" />
-    <None Include="Package.nuspec">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.DependencyResolution\ScaffR.DependencyResolution.ps1" />
+    <None Include="Package.nuspec" />
+    <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />
+    <None Include="tools\uninstall.ps1" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="content\CodeTemplates\Scaffolders\ScaffR.MVC.Normalize\Global.cs.t4" />
+    <Folder Include="lib\" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="NuGet.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

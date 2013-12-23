@@ -1,0 +1,41 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+#region credits
+// ***********************************************************************
+// Assembly	: <#= Model.Namespace #>.Infrastructure
+// Author	: Rod Johnson
+// Created	: 03-18-2013
+// 
+// Last Modified By : Rod Johnson
+// Last Modified On : 03-28-2013
+// ***********************************************************************
+#endregion
+namespace <#= Model.Namespace #>.Infrastructure.Migrations
+{
+    #region
+
+    using System.Data.Entity.Migrations;
+    using Data;
+
+    #endregion
+
+    #region
+
+    
+
+    #endregion
+
+    internal sealed class Configuration : DbMigrationsConfiguration<DataContext>
+    {
+        public Configuration()
+        {
+            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationDataLossAllowed = true;
+        }
+
+        protected override void Seed(DataContext context)
+        {
+            
+        }
+    }
+}

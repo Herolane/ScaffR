@@ -1,0 +1,36 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+
+#region credits
+// ***********************************************************************
+// Assembly	: <#= Model.Namespace #>.Infrastructure
+// Author	: Rod Johnson
+// Created	: 03-25-2013
+// 
+// Last Modified By : Rod Johnson
+// Last Modified On : 03-28-2013
+// ***********************************************************************
+#endregion
+namespace <#= Model.Namespace #>.Infrastructure.Data
+{
+    #region
+
+    using Core.Interfaces.Data;
+
+    #endregion
+
+    public partial class DatabaseFactory : IDatabaseFactory
+    {
+        private IDataContext _datacontext;
+
+        public IDataContext Get()
+        {
+            return this._datacontext ?? (_datacontext = new DataContext());
+        }
+
+        public void Dispose()
+        {
+            // TODO: Check what ninject does, because if we dispose this it will crash!
+        }
+    }
+}
