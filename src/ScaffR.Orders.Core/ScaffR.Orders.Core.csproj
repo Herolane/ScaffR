@@ -46,37 +46,37 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\OrderItems\RemoveFromInventory.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Order.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\OrderLineItem.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\OrderStatus.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Extensions\OrderExtensions.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Extensions\OrderLineItemExtensions.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\SessionInformation.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Pipeline\OrderContext.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Pipeline\OrderLineContext.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Pipeline\OrderLineProcessor.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Pipeline\PostOrderProcessor.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Pipeline\PreOrderProcessor.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Configuration\CoreSection.Ordering.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Configuration\Ordering\OrderingElement.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\OrderItems\MarkAsShipped.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\OrderItems\RemoveFromInventory.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\OrderItems\UpdateAvailableQuantity.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\Orders\CheckFraudFilter.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\Orders\CheckInventory.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\Orders\MarkAsCompleted.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\Orders\OrderItemsShippedFilter.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\Orders\PreAuthCreditCard.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\Orders\ProcessOrderLineItems.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\Orders\SendEmailFilter.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\Orders\SettleAuthorization.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Filters\Orders\UpdateFraudCheck.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Filters\OrderItems\RemoveFromInventory.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Order.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\OrderLineItem.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\OrderStatus.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Extensions\OrderExtensions.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Extensions\OrderLineItemExtensions.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\SessionInformation.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Pipeline\OrderContext.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Pipeline\OrderLineContext.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Pipeline\OrderLineProcessor.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Pipeline\PostOrderProcessor.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Pipeline\PreOrderProcessor.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Configuration\CoreSection.Ordering.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Configuration\Ordering\OrderingElement.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Filters\OrderItems\MarkAsShipped.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Filters\OrderItems\RemoveFromInventory.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Filters\OrderItems\UpdateAvailableQuantity.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Filters\Orders\CheckFraudFilter.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Filters\Orders\CheckInventory.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Filters\Orders\MarkAsCompleted.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Filters\Orders\OrderItemsShippedFilter.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Filters\Orders\PreAuthCreditCard.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Filters\Orders\ProcessOrderLineItems.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Filters\Orders\SendEmailFilter.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Filters\Orders\SettleAuthorization.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\Filters\Orders\UpdateFraudCheck.cs.t4" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Core\Scaffeine.Orders.Core.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Core\ScaffR.Orders.Core.ps1" />
     <None Include="content\App.config.transform">
       <SubType>Designer</SubType>
     </None>

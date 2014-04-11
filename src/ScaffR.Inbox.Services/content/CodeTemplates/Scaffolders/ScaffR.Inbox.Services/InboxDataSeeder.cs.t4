@@ -1,0 +1,18 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Data.Seeders
+{
+    using System.Collections.Generic;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
+
+    using <#= Model.Namespace #>.Core.Model;
+
+    public partial class InboxDataSeeder
+    {
+        public void Seed(DataContext context)
+        {
+			//Do Friends Seed here
+        }
+    }
+}

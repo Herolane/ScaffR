@@ -50,9 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Notifications\INotificationBubble.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Notifications\NotificationItem.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Notifications\Scaffeine.Notifications.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Notifications\INotificationBubble.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Notifications\NotificationItem.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Notifications\ScaffR.Notifications.ps1" />
     <None Include="content\Handlers\NotificationHandler.cs.pp" />
     <None Include="content\Hubs\NotificationHub.cs.pp" />
     <None Include="content\Models\INotification.cs.pp" />

@@ -1,0 +1,15 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+using System;
+using <#= Model.Namespace #>.Core.Infrastructure.Pipeline;
+
+namespace <#= Model.Namespace #>.Core.Common.Promotions.Prerequisites
+{
+    public class PrerequisiteProcessor : ICoreProcessor<PrerequisiteContext>
+    {
+        public void Execute(PrerequisiteContext data)
+        {
+            Console.WriteLine("prerequiesites processed");
+        }
+    }
+}

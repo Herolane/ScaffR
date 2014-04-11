@@ -61,13 +61,13 @@ public enum OrderStatus
 
 
 
-Scaffeine.Shell
-Scaffeine
+ScaffR.Shell
+ScaffR
 
-SCaffeine.Dashboard.Shell
+ScaffR.Dashboard.Shell
 
 
-Scaffeine.Dashboard
+ScaffR.Dashboard
 	todo
 	calendar	
 

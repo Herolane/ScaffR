@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Shipping.Shipwire\Scaffeine.Shipping.Shipwire.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Shipping.Shipwire\ScaffR.Shipping.Shipwire.ps1" />
     <None Include="content\Web.config.transform">
       <SubType>Designer</SubType>
     </None>

@@ -50,12 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Inbox.Core\Attachment.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Inbox.Core\MessageStatus.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Inbox.Core\Folder.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Inbox.Core\MessageReceiver.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Inbox.Core\Message.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Inbox.Core\Scaffeine.Inbox.Core.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Inbox.Core\Attachment.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Inbox.Core\MessageStatus.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Inbox.Core\Folder.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Inbox.Core\MessageReceiver.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Inbox.Core\Message.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Inbox.Core\ScaffR.Inbox.Core.ps1" />
     <None Include="Package.nuspec" />
     <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />

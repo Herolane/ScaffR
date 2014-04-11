@@ -1,0 +1,42 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Model
+{
+    using System.ComponentModel;
+
+    public enum OrderStatus
+    {
+        [Description("Order has been entered")]
+        Entered,
+
+        [Description("Order has started processing")]
+        Processing,
+
+        [Description("Order has been determined not to be fruad")]
+        Approved,
+
+        [Description("Order has been set as fraudulant")]
+        Rejected,
+
+        [Description("Order is being revied for possible fraud")]
+        Review,
+
+        [Description("Order payment has been authorize")]
+        Authorized,
+
+        [Description("Order payment was not authorized")]
+        NotAuthorized,
+
+        [Description("Order was canceled for non payment")]
+        Canceled,
+
+        [Description("An item on this order has been backordered")]
+        Backordered,
+
+        [Description("Order has been shipped")]
+        Shipped,
+
+        [Description("Order is now fully complete")]
+        Complete,
+    }
+}

@@ -1,0 +1,17 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Configuration
+{
+    using System.Configuration;
+    using Promotions;
+
+    public partial class CoreSection
+    {
+        [ConfigurationProperty("promotions")]
+        [ConfigurationCollection(typeof(PromotionSettingsCollection), AddItemName = "promotion", ClearItemsName = "clear", RemoveItemName = "remove")]
+        public PromotionSettingsCollection Promotions
+        {
+            get { return (PromotionSettingsCollection)base["promotions"]; }
+        }
+    }
+}

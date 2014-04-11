@@ -50,11 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Integrations\IntegrationProvider.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Integrations\IntegrationProviderCollection.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Integrations\IntegrationsManager.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Integrations\IntegrationsSection.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Integrations\Scaffeine.Integrations.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Integrations\IntegrationProvider.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Integrations\IntegrationProviderCollection.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Integrations\IntegrationsManager.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Integrations\IntegrationsSection.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Integrations\ScaffR.Integrations.ps1" />
     <None Include="content\Controllers\IntegrationsController.cs.pp" />
     <None Include="content\Views\Integrations\Facebook.cshtml.pp" />
     <None Include="content\Views\Integrations\Index.cshtml.pp" />

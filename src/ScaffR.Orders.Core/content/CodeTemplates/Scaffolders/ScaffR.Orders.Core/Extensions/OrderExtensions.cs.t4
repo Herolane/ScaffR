@@ -1,0 +1,32 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Common.Ordering.Extensions
+{
+    using System.Linq;
+    using Model;
+
+    public static class OrderExtensions
+    {
+        public static decimal GetOrderTotal (this Order order)
+        {
+            if (order.OrderItems.Count > 0)
+            {
+                return order.OrderItems.Sum(x => OrderLineItemExtensions.GetLineItemPriceWithTax(x));
+            }
+
+            return 0;
+        }
+
+        public static OrderStatus GetOrderStatus (this Order order)
+        {
+            if (order.OrderItems.Count > 0)
+            {
+                var firstOrDefault = order.OrderItems.OrderBy(x => x.OrderStatus).FirstOrDefault();
+                if (firstOrDefault != null)
+                    return firstOrDefault.OrderStatus;
+            }
+
+            return OrderStatus.Entered;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Data
+{
+    using System.Linq;
+    using Core.Model;
+    using System.Collections.Generic;
+    using System.Data.Entity;
+    
+    public partial class MessageRepository
+    {
+        public override IQueryable<Message> Query
+        {
+            get
+            {
+                return base.Query.Include(m => m.Receivers);
+            }
+        }
+        
+        public Attachment GetAttachmentById(int attachmentId)
+	    {
+	        return DataContext.DbSet<Attachment>().SingleOrDefault(a => a.Id == attachmentId);
+	    }
+
+        public IEnumerable<Folder> GetUserFolders(int userId)
+        {
+            return DataContext.DbSet<Folder>().Where(f => f.UserId == null || f.UserId == userId);
+        }
+    }
+}

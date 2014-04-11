@@ -1,4 +1,4 @@
-﻿[T4Scaffolding.Scaffolder(Description = "Scaffeine.Order - Generic Order Provider")][CmdletBinding()]
+﻿[T4Scaffolding.Scaffolder(Description = "ScaffR.Order - Generic Order Provider")][CmdletBinding()]
 param(
     [string]$Project,
 	[string]$CodeLanguage,

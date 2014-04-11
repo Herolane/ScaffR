@@ -1,3 +1,3 @@
 ﻿param($installPath, $toolsPath, $package, $project)
 
-scaffold scaffeine.shoppingcart.core
+scaffold ScaffR.shoppingcart.core

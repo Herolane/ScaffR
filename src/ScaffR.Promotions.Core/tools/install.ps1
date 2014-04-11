@@ -1,3 +1,3 @@
 ﻿param($installPath, $toolsPath, $package)
 
-scaffold scaffeine.promotions.core
+scaffold ScaffR.promotions.core

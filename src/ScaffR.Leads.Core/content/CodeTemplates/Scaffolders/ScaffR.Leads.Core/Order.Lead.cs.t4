@@ -1,0 +1,15 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Model
+{
+    using Newtonsoft.Json;
+
+    public partial class Order
+    {
+        public int LeadId { get; set; }
+
+        [JsonIgnore]
+        public Lead Lead { get; set; }
+    }
+}
+

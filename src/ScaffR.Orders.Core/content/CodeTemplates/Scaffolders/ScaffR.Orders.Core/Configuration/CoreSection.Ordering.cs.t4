@@ -1,0 +1,16 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Configuration
+{
+    using System.Configuration;
+    using Ordering;
+
+    public partial class CoreSection
+    {
+        [ConfigurationProperty("ordering", IsRequired = true)]
+        public OrderingElement Ordering
+        {
+            get { return (OrderingElement) base["ordering"]; }
+        }
+    }
+}

@@ -1,4 +1,4 @@
-[T4Scaffolding.Scaffolder(Description = "Scaffeine.Payments.PayPal - Builds the classes for the PayPal payment provider")][CmdletBinding()]
+[T4Scaffolding.Scaffolder(Description = "ScaffR.Payments.PayPal - Builds the classes for the PayPal payment provider")][CmdletBinding()]
 param(        
     [string]$Project,
 	[string]$CodeLanguage,

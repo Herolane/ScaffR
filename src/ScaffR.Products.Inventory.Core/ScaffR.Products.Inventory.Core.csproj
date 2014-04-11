@@ -46,12 +46,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Inventory.Core\Product.Inventory.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Inventory.Core\Product.Inventory.cs.t4" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Inventory.Core\Scaffeine.Products.Inventory.Core.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Inventory.Core\ScaffR.Products.Inventory.Core.ps1" />
     <None Include="Package.nuspec">
       <SubType>Designer</SubType>
     </None>

@@ -1,0 +1,52 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Service
+{
+    using Core.Model;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    public partial class MessageService
+    {
+        public void SendMessage(int userId, string subject, string textBody, int[] attachments, int[] receivers, int? parentId = null)
+        {
+            var message = new Message
+                              {
+                                  SenderId = userId,
+                                  Subject = subject,
+                                  Text = textBody,
+                                  ParentMessageId = parentId
+                              };
+
+            
+            message.Receivers.Add(new MessageReceiver{UserId = userId, MessageStatus = MessageStatus.Sent});
+            foreach (var receiver in receivers)
+            {
+                message.Receivers.Add(new MessageReceiver
+                                          {
+                                              UserId = receiver,
+                                              MessageStatus = MessageStatus.Unreaded
+                                          });
+            }
+
+            foreach (var attachment in attachments)
+            {
+                var att = Repository.GetAttachmentById(attachment);
+                if (att != null)
+                    message.Attachments.Add(att);
+            }
+
+            SaveOrUpdate(message);
+        }
+
+        public IEnumerable<Message> GetMessagesForFolder(int userId, int folderId)
+        {
+            return Find(m => m.FolderId == folderId && m.Receivers.Any(r => r.Id == userId));
+        }
+
+        public IEnumerable<Folder> GetUserFolders(int userId)
+        {
+            return Repository.GetUserFolders(userId);
+        }
+    }
+}

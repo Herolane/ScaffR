@@ -1,4 +1,4 @@
-﻿[T4Scaffolding.Scaffolder(Description = "Scaffeine.ShippingRates - Generic ShippingRates Provider")][CmdletBinding()]
+﻿[T4Scaffolding.Scaffolder(Description = "ScaffR.ShippingRates - Generic ShippingRates Provider")][CmdletBinding()]
 param(
     [string]$Project,
 	[string]$CodeLanguage,

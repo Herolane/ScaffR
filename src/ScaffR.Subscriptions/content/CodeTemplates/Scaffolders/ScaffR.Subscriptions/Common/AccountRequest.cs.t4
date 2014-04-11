@@ -1,0 +1,45 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Common.Subscriptions
+{
+    public partial class AccountRequest
+    {
+		public string Accountcode { get; set; }
+
+        public string Username { get; set; }
+
+        public string Email { get; set; }
+
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
+        public string CompanyName { get; set; }
+
+        public string AcceptLanguage { get; set; }
+
+        public string Address1 { get; set; }
+
+        public string Address2 { get; set; }
+
+        public string City { get; set; }
+
+        public string State { get; set; }
+
+        public string ZipCode { get; set; }
+
+        public string Phone { get; set; }
+
+        public string IPAddress { get; set; }
+
+        public string CardNumber { get; set; }
+
+        public string CardType { get; set; }
+
+        public string Month { get; set; }
+
+        public string Year { get; set; }
+
+        public string Country { get; set; }
+    }
+}

@@ -1,3 +1,3 @@
 ﻿param($installPath, $toolsPath, $package, $project)
 
-scaffold Scaffeine.Subscriptions
+scaffold ScaffR.Subscriptions

@@ -1,0 +1,19 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Common.Subscriptions
+{
+    using System.Configuration.Provider;
+
+    public abstract class SubscriptionsProvider : ProviderBase
+    {
+        public abstract AccountResponse CreateAccount(AccountRequest request);
+
+        public abstract AccountResponse UpdateAccount(AccountRequest request);
+
+        public abstract bool CloseAccount(string accountCode);
+
+        public abstract bool ReopenAccount(string accountCode);
+
+        public abstract CancelSubscriptionResponse CancelSubscription(CancelSubscriptionRequest request);
+    }
+}

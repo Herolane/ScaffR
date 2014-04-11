@@ -1,0 +1,11 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Shipping
+{
+    public class ShippingRateRequest
+    {
+        public int OrderId { get; set; }
+
+        public string Address { get; set; }
+    }
+}

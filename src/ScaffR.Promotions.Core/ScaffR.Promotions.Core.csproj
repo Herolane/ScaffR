@@ -55,7 +55,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Promotions\Scaffeine.Promotions.Core.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Promotions\ScaffR.Promotions.Core.ps1" />
     <None Include="content\app.config.transform" />
     <None Include="content\web.config.transform">
       <SubType>Designer</SubType>
@@ -70,19 +70,19 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Promotions\Benefits\BenefitContext.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Promotions\Benefits\BenefitProcessor.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Promotions\Prerequisites\PrerequisiteContext.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Promotions\Prerequisites\PrerequisiteProcessor.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Promotions\Promotion.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Promotions\PromotionManager.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Promotions\Benefits\BenefitContext.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Promotions\Benefits\BenefitProcessor.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Promotions\Prerequisites\PrerequisiteContext.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Promotions\Prerequisites\PrerequisiteProcessor.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Promotions\Promotion.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Promotions\PromotionManager.cs.t4" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Promotions\Configuration\PromotionSettings.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Promotions\Configuration\PromotionSettingsCollection.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Promotions\Configuration\PromotionSettings.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Promotions\Configuration\PromotionSettingsCollection.cs.t4" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Promotions\Configuration\CoreSection.Promotions.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Promotions\Configuration\CoreSection.Promotions.cs.t4" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

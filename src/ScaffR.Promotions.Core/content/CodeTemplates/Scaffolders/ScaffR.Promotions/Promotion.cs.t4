@@ -1,0 +1,40 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Common.Promotions
+{
+    using Benefits;
+    using Prerequisites;
+    using Configuration.Promotions;
+    using Infrastructure.Pipeline;
+
+    public class Promotion
+    {
+        private readonly PipelineManager<BenefitContext> _benefitProcessor;
+        private readonly PipelineManager<PrerequisiteContext> _prerequisiteProcessor;
+        private readonly string _name;
+
+        public Promotion(PromotionSettings settings)
+        {
+            _name = settings.Name;
+
+            _benefitProcessor = PipelineFactory.Create<BenefitContext>(settings.Benefits);
+
+            _prerequisiteProcessor = PipelineFactory.Create<PrerequisiteContext>(settings.Prerequisites);
+        }
+
+        public PipelineManager<BenefitContext> BenefitsProcessor
+        {
+            get { return _benefitProcessor; }
+        } 
+
+        public PipelineManager<PrerequisiteContext> PrerequisitesProcessor
+        {
+            get { return _prerequisiteProcessor; }
+        }
+
+        public string Name
+        {
+            get { return _name; }
+        }
+    }
+}

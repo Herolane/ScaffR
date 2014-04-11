@@ -50,14 +50,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Provider\OrderManager.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Provider\OrderManager.cs.t4" />
     <None Include="content\App.config.transform">
       <SubType>Designer</SubType>
     </None>
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Provider\OrderProvider.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Provider\OrderProviderCollection.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Provider\OrderSection.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Orders.Provider\Scaffeine.Orders.Provider.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Provider\OrderProvider.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Provider\OrderProviderCollection.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Provider\OrderSection.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Orders.Provider\ScaffR.Orders.Provider.ps1" />
     <None Include="content\Web.config.transform">
       <SubType>Designer</SubType>
     </None>

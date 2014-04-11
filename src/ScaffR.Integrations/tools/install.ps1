@@ -4,4 +4,4 @@ add-project $integrationsProjectName | with-reference "System.Configuration,Syst
 
 get-project | with-reference $integrationsProjectName
 
-scaffold Scaffeine.Integrations
+scaffold ScaffR.Integrations

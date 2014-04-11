@@ -17,8 +17,8 @@
     <tags></tags>
     <dependencies>
       <dependency id="ScaffR.Core"/>
-      <dependency id="Scaffeine.Customers.Core"/>
-      <dependency id="Scaffeine.Orders.Core"/>
+      <dependency id="ScaffR.Customers.Core"/>
+      <dependency id="ScaffR.Orders.Core"/>
     </dependencies>
   </metadata>
   <files>

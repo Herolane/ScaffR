@@ -1,0 +1,25 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Ordering
+{
+    using System;
+    using System.Configuration.Provider;
+
+    public partial class OrderProviderCollection : ProviderCollection
+    {
+        public new OrderProvider this[string name]
+        {
+            get { return (OrderProvider)base[name]; }
+        }
+
+        public override void Add(ProviderBase provider)
+        {
+            if (provider == null)
+                throw new ArgumentNullException("provider");
+
+            if (!(provider is OrderProvider)) throw new ArgumentException("Invalid provider type", "provider");
+
+            base.Add(provider);
+        }
+    }
+}

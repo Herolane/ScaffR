@@ -55,7 +55,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="content\CodeTemplates\Scaffolders\Scaffeine.Categories.Shell\deleteme.txt" />
+    <Content Include="content\CodeTemplates\Scaffolders\ScaffR.Categories.Shell\deleteme.txt" />
     <Content Include="NuGet.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

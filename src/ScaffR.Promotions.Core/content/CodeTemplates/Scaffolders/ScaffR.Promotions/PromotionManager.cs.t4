@@ -1,0 +1,38 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Common.Promotions
+{
+    using System.Collections.Generic;
+    using Configuration;
+    using Configuration.Promotions;
+
+    public class PromotionManager
+    {
+        private static IDictionary<string, Promotion> _promotions;
+        public static IDictionary<string, Promotion> Promotions
+        {
+            get
+            {
+                LoadPromotions();
+                return _promotions;
+            }
+        }
+
+        private static void LoadPromotions()
+        {
+            if (_promotions == null)
+            {
+                var promotions = CoreSection.GetConfig().Promotions;
+                if (promotions != null)
+                {
+                    _promotions = new Dictionary<string, Promotion>();
+                    foreach (PromotionSettings settings in promotions)
+                    {
+                        var promotion = new Promotion(settings);
+                        _promotions.Add(promotion.Name, promotion);
+                    }
+                }
+            }
+        } 
+    }
+}

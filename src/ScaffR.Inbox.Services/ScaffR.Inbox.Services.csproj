@@ -50,12 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Inbox.Services\Data\MessageRepository.Custom.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Inbox.Services\InboxDataSeeder.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Inbox.Services\Interfaces\IMessageRepository.Custom.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Inbox.Services\Interfaces\IMessageService.Custom.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Inbox.Services\Scaffeine.Inbox.Services.ps1" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Inbox.Services\Services\MessageService.Custom.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Inbox.Services\Data\MessageRepository.Custom.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Inbox.Services\InboxDataSeeder.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Inbox.Services\Interfaces\IMessageRepository.Custom.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Inbox.Services\Interfaces\IMessageService.Custom.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Inbox.Services\ScaffR.Inbox.Services.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Inbox.Services\Services\MessageService.Custom.cs.t4" />
     <None Include="Package.nuspec" />
     <None Include="tools\init.ps1" />
     <None Include="tools\install.ps1" />

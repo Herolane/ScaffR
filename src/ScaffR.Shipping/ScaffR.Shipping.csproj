@@ -49,15 +49,15 @@
     <None Include="content\App.config.transform">
       <SubType>Designer</SubType>
     </None>
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Shipping\ShippingProvider.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Shipping\ShippingRateRequest.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Shipping\ShippingRateResponse.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Shipping\ShippingProvider.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Shipping\ShippingRateRequest.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Shipping\ShippingRateResponse.cs.t4" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Shipping\Scaffeine.Shipping.ps1" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Shipping\ShippingSection.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Shipping\ScaffR.Shipping.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Shipping\ShippingSection.cs.t4" />
     <None Include="content\Web.config.transform">
       <SubType>Designer</SubType>
     </None>

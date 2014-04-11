@@ -46,7 +46,7 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.ActivityLog\UserActivities.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.ActivityLog\UserActivities.cs.t4" />
     <None Include="content\Handlers\LastActivityHandler.cs.pp" />
     <None Include="content\Controllers\Users\UsersController.Activities.cs.pp" />
     <None Include="content\Models\Users\UserActivitiesViewModel.cs.pp" />

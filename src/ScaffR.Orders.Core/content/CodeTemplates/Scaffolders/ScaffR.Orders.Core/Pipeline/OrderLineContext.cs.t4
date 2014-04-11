@@ -1,0 +1,22 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Common.Ordering
+{
+    using Model;
+
+    public class OrderLineContext
+    {
+        private OrderLineItem _orderItem;
+
+        public OrderLineContext(OrderLineItem orderItem )
+        {
+            OrderItem = orderItem;
+        }
+
+        public OrderLineItem OrderItem
+        {
+            get { return _orderItem; }
+            set { _orderItem = value; }
+        }
+    }
+}

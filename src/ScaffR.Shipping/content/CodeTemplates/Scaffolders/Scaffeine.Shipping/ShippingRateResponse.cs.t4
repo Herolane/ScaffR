@@ -1,8 +1,0 @@
-<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
-<#@ Output Extension="cs" #>
-namespace <#= Model.Namespace #>.Shipping
-{
-    public class ShippingRateResponse
-    {
-    }
-}

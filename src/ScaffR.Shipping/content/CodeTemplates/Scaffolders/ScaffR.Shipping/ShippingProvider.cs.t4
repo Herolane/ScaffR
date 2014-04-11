@@ -1,0 +1,11 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Shipping
+{
+    using System.Configuration.Provider;
+
+    public abstract class ShippingProvider : ProviderBase
+    {
+        public abstract ShippingRateResponse GetShippingRate(ShippingRateRequest request);
+    }
+}

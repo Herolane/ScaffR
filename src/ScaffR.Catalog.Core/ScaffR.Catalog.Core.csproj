@@ -46,24 +46,24 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Catalog.Core\Category.Catalog.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Catalog.Core\Category.Product.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Catalog.Core\CategoryFeaturedProduct.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Catalog.Core\Product.Catalog.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Catalog.Core\ProductAttributeHeader.cs.t4" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Catalog.Core\ProductAttributeValue.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Catalog.Core\Category.Catalog.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Catalog.Core\Category.Product.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Catalog.Core\CategoryFeaturedProduct.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Catalog.Core\Product.Catalog.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Catalog.Core\ProductAttributeHeader.cs.t4" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Catalog.Core\ProductAttributeValue.cs.t4" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BuildPublishPackage.cmd" />
-    <None Include="content\CodeTemplates\Scaffolders\Scaffeine.Catalog.Core\Scaffeine.Catalog.Core.ps1" />
+    <None Include="content\CodeTemplates\Scaffolders\ScaffR.Catalog.Core\ScaffR.Catalog.Core.ps1" />
     <None Include="Package.nuspec">
       <SubType>Designer</SubType>
     </None>
     <None Include="tools\install.ps1" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="content\CodeTemplates\Scaffolders\Scaffeine.Catalog.Core\Extensions\" />
+    <Folder Include="content\CodeTemplates\Scaffolders\ScaffR.Catalog.Core\Extensions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

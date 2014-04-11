@@ -1,0 +1,13 @@
+﻿<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+namespace <#= Model.Namespace #>.Core.Model
+{
+	public class Attachment : DomainObject
+    {
+        public Message Message { get; set; }
+        public int? MessageId { get; set; }
+
+        public string Name { get; set; }
+        public byte[] File { get; set; }
+    }
+}

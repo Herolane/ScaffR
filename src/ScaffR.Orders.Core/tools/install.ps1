@@ -1,3 +1,3 @@
 ﻿param($installPath, $toolsPath, $package, $project)
 
-scaffold Scaffeine.Orders.Core
+scaffold ScaffR.Orders.Core
